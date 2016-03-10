@@ -8,7 +8,7 @@ make sure you have installed the following libraries: <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDL2_mixer  https://www.libsdl.org/projects/SDL_mixer/ <br>
 
 How to build:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unix: <br>
+Unix: <br>
 
       
     Just run ./bootstrap.sh
