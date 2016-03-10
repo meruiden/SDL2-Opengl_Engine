@@ -1,0 +1,2111 @@
+The system is: Darwin - 15.3.0 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is AppleClang, found in "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/3.4.1/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is AppleClang, found in "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/3.4.1/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a4324/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_a4324.dir/build.make CMakeFiles/cmTC_a4324.dir/build
+Building C object CMakeFiles/cmTC_a4324.dir/testCCompiler.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc     -o CMakeFiles/cmTC_a4324.dir/testCCompiler.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/testCCompiler.c"
+Linking C executable cmTC_a4324
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a4324.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_a4324.dir/testCCompiler.c.o  -o cmTC_a4324  
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e4916/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_e4916.dir/build.make CMakeFiles/cmTC_e4916.dir/build
+Building C object CMakeFiles/cmTC_e4916.dir/CMakeCCompilerABI.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc     -o CMakeFiles/cmTC_e4916.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.4/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_e4916
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e4916.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_e4916.dir/CMakeCCompilerABI.c.o  -o cmTC_e4916   
+Apple LLVM version 7.0.0 (clang-700.1.76)
+Target: x86_64-apple-darwin15.3.0
+Thread model: posix
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -o cmTC_e4916 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_e4916.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-253.6
+configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+Library search paths:
+	/usr/lib
+	/usr/local/lib
+Framework search paths:
+	/Library/Frameworks/
+	/System/Library/Frameworks/
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_e4916/fast"]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_e4916.dir/build.make CMakeFiles/cmTC_e4916.dir/build]
+  ignore line: [Building C object CMakeFiles/cmTC_e4916.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc     -o CMakeFiles/cmTC_e4916.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.4/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_e4916]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e4916.dir/link.txt --verbose=1]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_e4916.dir/CMakeCCompilerABI.c.o  -o cmTC_e4916   ]
+  ignore line: [Apple LLVM version 7.0.0 (clang-700.1.76)]
+  ignore line: [Target: x86_64-apple-darwin15.3.0]
+  ignore line: [Thread model: posix]
+  link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -o cmTC_e4916 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_e4916.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.11.0] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_e4916] ==> ignore
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_e4916.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lSystem] ==> lib [System]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/usr/lib;/usr/local/lib]
+  Framework search paths: [;/Library/Frameworks/;/System/Library/Frameworks/]
+  remove lib [System]
+  collapse lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a] ==> [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+  collapse framework dir [/Library/Frameworks/] ==> [/Library/Frameworks]
+  collapse framework dir [/System/Library/Frameworks/] ==> [/System/Library/Frameworks]
+  implicit libs: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a]
+  implicit dirs: [/usr/lib;/usr/local/lib]
+  implicit fwks: [/Library/Frameworks;/System/Library/Frameworks]
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_018e9/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_018e9.dir/build.make CMakeFiles/cmTC_018e9.dir/build
+Building C object CMakeFiles/cmTC_018e9.dir/feature_tests.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_018e9.dir/feature_tests.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/feature_tests.c"
+Linking C executable cmTC_018e9
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_018e9.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_018e9.dir/feature_tests.c.o  -o cmTC_018e9  
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2a45d/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_2a45d.dir/build.make CMakeFiles/cmTC_2a45d.dir/build
+Building C object CMakeFiles/cmTC_2a45d.dir/feature_tests.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_2a45d.dir/feature_tests.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/feature_tests.c"
+Linking C executable cmTC_2a45d
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2a45d.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_2a45d.dir/feature_tests.c.o  -o cmTC_2a45d  
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c3c48/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_c3c48.dir/build.make CMakeFiles/cmTC_c3c48.dir/build
+Building C object CMakeFiles/cmTC_c3c48.dir/feature_tests.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_c3c48.dir/feature_tests.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/feature_tests.c"
+Linking C executable cmTC_c3c48
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c3c48.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_c3c48.dir/feature_tests.c.o  -o cmTC_c3c48  
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_43d87/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_43d87.dir/build.make CMakeFiles/cmTC_43d87.dir/build
+Building CXX object CMakeFiles/cmTC_43d87.dir/testCXXCompiler.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++      -o CMakeFiles/cmTC_43d87.dir/testCXXCompiler.cxx.o -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx"
+Linking CXX executable cmTC_43d87
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_43d87.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_43d87.dir/testCXXCompiler.cxx.o  -o cmTC_43d87  
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7383d/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_7383d.dir/build.make CMakeFiles/cmTC_7383d.dir/build
+Building CXX object CMakeFiles/cmTC_7383d.dir/CMakeCXXCompilerABI.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++      -o CMakeFiles/cmTC_7383d.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.4/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_7383d
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7383d.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_7383d.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_7383d   
+Apple LLVM version 7.0.0 (clang-700.1.76)
+Target: x86_64-apple-darwin15.3.0
+Thread model: posix
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -o cmTC_7383d -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_7383d.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-253.6
+configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+Library search paths:
+	/usr/lib
+	/usr/local/lib
+Framework search paths:
+	/Library/Frameworks/
+	/System/Library/Frameworks/
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_7383d/fast"]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_7383d.dir/build.make CMakeFiles/cmTC_7383d.dir/build]
+  ignore line: [Building CXX object CMakeFiles/cmTC_7383d.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++      -o CMakeFiles/cmTC_7383d.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.4/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_7383d]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7383d.dir/link.txt --verbose=1]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_7383d.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_7383d   ]
+  ignore line: [Apple LLVM version 7.0.0 (clang-700.1.76)]
+  ignore line: [Target: x86_64-apple-darwin15.3.0]
+  ignore line: [Thread model: posix]
+  link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -o cmTC_7383d -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_7383d.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.11.0] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_7383d] ==> ignore
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_7383d.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lc++] ==> lib [c++]
+    arg [-lSystem] ==> lib [System]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/usr/lib;/usr/local/lib]
+  Framework search paths: [;/Library/Frameworks/;/System/Library/Frameworks/]
+  remove lib [System]
+  collapse lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a] ==> [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+  collapse framework dir [/Library/Frameworks/] ==> [/Library/Frameworks]
+  collapse framework dir [/System/Library/Frameworks/] ==> [/System/Library/Frameworks]
+  implicit libs: [c++;/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a]
+  implicit dirs: [/usr/lib;/usr/local/lib]
+  implicit fwks: [/Library/Frameworks;/System/Library/Frameworks]
+
+
+
+
+Detecting CXX [-std=c++14] compiler features compiled with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5b353/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_5b353.dir/build.make CMakeFiles/cmTC_5b353.dir/build
+Building CXX object CMakeFiles/cmTC_5b353.dir/feature_tests.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++14 -o CMakeFiles/cmTC_5b353.dir/feature_tests.cxx.o -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/feature_tests.cxx"
+Linking CXX executable cmTC_5b353
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5b353.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_5b353.dir/feature_tests.cxx.o  -o cmTC_5b353  
+
+
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++11] compiler features compiled with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0a8bf/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_0a8bf.dir/build.make CMakeFiles/cmTC_0a8bf.dir/build
+Building CXX object CMakeFiles/cmTC_0a8bf.dir/feature_tests.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_0a8bf.dir/feature_tests.cxx.o -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/feature_tests.cxx"
+Linking CXX executable cmTC_0a8bf
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0a8bf.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_0a8bf.dir/feature_tests.cxx.o  -o cmTC_0a8bf  
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++98] compiler features compiled with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_aee88/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_aee88.dir/build.make CMakeFiles/cmTC_aee88.dir/build
+Building CXX object CMakeFiles/cmTC_aee88.dir/feature_tests.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_aee88.dir/feature_tests.cxx.o -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/feature_tests.cxx"
+Linking CXX executable cmTC_aee88
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aee88.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_aee88.dir/feature_tests.cxx.o  -o cmTC_aee88  
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:0cxx_alias_templates
+    Feature record: CXX_FEATURE:0cxx_alignas
+    Feature record: CXX_FEATURE:0cxx_alignof
+    Feature record: CXX_FEATURE:0cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:0cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:0cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:0cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:0cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:0cxx_default_function_template_args
+    Feature record: CXX_FEATURE:0cxx_defaulted_functions
+    Feature record: CXX_FEATURE:0cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:0cxx_delegating_constructors
+    Feature record: CXX_FEATURE:0cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:0cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:0cxx_explicit_conversions
+    Feature record: CXX_FEATURE:0cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:0cxx_extern_templates
+    Feature record: CXX_FEATURE:0cxx_final
+    Feature record: CXX_FEATURE:0cxx_func_identifier
+    Feature record: CXX_FEATURE:0cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:0cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:0cxx_inline_namespaces
+    Feature record: CXX_FEATURE:0cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:0cxx_local_type_template_args
+    Feature record: CXX_FEATURE:0cxx_long_long_type
+    Feature record: CXX_FEATURE:0cxx_noexcept
+    Feature record: CXX_FEATURE:0cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:0cxx_nullptr
+    Feature record: CXX_FEATURE:0cxx_override
+    Feature record: CXX_FEATURE:0cxx_range_for
+    Feature record: CXX_FEATURE:0cxx_raw_string_literals
+    Feature record: CXX_FEATURE:0cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:0cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:0cxx_rvalue_references
+    Feature record: CXX_FEATURE:0cxx_sizeof_member
+    Feature record: CXX_FEATURE:0cxx_static_assert
+    Feature record: CXX_FEATURE:0cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:0cxx_trailing_return_types
+    Feature record: CXX_FEATURE:0cxx_unicode_literals
+    Feature record: CXX_FEATURE:0cxx_uniform_initialization
+    Feature record: CXX_FEATURE:0cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:0cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:0cxx_variadic_macros
+    Feature record: CXX_FEATURE:0cxx_variadic_templates
+Performing C SOURCE FILE Test HAVE_GCC_FVISIBILITY succeded with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6ba1c/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_6ba1c.dir/build.make CMakeFiles/cmTC_6ba1c.dir/build
+Building C object CMakeFiles/cmTC_6ba1c.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DHAVE_GCC_FVISIBILITY -fvisibility=hidden -Werror   -o CMakeFiles/cmTC_6ba1c.dir/src.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_6ba1c
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ba1c.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DHAVE_GCC_FVISIBILITY -fvisibility=hidden -Werror -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_6ba1c.dir/src.c.o  -o cmTC_6ba1c  
+
+Source file was:
+
+      #if !defined(__GNUC__) || __GNUC__ < 4
+      #error SDL only uses visibility attributes in GCC 4 or newer
+      #endif
+      int main(int argc, char **argv) {}
+Performing C SOURCE FILE Test HAVE_GCC_WALL succeded with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c680d/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_c680d.dir/build.make CMakeFiles/cmTC_c680d.dir/build
+Building C object CMakeFiles/cmTC_c680d.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DHAVE_GCC_WALL   -Wall -o CMakeFiles/cmTC_c680d.dir/src.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_c680d
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c680d.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DHAVE_GCC_WALL -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_c680d.dir/src.c.o  -o cmTC_c680d  
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_GCC_WSHADOW succeded with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_844dd/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_844dd.dir/build.make CMakeFiles/cmTC_844dd.dir/build
+Building C object CMakeFiles/cmTC_844dd.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DHAVE_GCC_WSHADOW   -Wshadow -o CMakeFiles/cmTC_844dd.dir/src.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_844dd
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_844dd.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DHAVE_GCC_WSHADOW -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_844dd.dir/src.c.o  -o cmTC_844dd  
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_MMX succeded with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b5cbb/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_b5cbb.dir/build.make CMakeFiles/cmTC_b5cbb.dir/build
+Building C object CMakeFiles/cmTC_b5cbb.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DHAVE_MMX -mmmx   -o CMakeFiles/cmTC_b5cbb.dir/src.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_b5cbb
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b5cbb.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DHAVE_MMX -mmmx -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_b5cbb.dir/src.c.o  -o cmTC_b5cbb  
+
+Source file was:
+
+          #ifdef __MINGW32__
+          #include <_mingw.h>
+          #ifdef __MINGW64_VERSION_MAJOR
+          #include <intrin.h>
+          #else
+          #include <mmintrin.h>
+          #endif
+          #else
+          #include <mmintrin.h>
+          #endif
+          #ifndef __MMX__
+          #error Assembler CPP flag not enabled
+          #endif
+          int main(int argc, char **argv) { }
+Performing C SOURCE FILE Test HAVE_SSE succeded with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c2e43/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_c2e43.dir/build.make CMakeFiles/cmTC_c2e43.dir/build
+Building C object CMakeFiles/cmTC_c2e43.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DHAVE_SSE -msse   -o CMakeFiles/cmTC_c2e43.dir/src.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_c2e43
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c2e43.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DHAVE_SSE -msse -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_c2e43.dir/src.c.o  -o cmTC_c2e43  
+
+Source file was:
+
+          #ifdef __MINGW32__
+          #include <_mingw.h>
+          #ifdef __MINGW64_VERSION_MAJOR
+          #include <intrin.h>
+          #else
+          #include <xmmintrin.h>
+          #endif
+          #else
+          #include <xmmintrin.h>
+          #endif
+          #ifndef __SSE__
+          #error Assembler CPP flag not enabled
+          #endif
+          int main(int argc, char **argv) { }
+Performing C SOURCE FILE Test HAVE_SSE2 succeded with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_42878/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_42878.dir/build.make CMakeFiles/cmTC_42878.dir/build
+Building C object CMakeFiles/cmTC_42878.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DHAVE_SSE2 -msse2   -o CMakeFiles/cmTC_42878.dir/src.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_42878
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_42878.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DHAVE_SSE2 -msse2 -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_42878.dir/src.c.o  -o cmTC_42878  
+
+Source file was:
+
+          #ifdef __MINGW32__
+          #include <_mingw.h>
+          #ifdef __MINGW64_VERSION_MAJOR
+          #include <intrin.h>
+          #else
+          #include <emmintrin.h>
+          #endif
+          #else
+          #include <emmintrin.h>
+          #endif
+          #ifndef __SSE2__
+          #error Assembler CPP flag not enabled
+          #endif
+          int main(int argc, char **argv) { }
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_52570/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_52570.dir/build.make CMakeFiles/cmTC_52570.dir/build
+Building C object CMakeFiles/cmTC_52570.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3    -o CMakeFiles/cmTC_52570.dir/CheckIncludeFile.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+Linking C executable cmTC_52570
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_52570.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_52570.dir/CheckIncludeFile.c.o  -o cmTC_52570  
+
+
+Determining if the include file stdio.h exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_aa4bd/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_aa4bd.dir/build.make CMakeFiles/cmTC_aa4bd.dir/build
+Building C object CMakeFiles/cmTC_aa4bd.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3    -o CMakeFiles/cmTC_aa4bd.dir/CheckIncludeFile.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+Linking C executable cmTC_aa4bd
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aa4bd.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_aa4bd.dir/CheckIncludeFile.c.o  -o cmTC_aa4bd  
+
+
+Determining if the include file stdlib.h exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a29f0/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_a29f0.dir/build.make CMakeFiles/cmTC_a29f0.dir/build
+Building C object CMakeFiles/cmTC_a29f0.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3    -o CMakeFiles/cmTC_a29f0.dir/CheckIncludeFile.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+Linking C executable cmTC_a29f0
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a29f0.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_a29f0.dir/CheckIncludeFile.c.o  -o cmTC_a29f0  
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_616a4/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_616a4.dir/build.make CMakeFiles/cmTC_616a4.dir/build
+Building C object CMakeFiles/cmTC_616a4.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3    -o CMakeFiles/cmTC_616a4.dir/CheckIncludeFile.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+Linking C executable cmTC_616a4
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_616a4.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_616a4.dir/CheckIncludeFile.c.o  -o cmTC_616a4  
+
+
+Determining if the include file stdarg.h exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7d58f/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_7d58f.dir/build.make CMakeFiles/cmTC_7d58f.dir/build
+Building C object CMakeFiles/cmTC_7d58f.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3    -o CMakeFiles/cmTC_7d58f.dir/CheckIncludeFile.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+Linking C executable cmTC_7d58f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7d58f.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_7d58f.dir/CheckIncludeFile.c.o  -o cmTC_7d58f  
+
+
+Determining if the include file memory.h exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_feab3/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_feab3.dir/build.make CMakeFiles/cmTC_feab3.dir/build
+Building C object CMakeFiles/cmTC_feab3.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3    -o CMakeFiles/cmTC_feab3.dir/CheckIncludeFile.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+Linking C executable cmTC_feab3
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_feab3.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_feab3.dir/CheckIncludeFile.c.o  -o cmTC_feab3  
+
+
+Determining if the include file string.h exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2f398/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_2f398.dir/build.make CMakeFiles/cmTC_2f398.dir/build
+Building C object CMakeFiles/cmTC_2f398.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3    -o CMakeFiles/cmTC_2f398.dir/CheckIncludeFile.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+Linking C executable cmTC_2f398
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2f398.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_2f398.dir/CheckIncludeFile.c.o  -o cmTC_2f398  
+
+
+Determining if the include file strings.h exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2cc58/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_2cc58.dir/build.make CMakeFiles/cmTC_2cc58.dir/build
+Building C object CMakeFiles/cmTC_2cc58.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3    -o CMakeFiles/cmTC_2cc58.dir/CheckIncludeFile.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+Linking C executable cmTC_2cc58
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2cc58.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_2cc58.dir/CheckIncludeFile.c.o  -o cmTC_2cc58  
+
+
+Determining if the include file inttypes.h exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_04e66/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_04e66.dir/build.make CMakeFiles/cmTC_04e66.dir/build
+Building C object CMakeFiles/cmTC_04e66.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3    -o CMakeFiles/cmTC_04e66.dir/CheckIncludeFile.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+Linking C executable cmTC_04e66
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04e66.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_04e66.dir/CheckIncludeFile.c.o  -o cmTC_04e66  
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_aca55/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_aca55.dir/build.make CMakeFiles/cmTC_aca55.dir/build
+Building C object CMakeFiles/cmTC_aca55.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3    -o CMakeFiles/cmTC_aca55.dir/CheckIncludeFile.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+Linking C executable cmTC_aca55
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aca55.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_aca55.dir/CheckIncludeFile.c.o  -o cmTC_aca55  
+
+
+Determining if the include file ctype.h exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_58634/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_58634.dir/build.make CMakeFiles/cmTC_58634.dir/build
+Building C object CMakeFiles/cmTC_58634.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3    -o CMakeFiles/cmTC_58634.dir/CheckIncludeFile.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+Linking C executable cmTC_58634
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_58634.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_58634.dir/CheckIncludeFile.c.o  -o cmTC_58634  
+
+
+Determining if the include file math.h exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0588b/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_0588b.dir/build.make CMakeFiles/cmTC_0588b.dir/build
+Building C object CMakeFiles/cmTC_0588b.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3    -o CMakeFiles/cmTC_0588b.dir/CheckIncludeFile.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+Linking C executable cmTC_0588b
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0588b.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_0588b.dir/CheckIncludeFile.c.o  -o cmTC_0588b  
+
+
+Determining if the include file iconv.h exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9d51e/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_9d51e.dir/build.make CMakeFiles/cmTC_9d51e.dir/build
+Building C object CMakeFiles/cmTC_9d51e.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3    -o CMakeFiles/cmTC_9d51e.dir/CheckIncludeFile.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+Linking C executable cmTC_9d51e
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9d51e.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_9d51e.dir/CheckIncludeFile.c.o  -o cmTC_9d51e  
+
+
+Determining if the include file signal.h exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c38b5/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_c38b5.dir/build.make CMakeFiles/cmTC_c38b5.dir/build
+Building C object CMakeFiles/cmTC_c38b5.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3    -o CMakeFiles/cmTC_c38b5.dir/CheckIncludeFile.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+Linking C executable cmTC_c38b5
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c38b5.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_c38b5.dir/CheckIncludeFile.c.o  -o cmTC_c38b5  
+
+
+Determining if files dlfcn.h;stdint.h;stddef.h;inttypes.h;stdlib.h;strings.h;string.h;float.h exist passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_35472/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_35472.dir/build.make CMakeFiles/cmTC_35472.dir/build
+Building C object CMakeFiles/cmTC_35472.dir/CheckIncludeFiles.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3    -o CMakeFiles/cmTC_35472.dir/CheckIncludeFiles.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c"
+Linking C executable cmTC_35472
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_35472.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_35472.dir/CheckIncludeFiles.c.o  -o cmTC_35472  
+
+
+Determining size of size_t passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_96657/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_96657.dir/build.make CMakeFiles/cmTC_96657.dir/build
+Building C object CMakeFiles/cmTC_96657.dir/SIZEOF_SIZE_T.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3    -o CMakeFiles/cmTC_96657.dir/SIZEOF_SIZE_T.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CheckTypeSize/SIZEOF_SIZE_T.c"
+Linking C executable cmTC_96657
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_96657.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_96657.dir/SIZEOF_SIZE_T.c.o  -o cmTC_96657  
+
+
+Determining if the M_PI exist passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3b455/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_3b455.dir/build.make CMakeFiles/cmTC_3b455.dir/build
+Building C object CMakeFiles/cmTC_3b455.dir/CheckSymbolExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3    -o CMakeFiles/cmTC_3b455.dir/CheckSymbolExists.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c"
+Linking C executable cmTC_3b455
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3b455.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3  -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_3b455.dir/CheckSymbolExists.c.o  -o cmTC_3b455  
+
+File /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <math.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef M_PI
+  return ((int*)(&M_PI))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Performing C SOURCE FILE Test HAVE_MPROTECT succeded with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ebb8f/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_ebb8f.dir/build.make CMakeFiles/cmTC_ebb8f.dir/build
+Building C object CMakeFiles/cmTC_ebb8f.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DHAVE_MPROTECT   -o CMakeFiles/cmTC_ebb8f.dir/src.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_ebb8f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ebb8f.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DHAVE_MPROTECT -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_ebb8f.dir/src.c.o  -o cmTC_ebb8f  
+
+Source file was:
+#include <sys/types.h>
+                             #include <sys/mman.h>
+                             int main() { }
+Determining if the function strtod exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fd5eb/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_fd5eb.dir/build.make CMakeFiles/cmTC_fd5eb.dir/build
+Building C object CMakeFiles/cmTC_fd5eb.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=strtod   -o CMakeFiles/cmTC_fd5eb.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_fd5eb
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fd5eb.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=strtod -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_fd5eb.dir/CheckFunctionExists.c.o  -o cmTC_fd5eb  
+
+
+Determining if the function malloc exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f59ec/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_f59ec.dir/build.make CMakeFiles/cmTC_f59ec.dir/build
+Building C object CMakeFiles/cmTC_f59ec.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=malloc   -o CMakeFiles/cmTC_f59ec.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'malloc' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS malloc
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'malloc' is a builtin with type 'void *(unsigned long)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS malloc
+                              ^
+1 warning generated.
+Linking C executable cmTC_f59ec
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f59ec.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=malloc -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_f59ec.dir/CheckFunctionExists.c.o  -o cmTC_f59ec  
+
+
+Determining if the function calloc exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9fdcf/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_9fdcf.dir/build.make CMakeFiles/cmTC_9fdcf.dir/build
+Building C object CMakeFiles/cmTC_9fdcf.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=calloc   -o CMakeFiles/cmTC_9fdcf.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'calloc' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS calloc
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'calloc' is a builtin with type 'void *(unsigned long, unsigned long)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS calloc
+                              ^
+1 warning generated.
+Linking C executable cmTC_9fdcf
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9fdcf.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=calloc -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_9fdcf.dir/CheckFunctionExists.c.o  -o cmTC_9fdcf  
+
+
+Determining if the function realloc exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_392c0/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_392c0.dir/build.make CMakeFiles/cmTC_392c0.dir/build
+Building C object CMakeFiles/cmTC_392c0.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=realloc   -o CMakeFiles/cmTC_392c0.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'realloc' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS realloc
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'realloc' is a builtin with type 'void *(void *, unsigned long)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS realloc
+                              ^
+1 warning generated.
+Linking C executable cmTC_392c0
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_392c0.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=realloc -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_392c0.dir/CheckFunctionExists.c.o  -o cmTC_392c0  
+
+
+Determining if the function free exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7e716/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_7e716.dir/build.make CMakeFiles/cmTC_7e716.dir/build
+Building C object CMakeFiles/cmTC_7e716.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=free   -o CMakeFiles/cmTC_7e716.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7e716
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7e716.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=free -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_7e716.dir/CheckFunctionExists.c.o  -o cmTC_7e716  
+
+
+Determining if the function getenv exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b05f3/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_b05f3.dir/build.make CMakeFiles/cmTC_b05f3.dir/build
+Building C object CMakeFiles/cmTC_b05f3.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=getenv   -o CMakeFiles/cmTC_b05f3.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b05f3
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b05f3.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=getenv -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_b05f3.dir/CheckFunctionExists.c.o  -o cmTC_b05f3  
+
+
+Determining if the function setenv exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_716cc/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_716cc.dir/build.make CMakeFiles/cmTC_716cc.dir/build
+Building C object CMakeFiles/cmTC_716cc.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=setenv   -o CMakeFiles/cmTC_716cc.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_716cc
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_716cc.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=setenv -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_716cc.dir/CheckFunctionExists.c.o  -o cmTC_716cc  
+
+
+Determining if the function putenv exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1b140/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_1b140.dir/build.make CMakeFiles/cmTC_1b140.dir/build
+Building C object CMakeFiles/cmTC_1b140.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=putenv   -o CMakeFiles/cmTC_1b140.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1b140
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1b140.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=putenv -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_1b140.dir/CheckFunctionExists.c.o  -o cmTC_1b140  
+
+
+Determining if the function unsetenv exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3f300/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_3f300.dir/build.make CMakeFiles/cmTC_3f300.dir/build
+Building C object CMakeFiles/cmTC_3f300.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=unsetenv   -o CMakeFiles/cmTC_3f300.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3f300
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3f300.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=unsetenv -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_3f300.dir/CheckFunctionExists.c.o  -o cmTC_3f300  
+
+
+Determining if the function qsort exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_28efd/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_28efd.dir/build.make CMakeFiles/cmTC_28efd.dir/build
+Building C object CMakeFiles/cmTC_28efd.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=qsort   -o CMakeFiles/cmTC_28efd.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_28efd
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_28efd.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=qsort -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_28efd.dir/CheckFunctionExists.c.o  -o cmTC_28efd  
+
+
+Determining if the function abs exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_19107/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_19107.dir/build.make CMakeFiles/cmTC_19107.dir/build
+Building C object CMakeFiles/cmTC_19107.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=abs   -o CMakeFiles/cmTC_19107.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'abs' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS abs
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'abs' is a builtin with type 'int (int)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS abs
+                              ^
+1 warning generated.
+Linking C executable cmTC_19107
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_19107.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=abs -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_19107.dir/CheckFunctionExists.c.o  -o cmTC_19107  
+
+
+Determining if the function bcopy exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4feea/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_4feea.dir/build.make CMakeFiles/cmTC_4feea.dir/build
+Building C object CMakeFiles/cmTC_4feea.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=bcopy   -o CMakeFiles/cmTC_4feea.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4feea
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4feea.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=bcopy -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_4feea.dir/CheckFunctionExists.c.o  -o cmTC_4feea  
+
+
+Determining if the function memset exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e7f0c/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_e7f0c.dir/build.make CMakeFiles/cmTC_e7f0c.dir/build
+Building C object CMakeFiles/cmTC_e7f0c.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=memset   -o CMakeFiles/cmTC_e7f0c.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'memset' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS memset
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'memset' is a builtin with type 'void *(void *, int, unsigned long)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS memset
+                              ^
+1 warning generated.
+Linking C executable cmTC_e7f0c
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e7f0c.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=memset -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_e7f0c.dir/CheckFunctionExists.c.o  -o cmTC_e7f0c  
+
+
+Determining if the function memcpy exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a882c/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_a882c.dir/build.make CMakeFiles/cmTC_a882c.dir/build
+Building C object CMakeFiles/cmTC_a882c.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=memcpy   -o CMakeFiles/cmTC_a882c.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'memcpy' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS memcpy
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'memcpy' is a builtin with type 'void *(void *, const void *, unsigned long)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS memcpy
+                              ^
+1 warning generated.
+Linking C executable cmTC_a882c
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a882c.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=memcpy -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_a882c.dir/CheckFunctionExists.c.o  -o cmTC_a882c  
+
+
+Determining if the function memmove exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e17d3/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_e17d3.dir/build.make CMakeFiles/cmTC_e17d3.dir/build
+Building C object CMakeFiles/cmTC_e17d3.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=memmove   -o CMakeFiles/cmTC_e17d3.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'memmove' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS memmove
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'memmove' is a builtin with type 'void *(void *, const void *, unsigned long)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS memmove
+                              ^
+1 warning generated.
+Linking C executable cmTC_e17d3
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e17d3.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=memmove -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_e17d3.dir/CheckFunctionExists.c.o  -o cmTC_e17d3  
+
+
+Determining if the function memcmp exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1f6cd/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_1f6cd.dir/build.make CMakeFiles/cmTC_1f6cd.dir/build
+Building C object CMakeFiles/cmTC_1f6cd.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=memcmp   -o CMakeFiles/cmTC_1f6cd.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'memcmp' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS memcmp
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'memcmp' is a builtin with type 'int (const void *, const void *, unsigned long)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS memcmp
+                              ^
+1 warning generated.
+Linking C executable cmTC_1f6cd
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1f6cd.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=memcmp -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_1f6cd.dir/CheckFunctionExists.c.o  -o cmTC_1f6cd  
+
+
+Determining if the function strlen exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_67a60/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_67a60.dir/build.make CMakeFiles/cmTC_67a60.dir/build
+Building C object CMakeFiles/cmTC_67a60.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=strlen   -o CMakeFiles/cmTC_67a60.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'strlen' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strlen
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'strlen' is a builtin with type 'unsigned long (const char *)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strlen
+                              ^
+1 warning generated.
+Linking C executable cmTC_67a60
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_67a60.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=strlen -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_67a60.dir/CheckFunctionExists.c.o  -o cmTC_67a60  
+
+
+Determining if the function strlcpy exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a3333/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_a3333.dir/build.make CMakeFiles/cmTC_a3333.dir/build
+Building C object CMakeFiles/cmTC_a3333.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=strlcpy   -o CMakeFiles/cmTC_a3333.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'strlcpy' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strlcpy
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'strlcpy' is a builtin with type 'unsigned long (char *, const char *, unsigned long)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strlcpy
+                              ^
+1 warning generated.
+Linking C executable cmTC_a3333
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3333.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=strlcpy -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_a3333.dir/CheckFunctionExists.c.o  -o cmTC_a3333  
+
+
+Determining if the function strlcat exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9f5b0/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_9f5b0.dir/build.make CMakeFiles/cmTC_9f5b0.dir/build
+Building C object CMakeFiles/cmTC_9f5b0.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=strlcat   -o CMakeFiles/cmTC_9f5b0.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'strlcat' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strlcat
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'strlcat' is a builtin with type 'unsigned long (char *, const char *, unsigned long)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strlcat
+                              ^
+1 warning generated.
+Linking C executable cmTC_9f5b0
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9f5b0.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=strlcat -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_9f5b0.dir/CheckFunctionExists.c.o  -o cmTC_9f5b0  
+
+
+Determining if the function strdup exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_615ce/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_615ce.dir/build.make CMakeFiles/cmTC_615ce.dir/build
+Building C object CMakeFiles/cmTC_615ce.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=strdup   -o CMakeFiles/cmTC_615ce.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'strdup' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strdup
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'strdup' is a builtin with type 'char *(const char *)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strdup
+                              ^
+1 warning generated.
+Linking C executable cmTC_615ce
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_615ce.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=strdup -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_615ce.dir/CheckFunctionExists.c.o  -o cmTC_615ce  
+
+
+Determining if the function strchr exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c1811/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_c1811.dir/build.make CMakeFiles/cmTC_c1811.dir/build
+Building C object CMakeFiles/cmTC_c1811.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=strchr   -o CMakeFiles/cmTC_c1811.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'strchr' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strchr
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'strchr' is a builtin with type 'char *(const char *, int)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strchr
+                              ^
+1 warning generated.
+Linking C executable cmTC_c1811
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c1811.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=strchr -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_c1811.dir/CheckFunctionExists.c.o  -o cmTC_c1811  
+
+
+Determining if the function strrchr exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_44ccc/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_44ccc.dir/build.make CMakeFiles/cmTC_44ccc.dir/build
+Building C object CMakeFiles/cmTC_44ccc.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=strrchr   -o CMakeFiles/cmTC_44ccc.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'strrchr' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strrchr
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'strrchr' is a builtin with type 'char *(const char *, int)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strrchr
+                              ^
+1 warning generated.
+Linking C executable cmTC_44ccc
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_44ccc.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=strrchr -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_44ccc.dir/CheckFunctionExists.c.o  -o cmTC_44ccc  
+
+
+Determining if the function strstr exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a1309/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_a1309.dir/build.make CMakeFiles/cmTC_a1309.dir/build
+Building C object CMakeFiles/cmTC_a1309.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=strstr   -o CMakeFiles/cmTC_a1309.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'strstr' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strstr
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'strstr' is a builtin with type 'char *(const char *, const char *)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strstr
+                              ^
+1 warning generated.
+Linking C executable cmTC_a1309
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1309.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=strstr -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_a1309.dir/CheckFunctionExists.c.o  -o cmTC_a1309  
+
+
+Determining if the function strtol exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_25ced/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_25ced.dir/build.make CMakeFiles/cmTC_25ced.dir/build
+Building C object CMakeFiles/cmTC_25ced.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=strtol   -o CMakeFiles/cmTC_25ced.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_25ced
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_25ced.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=strtol -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_25ced.dir/CheckFunctionExists.c.o  -o cmTC_25ced  
+
+
+Determining if the function strtoul exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3ea3f/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_3ea3f.dir/build.make CMakeFiles/cmTC_3ea3f.dir/build
+Building C object CMakeFiles/cmTC_3ea3f.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=strtoul   -o CMakeFiles/cmTC_3ea3f.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3ea3f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ea3f.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=strtoul -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_3ea3f.dir/CheckFunctionExists.c.o  -o cmTC_3ea3f  
+
+
+Determining if the function strtoll exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7a6a5/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_7a6a5.dir/build.make CMakeFiles/cmTC_7a6a5.dir/build
+Building C object CMakeFiles/cmTC_7a6a5.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=strtoll   -o CMakeFiles/cmTC_7a6a5.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7a6a5
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7a6a5.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=strtoll -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_7a6a5.dir/CheckFunctionExists.c.o  -o cmTC_7a6a5  
+
+
+Determining if the function strtoull exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c7e53/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_c7e53.dir/build.make CMakeFiles/cmTC_c7e53.dir/build
+Building C object CMakeFiles/cmTC_c7e53.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=strtoull   -o CMakeFiles/cmTC_c7e53.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c7e53
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c7e53.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=strtoull -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_c7e53.dir/CheckFunctionExists.c.o  -o cmTC_c7e53  
+
+
+Determining if the function atoi exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e0de7/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_e0de7.dir/build.make CMakeFiles/cmTC_e0de7.dir/build
+Building C object CMakeFiles/cmTC_e0de7.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=atoi   -o CMakeFiles/cmTC_e0de7.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e0de7
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e0de7.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=atoi -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_e0de7.dir/CheckFunctionExists.c.o  -o cmTC_e0de7  
+
+
+Determining if the function atof exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_76de9/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_76de9.dir/build.make CMakeFiles/cmTC_76de9.dir/build
+Building C object CMakeFiles/cmTC_76de9.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=atof   -o CMakeFiles/cmTC_76de9.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_76de9
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_76de9.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=atof -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_76de9.dir/CheckFunctionExists.c.o  -o cmTC_76de9  
+
+
+Determining if the function strcmp exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_19407/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_19407.dir/build.make CMakeFiles/cmTC_19407.dir/build
+Building C object CMakeFiles/cmTC_19407.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=strcmp   -o CMakeFiles/cmTC_19407.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'strcmp' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strcmp
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'strcmp' is a builtin with type 'int (const char *, const char *)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strcmp
+                              ^
+1 warning generated.
+Linking C executable cmTC_19407
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_19407.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=strcmp -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_19407.dir/CheckFunctionExists.c.o  -o cmTC_19407  
+
+
+Determining if the function strncmp exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4849d/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_4849d.dir/build.make CMakeFiles/cmTC_4849d.dir/build
+Building C object CMakeFiles/cmTC_4849d.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=strncmp   -o CMakeFiles/cmTC_4849d.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'strncmp' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strncmp
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'strncmp' is a builtin with type 'int (const char *, const char *, unsigned long)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strncmp
+                              ^
+1 warning generated.
+Linking C executable cmTC_4849d
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4849d.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=strncmp -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_4849d.dir/CheckFunctionExists.c.o  -o cmTC_4849d  
+
+
+Determining if the function strcasecmp exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_46369/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_46369.dir/build.make CMakeFiles/cmTC_46369.dir/build
+Building C object CMakeFiles/cmTC_46369.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=strcasecmp   -o CMakeFiles/cmTC_46369.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'strcasecmp' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strcasecmp
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'strcasecmp' is a builtin with type 'int (const char *, const char *)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strcasecmp
+                              ^
+1 warning generated.
+Linking C executable cmTC_46369
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_46369.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=strcasecmp -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_46369.dir/CheckFunctionExists.c.o  -o cmTC_46369  
+
+
+Determining if the function strncasecmp exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5ae67/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_5ae67.dir/build.make CMakeFiles/cmTC_5ae67.dir/build
+Building C object CMakeFiles/cmTC_5ae67.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=strncasecmp   -o CMakeFiles/cmTC_5ae67.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'strncasecmp' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strncasecmp
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'strncasecmp' is a builtin with type 'int (const char *, const char *, unsigned long)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strncasecmp
+                              ^
+1 warning generated.
+Linking C executable cmTC_5ae67
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ae67.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=strncasecmp -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_5ae67.dir/CheckFunctionExists.c.o  -o cmTC_5ae67  
+
+
+Determining if the function vsscanf exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_11384/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_11384.dir/build.make CMakeFiles/cmTC_11384.dir/build
+Building C object CMakeFiles/cmTC_11384.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=vsscanf   -o CMakeFiles/cmTC_11384.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'vsscanf' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS vsscanf
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'vsscanf' is a builtin with type 'int (const char *restrict, const char *restrict, __va_list_tag *)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS vsscanf
+                              ^
+1 warning generated.
+Linking C executable cmTC_11384
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_11384.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=vsscanf -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_11384.dir/CheckFunctionExists.c.o  -o cmTC_11384  
+
+
+Determining if the function vsnprintf exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e6c86/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_e6c86.dir/build.make CMakeFiles/cmTC_e6c86.dir/build
+Building C object CMakeFiles/cmTC_e6c86.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=vsnprintf   -o CMakeFiles/cmTC_e6c86.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'vsnprintf' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS vsnprintf
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'vsnprintf' is a builtin with type 'int (char *, unsigned long, const char *, __va_list_tag *)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS vsnprintf
+                              ^
+1 warning generated.
+Linking C executable cmTC_e6c86
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e6c86.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=vsnprintf -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_e6c86.dir/CheckFunctionExists.c.o  -o cmTC_e6c86  
+
+
+Determining if the function fseeko exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c1b1e/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_c1b1e.dir/build.make CMakeFiles/cmTC_c1b1e.dir/build
+Building C object CMakeFiles/cmTC_c1b1e.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=fseeko   -o CMakeFiles/cmTC_c1b1e.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c1b1e
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c1b1e.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=fseeko -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_c1b1e.dir/CheckFunctionExists.c.o  -o cmTC_c1b1e  
+
+
+Determining if the function sigaction exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c6e19/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_c6e19.dir/build.make CMakeFiles/cmTC_c6e19.dir/build
+Building C object CMakeFiles/cmTC_c6e19.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=sigaction   -o CMakeFiles/cmTC_c6e19.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c6e19
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c6e19.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=sigaction -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_c6e19.dir/CheckFunctionExists.c.o  -o cmTC_c6e19  
+
+
+Determining if the function setjmp exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_71093/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_71093.dir/build.make CMakeFiles/cmTC_71093.dir/build
+Building C object CMakeFiles/cmTC_71093.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=setjmp   -o CMakeFiles/cmTC_71093.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: declaration of built-in function 'setjmp' requires inclusion of the header <setjmp.h> [-Wbuiltin-requires-header]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS setjmp
+                              ^
+1 warning generated.
+Linking C executable cmTC_71093
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_71093.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=setjmp -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_71093.dir/CheckFunctionExists.c.o  -o cmTC_71093  
+
+
+Determining if the function nanosleep exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_21f9e/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_21f9e.dir/build.make CMakeFiles/cmTC_21f9e.dir/build
+Building C object CMakeFiles/cmTC_21f9e.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=nanosleep   -o CMakeFiles/cmTC_21f9e.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_21f9e
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_21f9e.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=nanosleep -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_21f9e.dir/CheckFunctionExists.c.o  -o cmTC_21f9e  
+
+
+Determining if the function sysconf exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ec4a0/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_ec4a0.dir/build.make CMakeFiles/cmTC_ec4a0.dir/build
+Building C object CMakeFiles/cmTC_ec4a0.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=sysconf   -o CMakeFiles/cmTC_ec4a0.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ec4a0
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ec4a0.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=sysconf -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_ec4a0.dir/CheckFunctionExists.c.o  -o cmTC_ec4a0  
+
+
+Determining if the function sysctlbyname exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_04a85/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_04a85.dir/build.make CMakeFiles/cmTC_04a85.dir/build
+Building C object CMakeFiles/cmTC_04a85.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=sysctlbyname   -o CMakeFiles/cmTC_04a85.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_04a85
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04a85.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=sysctlbyname -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_04a85.dir/CheckFunctionExists.c.o  -o cmTC_04a85  
+
+
+Determining if the function pow exists in the m passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7b56f/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_7b56f.dir/build.make CMakeFiles/cmTC_7b56f.dir/build
+Building C object CMakeFiles/cmTC_7b56f.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=pow   -o CMakeFiles/cmTC_7b56f.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'pow' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS pow
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'pow' is a builtin with type 'double (double, double)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS pow
+                              ^
+1 warning generated.
+Linking C executable cmTC_7b56f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7b56f.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=pow -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_7b56f.dir/CheckFunctionExists.c.o  -o cmTC_7b56f  -lm 
+
+
+Determining if the function atan exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_98082/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_98082.dir/build.make CMakeFiles/cmTC_98082.dir/build
+Building C object CMakeFiles/cmTC_98082.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=atan   -o CMakeFiles/cmTC_98082.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'atan' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS atan
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'atan' is a builtin with type 'double (double)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS atan
+                              ^
+1 warning generated.
+Linking C executable cmTC_98082
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_98082.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=atan -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_98082.dir/CheckFunctionExists.c.o  -o cmTC_98082  -lm 
+
+
+Determining if the function atan2 exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_72f17/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_72f17.dir/build.make CMakeFiles/cmTC_72f17.dir/build
+Building C object CMakeFiles/cmTC_72f17.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=atan2   -o CMakeFiles/cmTC_72f17.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'atan2' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS atan2
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'atan2' is a builtin with type 'double (double, double)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS atan2
+                              ^
+1 warning generated.
+Linking C executable cmTC_72f17
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_72f17.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=atan2 -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_72f17.dir/CheckFunctionExists.c.o  -o cmTC_72f17  -lm 
+
+
+Determining if the function ceil exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6cab5/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_6cab5.dir/build.make CMakeFiles/cmTC_6cab5.dir/build
+Building C object CMakeFiles/cmTC_6cab5.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=ceil   -o CMakeFiles/cmTC_6cab5.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'ceil' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS ceil
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'ceil' is a builtin with type 'double (double)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS ceil
+                              ^
+1 warning generated.
+Linking C executable cmTC_6cab5
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6cab5.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=ceil -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_6cab5.dir/CheckFunctionExists.c.o  -o cmTC_6cab5  -lm 
+
+
+Determining if the function copysign exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_10a1d/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_10a1d.dir/build.make CMakeFiles/cmTC_10a1d.dir/build
+Building C object CMakeFiles/cmTC_10a1d.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=copysign   -o CMakeFiles/cmTC_10a1d.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'copysign' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS copysign
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'copysign' is a builtin with type 'double (double, double)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS copysign
+                              ^
+1 warning generated.
+Linking C executable cmTC_10a1d
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_10a1d.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=copysign -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_10a1d.dir/CheckFunctionExists.c.o  -o cmTC_10a1d  -lm 
+
+
+Determining if the function cos exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0a522/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_0a522.dir/build.make CMakeFiles/cmTC_0a522.dir/build
+Building C object CMakeFiles/cmTC_0a522.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=cos   -o CMakeFiles/cmTC_0a522.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'cos' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS cos
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'cos' is a builtin with type 'double (double)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS cos
+                              ^
+1 warning generated.
+Linking C executable cmTC_0a522
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0a522.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=cos -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_0a522.dir/CheckFunctionExists.c.o  -o cmTC_0a522  -lm 
+
+
+Determining if the function cosf exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_dbbf9/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_dbbf9.dir/build.make CMakeFiles/cmTC_dbbf9.dir/build
+Building C object CMakeFiles/cmTC_dbbf9.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=cosf   -o CMakeFiles/cmTC_dbbf9.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'cosf' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS cosf
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'cosf' is a builtin with type 'float (float)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS cosf
+                              ^
+1 warning generated.
+Linking C executable cmTC_dbbf9
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dbbf9.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=cosf -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_dbbf9.dir/CheckFunctionExists.c.o  -o cmTC_dbbf9  -lm 
+
+
+Determining if the function fabs exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_81494/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_81494.dir/build.make CMakeFiles/cmTC_81494.dir/build
+Building C object CMakeFiles/cmTC_81494.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=fabs   -o CMakeFiles/cmTC_81494.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'fabs' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS fabs
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'fabs' is a builtin with type 'double (double)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS fabs
+                              ^
+1 warning generated.
+Linking C executable cmTC_81494
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_81494.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=fabs -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_81494.dir/CheckFunctionExists.c.o  -o cmTC_81494  -lm 
+
+
+Determining if the function floor exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_194a2/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_194a2.dir/build.make CMakeFiles/cmTC_194a2.dir/build
+Building C object CMakeFiles/cmTC_194a2.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=floor   -o CMakeFiles/cmTC_194a2.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'floor' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS floor
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'floor' is a builtin with type 'double (double)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS floor
+                              ^
+1 warning generated.
+Linking C executable cmTC_194a2
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_194a2.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=floor -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_194a2.dir/CheckFunctionExists.c.o  -o cmTC_194a2  -lm 
+
+
+Determining if the function log exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e6591/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_e6591.dir/build.make CMakeFiles/cmTC_e6591.dir/build
+Building C object CMakeFiles/cmTC_e6591.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=log   -o CMakeFiles/cmTC_e6591.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'log' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS log
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'log' is a builtin with type 'double (double)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS log
+                              ^
+1 warning generated.
+Linking C executable cmTC_e6591
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e6591.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=log -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_e6591.dir/CheckFunctionExists.c.o  -o cmTC_e6591  -lm 
+
+
+Determining if the function pow exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_42163/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_42163.dir/build.make CMakeFiles/cmTC_42163.dir/build
+Building C object CMakeFiles/cmTC_42163.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=pow   -o CMakeFiles/cmTC_42163.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'pow' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS pow
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'pow' is a builtin with type 'double (double, double)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS pow
+                              ^
+1 warning generated.
+Linking C executable cmTC_42163
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_42163.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=pow -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_42163.dir/CheckFunctionExists.c.o  -o cmTC_42163  -lm 
+
+
+Determining if the function scalbn exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a6bf4/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_a6bf4.dir/build.make CMakeFiles/cmTC_a6bf4.dir/build
+Building C object CMakeFiles/cmTC_a6bf4.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=scalbn   -o CMakeFiles/cmTC_a6bf4.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'scalbn' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS scalbn
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'scalbn' is a builtin with type 'double (double, int)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS scalbn
+                              ^
+1 warning generated.
+Linking C executable cmTC_a6bf4
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a6bf4.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=scalbn -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_a6bf4.dir/CheckFunctionExists.c.o  -o cmTC_a6bf4  -lm 
+
+
+Determining if the function sin exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_22f3a/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_22f3a.dir/build.make CMakeFiles/cmTC_22f3a.dir/build
+Building C object CMakeFiles/cmTC_22f3a.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=sin   -o CMakeFiles/cmTC_22f3a.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'sin' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS sin
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'sin' is a builtin with type 'double (double)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS sin
+                              ^
+1 warning generated.
+Linking C executable cmTC_22f3a
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_22f3a.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=sin -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_22f3a.dir/CheckFunctionExists.c.o  -o cmTC_22f3a  -lm 
+
+
+Determining if the function sinf exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d107f/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_d107f.dir/build.make CMakeFiles/cmTC_d107f.dir/build
+Building C object CMakeFiles/cmTC_d107f.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=sinf   -o CMakeFiles/cmTC_d107f.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'sinf' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS sinf
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'sinf' is a builtin with type 'float (float)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS sinf
+                              ^
+1 warning generated.
+Linking C executable cmTC_d107f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d107f.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=sinf -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_d107f.dir/CheckFunctionExists.c.o  -o cmTC_d107f  -lm 
+
+
+Determining if the function sqrt exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5468e/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_5468e.dir/build.make CMakeFiles/cmTC_5468e.dir/build
+Building C object CMakeFiles/cmTC_5468e.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=sqrt   -o CMakeFiles/cmTC_5468e.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'sqrt' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS sqrt
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'sqrt' is a builtin with type 'double (double)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS sqrt
+                              ^
+1 warning generated.
+Linking C executable cmTC_5468e
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5468e.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=sqrt -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_5468e.dir/CheckFunctionExists.c.o  -o cmTC_5468e  -lm 
+
+
+Determining if the function sqrtf exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_69db4/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_69db4.dir/build.make CMakeFiles/cmTC_69db4.dir/build
+Building C object CMakeFiles/cmTC_69db4.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=sqrtf   -o CMakeFiles/cmTC_69db4.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'sqrtf' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS sqrtf
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'sqrtf' is a builtin with type 'float (float)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS sqrtf
+                              ^
+1 warning generated.
+Linking C executable cmTC_69db4
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_69db4.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=sqrtf -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_69db4.dir/CheckFunctionExists.c.o  -o cmTC_69db4  -lm 
+
+
+Determining if the function tan exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ab517/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_ab517.dir/build.make CMakeFiles/cmTC_ab517.dir/build
+Building C object CMakeFiles/cmTC_ab517.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=tan   -o CMakeFiles/cmTC_ab517.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'tan' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS tan
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'tan' is a builtin with type 'double (double)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS tan
+                              ^
+1 warning generated.
+Linking C executable cmTC_ab517
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ab517.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=tan -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_ab517.dir/CheckFunctionExists.c.o  -o cmTC_ab517  -lm 
+
+
+Determining if the function tanf exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_38b0a/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_38b0a.dir/build.make CMakeFiles/cmTC_38b0a.dir/build
+Building C object CMakeFiles/cmTC_38b0a.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=tanf   -o CMakeFiles/cmTC_38b0a.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'tanf' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS tanf
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'tanf' is a builtin with type 'float (float)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS tanf
+                              ^
+1 warning generated.
+Linking C executable cmTC_38b0a
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_38b0a.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=tanf -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_38b0a.dir/CheckFunctionExists.c.o  -o cmTC_38b0a  -lm 
+
+
+Determining if the function acos exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_29022/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_29022.dir/build.make CMakeFiles/cmTC_29022.dir/build
+Building C object CMakeFiles/cmTC_29022.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=acos   -o CMakeFiles/cmTC_29022.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'acos' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS acos
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'acos' is a builtin with type 'double (double)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS acos
+                              ^
+1 warning generated.
+Linking C executable cmTC_29022
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_29022.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=acos -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_29022.dir/CheckFunctionExists.c.o  -o cmTC_29022  -lm 
+
+
+Determining if the function asin exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_030f1/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_030f1.dir/build.make CMakeFiles/cmTC_030f1.dir/build
+Building C object CMakeFiles/cmTC_030f1.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=asin   -o CMakeFiles/cmTC_030f1.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: warning: incompatible redeclaration of library function 'asin' [-Wincompatible-library-redeclaration]
+char CHECK_FUNCTION_EXISTS();
+     ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS asin
+                              ^
+/usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c:6:6: note: 'asin' is a builtin with type 'double (double)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS asin
+                              ^
+1 warning generated.
+Linking C executable cmTC_030f1
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_030f1.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=asin -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_030f1.dir/CheckFunctionExists.c.o  -o cmTC_030f1  -lm 
+
+
+Determining if the function iconv_open exists in the iconv passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_cdfc3/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_cdfc3.dir/build.make CMakeFiles/cmTC_cdfc3.dir/build
+Building C object CMakeFiles/cmTC_cdfc3.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=iconv_open   -o CMakeFiles/cmTC_cdfc3.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_cdfc3
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cdfc3.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=iconv_open -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_cdfc3.dir/CheckFunctionExists.c.o  -o cmTC_cdfc3  -liconv 
+
+
+Performing C SOURCE FILE Test HAVE_SA_SIGACTION succeded with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0d1b3/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_0d1b3.dir/build.make CMakeFiles/cmTC_0d1b3.dir/build
+Building C object CMakeFiles/cmTC_0d1b3.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DHAVE_SA_SIGACTION   -o CMakeFiles/cmTC_0d1b3.dir/src.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_0d1b3
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0d1b3.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DHAVE_SA_SIGACTION -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_0d1b3.dir/src.c.o  -o cmTC_0d1b3  
+
+Source file was:
+
+#include <signal.h>
+
+int main()
+{
+   (void)sizeof(((struct sigaction *)0)->sa_sigaction);
+   return 0;
+}
+
+Determining if the function dlopen exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_31262/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_31262.dir/build.make CMakeFiles/cmTC_31262.dir/build
+Building C object CMakeFiles/cmTC_31262.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=dlopen   -o CMakeFiles/cmTC_31262.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_31262
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_31262.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=dlopen -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_31262.dir/CheckFunctionExists.c.o  -o cmTC_31262  
+
+
+Performing C SOURCE FILE Test HAVE_PTHREADS succeded with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5f95b/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_5f95b.dir/build.make CMakeFiles/cmTC_5f95b.dir/build
+Building C object CMakeFiles/cmTC_5f95b.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DHAVE_PTHREADS -D_THREAD_SAFE   -o CMakeFiles/cmTC_5f95b.dir/src.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_5f95b
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f95b.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DHAVE_PTHREADS -D_THREAD_SAFE -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_5f95b.dir/src.c.o  -o cmTC_5f95b  
+
+Return value: 1
+Source file was:
+
+        #include <pthread.h>
+        int main(int argc, char** argv) {
+          pthread_attr_t type;
+          pthread_attr_init(&type);
+          return 0;
+        }
+Performing C SOURCE FILE Test HAVE_RECURSIVE_MUTEXES succeded with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1218b/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_1218b.dir/build.make CMakeFiles/cmTC_1218b.dir/build
+Building C object CMakeFiles/cmTC_1218b.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DHAVE_RECURSIVE_MUTEXES -D_THREAD_SAFE   -o CMakeFiles/cmTC_1218b.dir/src.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_1218b
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1218b.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DHAVE_RECURSIVE_MUTEXES -D_THREAD_SAFE -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_1218b.dir/src.c.o  -o cmTC_1218b  
+
+Source file was:
+
+        #include <pthread.h>
+        int main(int argc, char **argv) {
+          pthread_mutexattr_t attr;
+          pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
+          return 0;
+        }
+Performing C SOURCE FILE Test HAVE_PTHREADS_SEM succeded with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_12bf5/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_12bf5.dir/build.make CMakeFiles/cmTC_12bf5.dir/build
+Building C object CMakeFiles/cmTC_12bf5.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DHAVE_PTHREADS_SEM -D_THREAD_SAFE   -o CMakeFiles/cmTC_12bf5.dir/src.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_12bf5
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_12bf5.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DHAVE_PTHREADS_SEM -D_THREAD_SAFE -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_12bf5.dir/src.c.o  -o cmTC_12bf5  
+
+Source file was:
+#include <pthread.h>
+                                 #include <semaphore.h>
+                                 int main(int argc, char **argv) { return 0; }
+Determining if the function pthread_setname_np exists passed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_dc086/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_dc086.dir/build.make CMakeFiles/cmTC_dc086.dir/build
+Building C object CMakeFiles/cmTC_dc086.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=pthread_setname_np -D_THREAD_SAFE   -o CMakeFiles/cmTC_dc086.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_dc086
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dc086.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=pthread_setname_np -D_THREAD_SAFE -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_dc086.dir/CheckFunctionExists.c.o  -o cmTC_dc086  
+
+

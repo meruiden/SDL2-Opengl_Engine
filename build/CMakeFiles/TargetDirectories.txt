@@ -1,0 +1,2 @@
+/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/project.dir
+/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/engine.dir

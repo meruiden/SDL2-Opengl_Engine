@@ -1,0 +1,409 @@
+Performing C SOURCE FILE Test HAVE_GCC_PREFERRED_STACK_BOUNDARY failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2f13d/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_2f13d.dir/build.make CMakeFiles/cmTC_2f13d.dir/build
+Building C object CMakeFiles/cmTC_2f13d.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DHAVE_GCC_PREFERRED_STACK_BOUNDARY -mpreferred-stack-boundary=2   -o CMakeFiles/cmTC_2f13d.dir/src.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c"
+clang: error: unknown argument: '-mpreferred-stack-boundary=2'
+make[1]: *** [CMakeFiles/cmTC_2f13d.dir/src.c.o] Error 1
+make: *** [cmTC_2f13d/fast] Error 2
+
+Source file was:
+int x = 0; int main(int argc, char **argv) {}
+Performing C SOURCE FILE Test HAVE_NO_UNDEFINED failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e74fd/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_e74fd.dir/build.make CMakeFiles/cmTC_e74fd.dir/build
+Building C object CMakeFiles/cmTC_e74fd.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DHAVE_NO_UNDEFINED -Wl,--no-undefined   -o CMakeFiles/cmTC_e74fd.dir/src.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c"
+clang: warning: -Wl,--no-undefined: 'linker' input unused
+Linking C executable cmTC_e74fd
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e74fd.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DHAVE_NO_UNDEFINED -Wl,--no-undefined -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_e74fd.dir/src.c.o  -o cmTC_e74fd  
+ld: unknown option: --no-undefined
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_e74fd] Error 1
+make: *** [cmTC_e74fd/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_3DNOW failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fd97d/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_fd97d.dir/build.make CMakeFiles/cmTC_fd97d.dir/build
+Building C object CMakeFiles/cmTC_fd97d.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DHAVE_3DNOW -m3dnow   -o CMakeFiles/cmTC_fd97d.dir/src.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c"
+/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c:8:13: warning: implicit declaration of function '_m_prefetch' is invalid in C99 [-Wimplicit-function-declaration]
+            _m_prefetch(p);
+            ^
+1 warning generated.
+Linking C executable cmTC_fd97d
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fd97d.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DHAVE_3DNOW -m3dnow -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_fd97d.dir/src.c.o  -o cmTC_fd97d  
+Undefined symbols for architecture x86_64:
+  "__m_prefetch", referenced from:
+      _main in src.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_fd97d] Error 1
+make: *** [cmTC_fd97d/fast] Error 2
+
+Source file was:
+
+          #include <mm3dnow.h>
+          #ifndef __3dNOW__
+          #error Assembler CPP flag not enabled
+          #endif
+          int main(int argc, char **argv) {
+            void *p = 0;
+            _m_prefetch(p);
+          }
+Performing C SOURCE FILE Test HAVE_ALTIVEC_H_HDR failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8197a/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_8197a.dir/build.make CMakeFiles/cmTC_8197a.dir/build
+Building C object CMakeFiles/cmTC_8197a.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DHAVE_ALTIVEC_H_HDR -maltivec   -o CMakeFiles/cmTC_8197a.dir/src.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c"
+clang: error: invalid argument '-faltivec' only allowed with 'ppc/ppc64/ppc64le'
+make[1]: *** [CMakeFiles/cmTC_8197a.dir/src.c.o] Error 1
+make: *** [cmTC_8197a/fast] Error 2
+
+Source file was:
+
+          #include <altivec.h>
+          vector unsigned int vzero() {
+              return vec_splat_u32(0);
+          }
+          int main(int argc, char **argv) { }
+Performing C SOURCE FILE Test HAVE_ALTIVEC failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_137d7/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_137d7.dir/build.make CMakeFiles/cmTC_137d7.dir/build
+Building C object CMakeFiles/cmTC_137d7.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DHAVE_ALTIVEC -maltivec   -o CMakeFiles/cmTC_137d7.dir/src.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c"
+clang: error: invalid argument '-faltivec' only allowed with 'ppc/ppc64/ppc64le'
+make[1]: *** [CMakeFiles/cmTC_137d7.dir/src.c.o] Error 1
+make: *** [cmTC_137d7/fast] Error 2
+
+Source file was:
+
+          vector unsigned int vzero() {
+              return vec_splat_u32(0);
+          }
+          int main(int argc, char **argv) { }
+Determining if the include file malloc.h exists failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9044a/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_9044a.dir/build.make CMakeFiles/cmTC_9044a.dir/build
+Building C object CMakeFiles/cmTC_9044a.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3    -o CMakeFiles/cmTC_9044a.dir/CheckIncludeFile.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'malloc.h' file not found
+#include <malloc.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_9044a.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTC_9044a/fast] Error 2
+
+
+Determining if the function _strrev exists failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e9b5f/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_e9b5f.dir/build.make CMakeFiles/cmTC_e9b5f.dir/build
+Building C object CMakeFiles/cmTC_e9b5f.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=_strrev   -o CMakeFiles/cmTC_e9b5f.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e9b5f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e9b5f.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=_strrev -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_e9b5f.dir/CheckFunctionExists.c.o  -o cmTC_e9b5f  
+Undefined symbols for architecture x86_64:
+  "__strrev", referenced from:
+      _main in CheckFunctionExists.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_e9b5f] Error 1
+make: *** [cmTC_e9b5f/fast] Error 2
+
+
+Determining if the function _strupr exists failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d9fdc/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_d9fdc.dir/build.make CMakeFiles/cmTC_d9fdc.dir/build
+Building C object CMakeFiles/cmTC_d9fdc.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=_strupr   -o CMakeFiles/cmTC_d9fdc.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d9fdc
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d9fdc.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=_strupr -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_d9fdc.dir/CheckFunctionExists.c.o  -o cmTC_d9fdc  
+Undefined symbols for architecture x86_64:
+  "__strupr", referenced from:
+      _main in CheckFunctionExists.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_d9fdc] Error 1
+make: *** [cmTC_d9fdc/fast] Error 2
+
+
+Determining if the function _strlwr exists failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9d2a9/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_9d2a9.dir/build.make CMakeFiles/cmTC_9d2a9.dir/build
+Building C object CMakeFiles/cmTC_9d2a9.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=_strlwr   -o CMakeFiles/cmTC_9d2a9.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_9d2a9
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9d2a9.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=_strlwr -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_9d2a9.dir/CheckFunctionExists.c.o  -o cmTC_9d2a9  
+Undefined symbols for architecture x86_64:
+  "__strlwr", referenced from:
+      _main in CheckFunctionExists.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_9d2a9] Error 1
+make: *** [cmTC_9d2a9/fast] Error 2
+
+
+Determining if the function itoa exists failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_afd1d/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_afd1d.dir/build.make CMakeFiles/cmTC_afd1d.dir/build
+Building C object CMakeFiles/cmTC_afd1d.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=itoa   -o CMakeFiles/cmTC_afd1d.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_afd1d
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_afd1d.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=itoa -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_afd1d.dir/CheckFunctionExists.c.o  -o cmTC_afd1d  
+Undefined symbols for architecture x86_64:
+  "_itoa", referenced from:
+      _main in CheckFunctionExists.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_afd1d] Error 1
+make: *** [cmTC_afd1d/fast] Error 2
+
+
+Determining if the function _ltoa exists failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a3d23/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_a3d23.dir/build.make CMakeFiles/cmTC_a3d23.dir/build
+Building C object CMakeFiles/cmTC_a3d23.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=_ltoa   -o CMakeFiles/cmTC_a3d23.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a3d23
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3d23.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=_ltoa -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_a3d23.dir/CheckFunctionExists.c.o  -o cmTC_a3d23  
+Undefined symbols for architecture x86_64:
+  "__ltoa", referenced from:
+      _main in CheckFunctionExists.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_a3d23] Error 1
+make: *** [cmTC_a3d23/fast] Error 2
+
+
+Determining if the function _uitoa exists failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8503e/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_8503e.dir/build.make CMakeFiles/cmTC_8503e.dir/build
+Building C object CMakeFiles/cmTC_8503e.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=_uitoa   -o CMakeFiles/cmTC_8503e.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8503e
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8503e.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=_uitoa -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_8503e.dir/CheckFunctionExists.c.o  -o cmTC_8503e  
+Undefined symbols for architecture x86_64:
+  "__uitoa", referenced from:
+      _main in CheckFunctionExists.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_8503e] Error 1
+make: *** [cmTC_8503e/fast] Error 2
+
+
+Determining if the function _ultoa exists failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_97962/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_97962.dir/build.make CMakeFiles/cmTC_97962.dir/build
+Building C object CMakeFiles/cmTC_97962.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=_ultoa   -o CMakeFiles/cmTC_97962.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_97962
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_97962.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=_ultoa -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_97962.dir/CheckFunctionExists.c.o  -o cmTC_97962  
+Undefined symbols for architecture x86_64:
+  "__ultoa", referenced from:
+      _main in CheckFunctionExists.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_97962] Error 1
+make: *** [cmTC_97962/fast] Error 2
+
+
+Determining if the function _i64toa exists failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_962e4/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_962e4.dir/build.make CMakeFiles/cmTC_962e4.dir/build
+Building C object CMakeFiles/cmTC_962e4.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=_i64toa   -o CMakeFiles/cmTC_962e4.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_962e4
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_962e4.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=_i64toa -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_962e4.dir/CheckFunctionExists.c.o  -o cmTC_962e4  
+Undefined symbols for architecture x86_64:
+  "__i64toa", referenced from:
+      _main in CheckFunctionExists.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_962e4] Error 1
+make: *** [cmTC_962e4/fast] Error 2
+
+
+Determining if the function _ui64toa exists failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3e404/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_3e404.dir/build.make CMakeFiles/cmTC_3e404.dir/build
+Building C object CMakeFiles/cmTC_3e404.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=_ui64toa   -o CMakeFiles/cmTC_3e404.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3e404
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e404.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=_ui64toa -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_3e404.dir/CheckFunctionExists.c.o  -o cmTC_3e404  
+Undefined symbols for architecture x86_64:
+  "__ui64toa", referenced from:
+      _main in CheckFunctionExists.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_3e404] Error 1
+make: *** [cmTC_3e404/fast] Error 2
+
+
+Determining if the function _stricmp exists failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8bd0f/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_8bd0f.dir/build.make CMakeFiles/cmTC_8bd0f.dir/build
+Building C object CMakeFiles/cmTC_8bd0f.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=_stricmp   -o CMakeFiles/cmTC_8bd0f.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8bd0f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8bd0f.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=_stricmp -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_8bd0f.dir/CheckFunctionExists.c.o  -o cmTC_8bd0f  
+Undefined symbols for architecture x86_64:
+  "__stricmp", referenced from:
+      _main in CheckFunctionExists.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_8bd0f] Error 1
+make: *** [cmTC_8bd0f/fast] Error 2
+
+
+Determining if the function _strnicmp exists failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0e45b/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_0e45b.dir/build.make CMakeFiles/cmTC_0e45b.dir/build
+Building C object CMakeFiles/cmTC_0e45b.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=_strnicmp   -o CMakeFiles/cmTC_0e45b.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0e45b
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e45b.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=_strnicmp -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_0e45b.dir/CheckFunctionExists.c.o  -o cmTC_0e45b  
+Undefined symbols for architecture x86_64:
+  "__strnicmp", referenced from:
+      _main in CheckFunctionExists.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_0e45b] Error 1
+make: *** [cmTC_0e45b/fast] Error 2
+
+
+Determining if the function fseeko64 exists failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_77015/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_77015.dir/build.make CMakeFiles/cmTC_77015.dir/build
+Building C object CMakeFiles/cmTC_77015.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=fseeko64   -o CMakeFiles/cmTC_77015.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_77015
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_77015.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=fseeko64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_77015.dir/CheckFunctionExists.c.o  -o cmTC_77015  
+Undefined symbols for architecture x86_64:
+  "_fseeko64", referenced from:
+      _main in CheckFunctionExists.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_77015] Error 1
+make: *** [cmTC_77015/fast] Error 2
+
+
+Performing C SOURCE FILE Test HAVE_SEM_TIMEDWAIT failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c2f87/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_c2f87.dir/build.make CMakeFiles/cmTC_c2f87.dir/build
+Building C object CMakeFiles/cmTC_c2f87.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DHAVE_SEM_TIMEDWAIT -D_THREAD_SAFE   -o CMakeFiles/cmTC_c2f87.dir/src.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c"
+/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c:5:19: warning: implicit declaration of function 'sem_timedwait' is invalid in C99 [-Wimplicit-function-declaration]
+                  sem_timedwait(NULL, NULL);
+                  ^
+1 warning generated.
+Linking C executable cmTC_c2f87
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c2f87.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DHAVE_SEM_TIMEDWAIT -D_THREAD_SAFE -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_c2f87.dir/src.c.o  -o cmTC_c2f87  
+Undefined symbols for architecture x86_64:
+  "_sem_timedwait", referenced from:
+      _main in src.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_c2f87] Error 1
+make: *** [cmTC_c2f87/fast] Error 2
+
+Source file was:
+
+              #include <pthread.h>
+              #include <semaphore.h>
+              int main(int argc, char **argv) {
+                  sem_timedwait(NULL, NULL);
+                  return 0;
+              }
+Performing C SOURCE FILE Test HAVE_PTHREAD_NP_H failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_36aeb/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_36aeb.dir/build.make CMakeFiles/cmTC_36aeb.dir/build
+Building C object CMakeFiles/cmTC_36aeb.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DHAVE_PTHREAD_NP_H -D_THREAD_SAFE   -o CMakeFiles/cmTC_36aeb.dir/src.c.o   -c "/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c"
+/Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp/src.c:3:20: fatal error: 'pthread_np.h' file not found
+          #include <pthread_np.h>
+                   ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_36aeb.dir/src.c.o] Error 1
+make: *** [cmTC_36aeb/fast] Error 2
+
+Source file was:
+
+          #include <pthread.h>
+          #include <pthread_np.h>
+          int main(int argc, char** argv) { return 0; }
+Determining if the function pthread_set_name_np exists failed with the following output:
+Change Dir: /Users/cornesteenhuis/Dropbox (Edutales)/csFramework/2d/opengl_SDL2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_45971/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_45971.dir/build.make CMakeFiles/cmTC_45971.dir/build
+Building C object CMakeFiles/cmTC_45971.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -g -O3 -DCHECK_FUNCTION_EXISTS=pthread_set_name_np -D_THREAD_SAFE   -o CMakeFiles/cmTC_45971.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.4/Modules/CheckFunctionExists.c
+Linking C executable cmTC_45971
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_45971.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -g -O3 -DCHECK_FUNCTION_EXISTS=pthread_set_name_np -D_THREAD_SAFE -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_45971.dir/CheckFunctionExists.c.o  -o cmTC_45971  
+Undefined symbols for architecture x86_64:
+  "_pthread_set_name_np", referenced from:
+      _main in CheckFunctionExists.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_45971] Error 1
+make: *** [cmTC_45971/fast] Error 2
+
+
