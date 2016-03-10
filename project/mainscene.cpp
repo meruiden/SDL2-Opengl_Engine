@@ -78,7 +78,6 @@ void Mainscene::update(float deltaTime){
             tower->position = input->getMouseToWorld(camera);
         }
 
-
     }
 
     if(tower != NULL){
@@ -100,8 +99,6 @@ void Mainscene::update(float deltaTime){
                 i--;
             }
         }
-
-
 
         if(tower->wantsToShoot){
             tower->shootcounter = 0;
