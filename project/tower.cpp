@@ -53,6 +53,6 @@ Bullet* Tower::shoot(){
     b->position = this->position;
     b->target = this->target;
     b->scale = Vector2(0.2f, 0.2f);
-    b->setTga("assets/projectiel.tga");
+    b->setPng("assets/projectiel.png");
     return b;
 }
