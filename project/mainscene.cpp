@@ -67,7 +67,6 @@ void Mainscene::update(float deltaTime){
             removeHudObject(choosedog);
             delete choosedog;
             choosedog = NULL;
-
             tower = new Tower();
             addEntity(tower);
             tower->position = input->getMouseToWorld(camera);
