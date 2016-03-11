@@ -15,7 +15,6 @@ public:
     virtual void update(float deltaTime);
     Sound* geluidje;
 
-    Text* textje;
     HudObject* chooseframe;
     HudObject* choosedog;
     std::vector<Enemy*> enemies;

@@ -7,7 +7,7 @@ Bullet::Bullet() : Entity(){
 }
 
 Bullet::~Bullet(){
-    
+
 }
 
 void Bullet::update(float deltaTime){

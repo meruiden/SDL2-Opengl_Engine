@@ -44,7 +44,7 @@ TTF_Font* Recoursemanager::getFont(std::string fontpath, int size){
             return this->loadedFonts[i];
         }
     }
-
+    std::cout << "loading font: " << fontpath << std::endl;
     TTF_Font* f;
     f = NULL;
     f = TTF_OpenFont(fontpath.c_str(), size);

@@ -83,6 +83,11 @@ private:
     float fpscounter;
     int frames;
     Input* input;
+    Text* fpsText;
+    Text* timer;
+    void devMode();
+    bool devmodeon;
+    float counter;
 
 };
 

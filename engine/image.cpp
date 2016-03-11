@@ -70,7 +70,7 @@ void Image::loadTGA(std::string ip){
     //read in image data
     fread(data, sizeof(unsigned char), imageSize, file);
 
-       //close file
+       //close file 
     fclose(file);
 
     if (byteCount == 3 || byteCount == 4) {

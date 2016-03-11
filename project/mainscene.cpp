@@ -19,12 +19,7 @@ Mainscene::Mainscene() : Scene(){
     choosedog->position = Vector2(1280-245/2, 180);
     choosedog->scale = Vector2(0.7f, 0.7f);
     spawnEnemies(5);
-    textje = new Text();
-    textje->setFont("assets/PrintClearly.ttf", 70);
-    textje->setText("Time: 0");
-    textje->position = Vector2(20,70);
-    textje->isHud = true;
-    addText(textje);
+
 
     lockDog = false;
 }
@@ -47,7 +42,7 @@ Mainscene::~Mainscene(){
         bullets[i] = NULL;
     }
     bullets.clear();
-    delete textje;
+
 }
 
 void Mainscene::update(float deltaTime){
@@ -80,7 +75,7 @@ void Mainscene::update(float deltaTime){
 
     }
 
-    if(tower != NULL){
+    if(tower != NULL && enemies.size() > 0){
         Enemy* target = enemies[0];
         for(unsigned int i = 0; i < enemies.size(); i ++){
             Vector2 curdisvec = Vector2(target->position, tower->position);
@@ -95,8 +90,7 @@ void Mainscene::update(float deltaTime){
                 bullets[i]->target->dead = true;
                 removeEnemy(bullets[i]->target);
                 removeBullet(bullets[i]);
-                //explosionSound->play();
-                i--;
+                explosionSound->play();
             }
         }
 
@@ -107,16 +101,11 @@ void Mainscene::update(float deltaTime){
             b = tower->shoot();
             addEntity(b);
             bullets.push_back(b);
-            //shootSound->play();
+            shootSound->play();
 
         }
     }
-    counter += deltaTime;
-    std::ostringstream ss;
-    std::string s = "Time: ";
-    ss << s;
-    ss << (int)counter;
-    textje->setText(ss.str());
+
 
     if(input->getKey(SDLK_w)){
         camera->position += Vector2(0,-150*deltaTime);

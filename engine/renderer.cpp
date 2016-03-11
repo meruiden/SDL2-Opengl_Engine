@@ -1,6 +1,8 @@
 #include "renderer.h"
 
 Renderer::Renderer(){
+    counter = 0.0f;
+    devmodeon = false;
     if( SDL_Init( SDL_INIT_EVERYTHING ) < 0 )
     {
         printf( "SDL could not initialize! SDL Error: %s\n", SDL_GetError() );
@@ -144,15 +146,34 @@ Renderer::Renderer(){
     input = new Input();
     camera = new Camera();
 
+    timer = new Text();
+    fpsText = new Text();
+
+    timer->setFont("assets/PrintClearly.ttf", 70);
+    timer->setText("Time: 0");
+    timer->position = Vector2(20,40);
+
+    fpsText->setFont("assets/PrintClearly.ttf", 70);
+    fpsText->setText("FPS: 0");
+    fpsText->position = Vector2(20,100);
+
+    timer->isHud = true;
+    fpsText->isHud = true;
+
+
+
 }
 
 void Renderer::renderScene(Scene* scene){
 
         displayFPS();
         updateDeltaTime();
+        counter += dt;
+
 
         scene->input = input;
         scene->camera = camera;
+
         for(unsigned int i = 0; i < scene->entities.size(); i ++){
 
             scene->entities[i]->input = input;
@@ -205,7 +226,14 @@ void Renderer::renderScene(Scene* scene){
                 renderText(scene->texts[i]);
             }
         }
+        std::ostringstream ss;
+        ss << "Time: ";
+        float roundedtime = counter;
+        roundedtime = roundf(roundedtime * 100) / 100;
+        ss <<  roundedtime;
+        timer->setText(ss.str());
 
+        devMode();
 
         SDL_GL_SwapWindow(window);
 }
@@ -257,7 +285,7 @@ void Renderer::renderEntity(glm::mat4& modelMatrix, Entity* entity, bool isHud){
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
             // Set our "myTextureSampler" sampler to user Texture Unit 0
             glUniform1i(textureID, 0);
-            
+
             // 1st attribute buffer : vertices
             glEnableVertexAttribArray(vertexPosition_modelspaceID);
             glBindBuffer(GL_ARRAY_BUFFER, img->getVtbuffer());
@@ -321,6 +349,8 @@ glm::mat4 Renderer::getModelMatrix(Vector2 pos, Vector2 scal, float rot){
 }
 
 Renderer::~Renderer(){
+    delete timer;
+    delete fpsText;
     delete resman;
     delete input;
     Mix_CloseAudio();
@@ -334,6 +364,7 @@ Renderer::~Renderer(){
 
     // Clean up
     SDL_Quit();
+    delete camera;
     std::cout << "DELETED RENDERER" << std::endl;
 }
 
@@ -355,6 +386,11 @@ void Renderer::displayFPS(){
     if(fpscounter >= 1){
         std::cout << "FPS: ";
         std::cout << frames << std::endl;
+        std::ostringstream ss;
+        ss << "FPS: ";
+        ss << frames;
+        fpsText->setText(ss.str());
+
         frames = 0;
         fpscounter = 0.0f;
     }
@@ -434,4 +470,18 @@ void Renderer::renderText(Text* t){
 
     glDisableVertexAttribArray(vertexPosition_modelspaceID);
     glDisableVertexAttribArray(vertexUVID);
+}
+
+void Renderer::devMode(){
+    if( input->getKeyDown(SDLK_F10)){
+        if(devmodeon){
+            devmodeon = false;
+        }else if(!devmodeon){
+            devmodeon = true;
+        }
+    }
+    if(devmodeon){
+        renderText(timer);
+        renderText(fpsText);
+    }
 }

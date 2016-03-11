@@ -49,6 +49,7 @@ void Text::setText(std::string message){
 
 void Text::makeMesh(){
     //this->curmessage = message;
+
     if(uvbuffer != 0 && vertexbuffer != 0){
         glDeleteBuffers(1, &uvbuffer);
         glDeleteBuffers(1, &vertexbuffer);
