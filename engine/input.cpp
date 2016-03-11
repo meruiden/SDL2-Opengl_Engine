@@ -1,6 +1,8 @@
 #include <engine/input.h>
-
+#include <iostream>
 Input::Input(){
+    this->scrollup = false;
+    this->scrolldown = false;
     this->mustq = false;
     for(unsigned int i = 0; i < 282; i++){
         keys[i] =  false;
@@ -36,7 +38,8 @@ Input::~Input(){
 
 void Input::update(){
     /* Our SDL event placeholder. */
-
+    this->scrollup = false;
+    this->scrolldown = false;
     int x,y;
     SDL_GetMouseState(&x, &y);
     mousepos = Vector2(x,y);
@@ -104,6 +107,12 @@ void Input::update(){
             }
             mousebutton[(int)event.button.button] = false;
         break;
+        case SDL_MOUSEWHEEL:
+            if (event.wheel.y < 0){
+                this->scrolldown = true;
+            }else{
+                this->scrollup = true;
+            }
         }
     }
 }

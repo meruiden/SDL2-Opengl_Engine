@@ -47,6 +47,7 @@ public:
 
     float magnitude(){return sqrt((x * x) + (y * y));}
     void normalize();
+    void limit(float value);
 
     std::string returnString();
 private:

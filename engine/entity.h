@@ -27,6 +27,8 @@ public:
     void addText(Text* t);
     void removeText(Text* t);
 
+    
+
     std::string getExtention(){return extention;}
 
     Color color;

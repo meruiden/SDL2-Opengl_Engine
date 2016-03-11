@@ -137,3 +137,10 @@ bool Vector2::operator!=(const Vector2& rhs)
 {
     return(x!=rhs.x || y!=rhs.y);
 }
+
+void Vector2::limit(float value){
+    if(magnitude() > value){
+        normalize();
+        Vector2(x,y) *= value;
+    }
+}

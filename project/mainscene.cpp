@@ -1,7 +1,8 @@
 #include "mainscene.h"
 
 Mainscene::Mainscene() : Scene(){
-
+    scrollvel = Vector2();
+    scrollacc = Vector2();
     counter = 0;
     geluidje = new Sound("assets/geluidje.wav");
     shootSound = new Sound("assets/shoot.wav");
@@ -19,6 +20,7 @@ Mainscene::Mainscene() : Scene(){
     choosedog->position = Vector2(1280-245/2, 180);
     choosedog->scale = Vector2(0.7f, 0.7f);
     spawnEnemies(5);
+
 
 
     lockDog = false;
@@ -47,7 +49,14 @@ Mainscene::~Mainscene(){
 
 void Mainscene::update(float deltaTime){
 
+    counter += deltaTime;
+    if(counter >= 1.0f/60){
+        fixedUpdate();
+        counter = 0;
+    }
+
     if(choosedog != NULL){
+        choosedog->position.y = chooseframe->position.y - 180;
         if(input->getMouseToScreen().x < choosedog->position.x + 50 && input->getMouseToScreen().x > choosedog->position.x - 50
             && input->getMouseToScreen().y < choosedog->position.y + 50 && input->getMouseToScreen().y > choosedog->position.y - 50){
                 if(input->getMouseButtonDown(1)){
@@ -73,6 +82,9 @@ void Mainscene::update(float deltaTime){
         }
 
     }
+
+
+
 
     if(tower != NULL && enemies.size() > 0){
         Enemy* target = enemies[0];
@@ -124,7 +136,6 @@ void Mainscene::update(float deltaTime){
     }
 
 
-
 }
 
 void Mainscene::spawnEnemies(int number){
@@ -150,6 +161,26 @@ void Mainscene::removeBullet(Bullet* b){
             ++it;
         }
     }
+}
+
+void Mainscene::fixedUpdate(){
+    scrollvel *= 0.9f;
+    if(input->scrollDown()){
+        scrollacc = Vector2(0, 0);
+        scrollacc += Vector2(0, 10);
+    }
+
+    if(input->scrollUp()){
+        scrollacc = Vector2(0, 0);
+        scrollacc += Vector2(0, -10);
+    }
+
+    scrollvel += scrollacc;
+    scrollvel.limit(30);
+    chooseframe->position += scrollvel;
+
+    scrollacc *= 0;
+
 }
 
 

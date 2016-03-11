@@ -14,7 +14,8 @@ public:
     virtual ~Mainscene();
     virtual void update(float deltaTime);
     Sound* geluidje;
-
+    Vector2 scrollvel;
+    Vector2 scrollacc;
     HudObject* chooseframe;
     HudObject* choosedog;
     std::vector<Enemy*> enemies;
@@ -26,7 +27,9 @@ public:
 
     Sound* shootSound;
     Sound* explosionSound;
-    float counter;
+    double counter;
+    void fixedUpdate();
+
 
     bool lockDog;
 private:

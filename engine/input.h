@@ -25,6 +25,10 @@ public:
 
     bool mustQuit(){return mustq;};
 
+    bool scrollUp(){return scrollup;}
+    bool scrollDown(){return scrolldown;}
+
+
 
 private:
     bool keys[282];
@@ -42,6 +46,8 @@ private:
     bool mousebuttonalrdydown[20];
     bool mousebuttonalrdyup[20];
 
+    bool scrollup;
+    bool scrolldown;
     Vector2 mousepos;
 };
 
