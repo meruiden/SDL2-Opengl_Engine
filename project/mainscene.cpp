@@ -1,6 +1,9 @@
 #include "mainscene.h"
 
 Mainscene::Mainscene() : Scene(){
+    pathpoints.push_back(Vector2(300,300));
+    pathpoints.push_back(Vector2(500,600));
+
     scrollvel = Vector2();
     scrollacc = Vector2();
     counter = 0;
@@ -43,6 +46,7 @@ Mainscene::~Mainscene(){
         delete bullets[i];
         bullets[i] = NULL;
     }
+    pathpoints.clear();
     bullets.clear();
 
 }
@@ -54,6 +58,8 @@ void Mainscene::update(float deltaTime){
         fixedUpdate();
         counter = 0;
     }
+
+
 
     if(choosedog != NULL){
         choosedog->position.y = chooseframe->position.y - 180;
@@ -93,6 +99,14 @@ void Mainscene::update(float deltaTime){
             Vector2 disvec = Vector2(enemies[i]->position, tower->position);
             if(disvec.magnitude() < curdisvec.magnitude()){
                 target = enemies[i];
+            }
+
+            if(enemies[i]->atTarget){
+                enemies[i]->atTarget = false;
+                enemies[i]->currPathPoint ++;
+                if(pathpoints.size() > enemies[i]->currPathPoint){
+                    enemies[i]->curtarget = pathpoints[enemies[i]->currPathPoint];
+                }
             }
         }
         tower->target = target;
@@ -148,8 +162,8 @@ void Mainscene::spawnEnemies(int number){
     for(unsigned int i = 0; i < number; i ++){
         Enemy* e;
         e = new Enemy();
-        e->position = Vector2(-100,70);
-        e->position.y += 150*i;
+        e->position = Vector2(-400,400);
+        e->position.x += 150*i;
         enemies.push_back(e);
         addEntity(e);
     }

@@ -10,8 +10,9 @@ public:
     virtual void update(float deltaTime);
     float collisionRadius;
     bool dead;
-    float spritetimer;
-    int spritecounter;
+    int currPathPoint;
+    bool atTarget;
+    Vector2 curtarget;
 private:
 
 protected:

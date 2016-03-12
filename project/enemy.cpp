@@ -1,10 +1,13 @@
 #include "enemy.h"
 #include <iostream>
 Enemy::Enemy() : Entity(){
+    this->atTarget = true;
+    this->curtarget = Vector2();
+    this->currPathPoint = 0;
     this->collisionRadius = 20.0f;
     this->dead = false;
-    this->spritetimer = 0.0f;
-    this->spritecounter = 0;
+    this->scale = Vector2(0.5f, 0.5f);
+    this->setPng("assets/cloud.png");
 }
 
 Enemy::~Enemy(){
@@ -12,20 +15,10 @@ Enemy::~Enemy(){
 }
 
 void Enemy::update(float deltaTime){
-    this->position.x += 70*deltaTime;
-
-    if(spritetimer >= 0.08f){
-        std::stringstream ss;
-        ss << "assets/skeleton/skeleton-";
-        ss << spritecounter;
-        ss << ".png";
-        this->setPng(ss.str());
-        spritecounter ++;
-        if(spritecounter == 24){
-            spritecounter = 0;
-        }
-
-        spritetimer = 0.0f;
+    Vector2 dir = Vector2(this->curtarget, this->position);
+    if(dir.magnitude() < 10){
+        atTarget = true;
     }
-    spritetimer += deltaTime;
+    dir.normalize();
+    this->position += dir*deltaTime;
 }
