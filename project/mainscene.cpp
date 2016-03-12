@@ -117,7 +117,13 @@ void Mainscene::update(float deltaTime){
         }
     }
 
+    if(input->scrollDown()){
+        chooseframe->position += Vector2(0, 30);
+    }
 
+    if(input->scrollUp()){
+        chooseframe->position += Vector2(0, -30);
+    }
     if(input->getKey(SDLK_w)){
         camera->position += Vector2(0,-150*deltaTime);
     }
@@ -164,22 +170,7 @@ void Mainscene::removeBullet(Bullet* b){
 }
 
 void Mainscene::fixedUpdate(){
-    scrollvel *= 0.9f;
-    if(input->scrollDown()){
-        scrollacc = Vector2(0, 0);
-        scrollacc += Vector2(0, 10);
-    }
 
-    if(input->scrollUp()){
-        scrollacc = Vector2(0, 0);
-        scrollacc += Vector2(0, -10);
-    }
-
-    scrollvel += scrollacc;
-    scrollvel.limit(30);
-    chooseframe->position += scrollvel;
-
-    scrollacc *= 0;
 
 }
 
