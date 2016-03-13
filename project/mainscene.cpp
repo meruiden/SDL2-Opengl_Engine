@@ -1,11 +1,14 @@
 #include "mainscene.h"
 
 Mainscene::Mainscene() : Scene(){
+    std::cout <<  rand() % 4 + 1 << std::endl;
     pathpoints.push_back(Vector2(300,300));
     pathpoints.push_back(Vector2(500,200));
     pathpoints.push_back(Vector2(700,600));
     pathpoints.push_back(Vector2(1000,100));
 
+    worker = new Worker();
+    addEntity(worker);
     scrollvel = Vector2();
     scrollacc = Vector2();
     counter = 0;
@@ -26,12 +29,11 @@ Mainscene::Mainscene() : Scene(){
     choosedog->scale = Vector2(0.7f, 0.7f);
     spawnEnemies(5);
 
-
-
     lockDog = false;
 }
 
 Mainscene::~Mainscene(){
+    delete worker;
     delete chooseframe;
     delete choosedog;
     delete shootSound;
@@ -84,9 +86,11 @@ void Mainscene::update(float deltaTime){
             removeHudObject(choosedog);
             delete choosedog;
             choosedog = NULL;
+
             tower = new Tower();
             addEntity(tower);
             tower->position = input->getMouseToWorld(camera);
+            worker->giveJob(tower);
         }
 
     }
@@ -102,8 +106,12 @@ void Mainscene::update(float deltaTime){
     }
 
 
+    if(tower != NULL && !tower->ready){
 
+    }
     if(tower != NULL && enemies.size() > 0){
+
+
         Enemy* target = enemies[0];
         for(unsigned int i = 0; i < enemies.size(); i ++){
             Vector2 curdisvec = Vector2(target->position, tower->position);

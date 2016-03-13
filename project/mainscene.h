@@ -6,6 +6,7 @@
 #include <project/enemy.h>
 #include <engine/hudobject.h>
 #include <engine/sound.h>
+#include <project/worker.h>
 
 #include <sstream>
 class Mainscene : public Scene{
@@ -14,6 +15,7 @@ public:
     virtual ~Mainscene();
     virtual void update(float deltaTime);
 
+    Worker* worker;
     std::vector<Vector2> pathpoints;
     Sound* geluidje;
     Vector2 scrollvel;

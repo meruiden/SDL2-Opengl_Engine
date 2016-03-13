@@ -121,6 +121,10 @@ add_executable(project
 	project/enemy.h
 	project/bullet.cpp
 	project/bullet.h
+	project/worker.cpp
+	project/worker.h
+	project/simpleentity.cpp
+	project/simpleentity.h
 )
 
 target_link_libraries(project

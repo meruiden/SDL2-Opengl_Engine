@@ -15,7 +15,7 @@ public:
     bool wantsToShoot;
     Enemy* target;
     Bullet* shoot();
-
+    bool ready;
 
 private:
 

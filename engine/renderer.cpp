@@ -1,6 +1,8 @@
 #include "renderer.h"
 
 Renderer::Renderer(){
+    srand (time(NULL));
+    
     counter = 0.0f;
     devmodeon = false;
     if( SDL_Init( SDL_INIT_EVERYTHING ) < 0 )
