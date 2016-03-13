@@ -2,7 +2,9 @@
 
 Mainscene::Mainscene() : Scene(){
     pathpoints.push_back(Vector2(300,300));
-    pathpoints.push_back(Vector2(500,600));
+    pathpoints.push_back(Vector2(500,200));
+    pathpoints.push_back(Vector2(700,600));
+    pathpoints.push_back(Vector2(1000,100));
 
     scrollvel = Vector2();
     scrollacc = Vector2();
@@ -89,6 +91,15 @@ void Mainscene::update(float deltaTime){
 
     }
 
+    for(unsigned int i = 0; i < enemies.size(); i ++){
+        if(enemies[i]->atTarget){
+            if(pathpoints.size() > enemies[i]->currPathPoint){
+                enemies[i]->atTarget = false;
+                enemies[i]->currPathPoint ++;
+                enemies[i]->curtarget = pathpoints[enemies[i]->currPathPoint];
+            }
+        }
+    }
 
 
 
@@ -101,15 +112,11 @@ void Mainscene::update(float deltaTime){
                 target = enemies[i];
             }
 
-            if(enemies[i]->atTarget){
-                enemies[i]->atTarget = false;
-                enemies[i]->currPathPoint ++;
-                if(pathpoints.size() > enemies[i]->currPathPoint){
-                    enemies[i]->curtarget = pathpoints[enemies[i]->currPathPoint];
-                }
-            }
+
         }
         tower->target = target;
+
+
         for(unsigned int i = 0; i < bullets.size(); i++){
             if(bullets[i]->disToTarget < bullets[i]->target->collisionRadius){
                 bullets[i]->target->dead = true;
@@ -166,6 +173,7 @@ void Mainscene::spawnEnemies(int number){
         e->position.x += 150*i;
         enemies.push_back(e);
         addEntity(e);
+        e->curtarget = pathpoints[0];
     }
 }
 

@@ -1,7 +1,7 @@
 #include "enemy.h"
 #include <iostream>
 Enemy::Enemy() : Entity(){
-    this->atTarget = true;
+    this->atTarget = false;
     this->curtarget = Vector2();
     this->currPathPoint = 0;
     this->collisionRadius = 20.0f;
@@ -16,9 +16,12 @@ Enemy::~Enemy(){
 
 void Enemy::update(float deltaTime){
     Vector2 dir = Vector2(this->curtarget, this->position);
+    this->rotation = dir.getAngle();
+
     if(dir.magnitude() < 10){
         atTarget = true;
     }
     dir.normalize();
-    this->position += dir*deltaTime;
+    float rads = this->rotation * DEG_TO_RAD;
+    this->position += (Vector2(cos(rads), sin(rads))*60)*deltaTime;
 }
