@@ -164,6 +164,8 @@ Renderer::Renderer(){
 
     std::cout << "Press F10 to view fps and time" << std::endl;
 
+
+
 }
 
 void Renderer::renderScene(Scene* scene){
@@ -177,7 +179,6 @@ void Renderer::renderScene(Scene* scene){
         scene->camera = camera;
 
         for(unsigned int i = 0; i < scene->entities.size(); i ++){
-
             scene->entities[i]->input = input;
             for(unsigned int a = 0; a < scene->entities[i]->getChildren().size(); a++){
                 if(!scene->hasEntity(scene->entities[i]->getChildren()[a])){
@@ -226,6 +227,7 @@ void Renderer::renderScene(Scene* scene){
                 renderText(scene->texts[i]);
             }
         }
+
         std::ostringstream ss;
         ss << "Time: ";
         float roundedtime = counter;

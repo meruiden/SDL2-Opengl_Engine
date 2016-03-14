@@ -15,8 +15,10 @@ public:
     virtual ~Mainscene();
     virtual void update(float deltaTime);
 
+
     std::vector<Vector2> pathpoints;
     Sound* geluidje;
+    Sound* bgmusic;
     Vector2 scrollvel;
     Vector2 scrollacc;
     HudObject* chooseframe;

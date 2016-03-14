@@ -11,8 +11,11 @@ public:
     virtual ~Sound();
 
     Mix_Chunk *sound;
+    int volume;
 
+    int channel;
     void play(bool loop);
+    void setVolume(float value);
     void play();
 private:
 

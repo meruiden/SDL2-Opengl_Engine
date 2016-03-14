@@ -1,11 +1,14 @@
 #include <engine/sound.h>
 
 Sound::Sound(const char * filepath){
+    this->channel= -10;
     this->sound = Mix_LoadWAV(filepath);
+    this->volume = 100;
     if(sound == NULL){
         std::cout << "Failed to load sound!!!" << std::endl;
         return;
     }
+
 
 }
 
@@ -24,6 +27,19 @@ void Sound::play( bool loop = false){
     }else{
         loopornot = 0;
     }
+    float v = 128.0f/100;
+    v *= this->volume;
+    this->channel = Mix_PlayChannel(-1, sound, loopornot);
+    Mix_Volume(this->channel, (int)v);
 
-    Mix_PlayChannel(-1, sound, loopornot);
+}
+
+void Sound::setVolume(float value){
+    float v = 128.0f/100;
+    v *= value;
+    this->volume = value;
+    if(this->channel != 10){
+        Mix_Volume(this->channel, (int)v);
+    }
+
 }

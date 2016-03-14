@@ -6,7 +6,7 @@ Mainscene::Mainscene() : Scene(){
     pathpoints.push_back(Vector2(700,600));
     pathpoints.push_back(Vector2(1000,100));
     pathpoints.push_back(Vector2(1600,100));
-    for(unsigned int i = 0; i < 4; i++){
+    for(unsigned int i = 0; i < 2; i++){
         Worker* worker = new Worker();
         worker->homePos = Vector2(100+ (230*i), 100);
         worker->position = worker->homePos;
@@ -17,10 +17,14 @@ Mainscene::Mainscene() : Scene(){
     scrollvel = Vector2();
     scrollacc = Vector2();
     counter = 0;
+    bgmusic = new Sound("assets/bg-music.wav");
+    bgmusic->play(true);
+    bgmusic->setVolume(10);
     geluidje = new Sound("assets/geluidje.wav");
     shootSound = new Sound("assets/shoot.wav");
     explosionSound = new Sound("assets/explosion.wav");
-
+    shootSound->setVolume(30);
+    explosionSound->setVolume(30);
     chooseframe = new HudObject();
     chooseframe->setTga("assets/chooseframe.tga");
     addHudObject(chooseframe);
@@ -259,7 +263,7 @@ void Mainscene::spawnEnemies(int number){
     for(unsigned int i = 0; i < number; i ++){
         Enemy* e;
         e = new Enemy();
-        e->position = Vector2(-100,400);
+        e->position = Vector2(-400,400);
         e->position.x -= 150*i;
         enemies.push_back(e);
         addEntity(e);

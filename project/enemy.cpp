@@ -6,7 +6,7 @@ Enemy::Enemy() : Entity(){
     this->currPathPoint = 0;
     this->collisionRadius = 20.0f;
     this->dead = false;
-    this->scale = Vector2(0.3f, 0.3f);
+    this->scale = Vector2(0.4f, 0.4f);
     this->setPng("assets/Devilduck.png");
 }
 
@@ -30,14 +30,11 @@ void Enemy::update(float deltaTime){
 
     this->rotation += _trueRotation;
 
-
     if(dir.magnitude() < 10){
         atTarget = true;
     }
     dir.normalize();
 
-
-
-    float rads = (this->rotation+90) * DEG_TO_RAD;
+    float rads = (dir.getAngle()) * DEG_TO_RAD;
     this->position += (Vector2(cos(rads), sin(rads))*150)*deltaTime;
 }

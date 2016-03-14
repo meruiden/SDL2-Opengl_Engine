@@ -7,6 +7,7 @@
 #include <engine/text.h>
 #include <engine/color.h>
 #include <vector>
+#include <iostream>
 class Entity{
 public:
     Entity();
