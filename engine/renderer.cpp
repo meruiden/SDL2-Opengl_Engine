@@ -2,7 +2,7 @@
 
 Renderer::Renderer(){
     srand (time(NULL));
-    
+
     counter = 0.0f;
     devmodeon = false;
     if( SDL_Init( SDL_INIT_EVERYTHING ) < 0 )
@@ -162,7 +162,7 @@ Renderer::Renderer(){
     timer->isHud = true;
     fpsText->isHud = true;
 
-
+    std::cout << "Press F10 to view fps and time" << std::endl;
 
 }
 
@@ -206,7 +206,6 @@ void Renderer::renderScene(Scene* scene){
         }
 
         for(unsigned int i = 0; i < scene->texts.size(); i ++){
-            glm::mat4 mm = glm::mat4(1.0f);
             if(scene->texts[i] != NULL && !scene->texts[i]->isHud){
                 renderText(scene->texts[i]);
             }
@@ -223,7 +222,6 @@ void Renderer::renderScene(Scene* scene){
 
 
         for(unsigned int i = 0; i < scene->texts.size(); i ++){
-            glm::mat4 mm = glm::mat4(1.0f);
             if(scene->texts[i] != NULL && scene->texts[i]->isHud){
                 renderText(scene->texts[i]);
             }

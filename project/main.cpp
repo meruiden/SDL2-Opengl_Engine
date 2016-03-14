@@ -14,7 +14,7 @@ int main( void )
     do{
         renderer->renderScene(mainscene);
     } // Check if the ESC key was pressed or the window was closed
-	while( !renderer->mustStop() );
+	while(!renderer->mustStop());
 
     delete renderer;
     delete mainscene;

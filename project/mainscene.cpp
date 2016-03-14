@@ -5,6 +5,7 @@ Mainscene::Mainscene() : Scene(){
     pathpoints.push_back(Vector2(500,200));
     pathpoints.push_back(Vector2(700,600));
     pathpoints.push_back(Vector2(1000,100));
+    pathpoints.push_back(Vector2(1600,100));
     for(unsigned int i = 0; i < 4; i++){
         Worker* worker = new Worker();
         worker->homePos = Vector2(100+ (230*i), 100);

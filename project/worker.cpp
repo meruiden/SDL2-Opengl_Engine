@@ -19,6 +19,7 @@ Worker::~Worker(){
 }
 
 void Worker::update(float deltaTime){
+
     if(this->working && target != NULL){
         Vector2 thisToTarget = Vector2(this->position, target->position);
         this->rotation = thisToTarget.getAngle()+90;
@@ -101,6 +102,7 @@ void Worker::update(float deltaTime){
             this->rotation = 0;
         }
     }
+
 }
 
 void Worker::giveJob(Tower* tower){

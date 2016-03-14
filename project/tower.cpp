@@ -22,27 +22,20 @@ void Tower::update(float deltaTime){
         float _trueRotation = 0.0f;
 
         Vector2 disvec = Vector2(this->position, target->position);
-        // which way to rotate
         float rotateTo = 0.0f;
 
         if(target != NULL && !target->dead){
             if( Vector2(target->position, this->position).magnitude() < 360 ){
                 rotateTo = atan2(disvec.y, disvec.x)*RAD_TO_DEG;
                 rotateTo += 90;
-                if(this->shootcounter >= 1.5f && disvec.magnitude() < 360){
+                if(this->shootcounter >= 2.0f && disvec.magnitude() < 360){
                     this->wantsToShoot = true;
                 }
             }
         }
-
-        // keep rotation positive, between 0 and 360 degrees
         if (rotateTo > this->rotation + 180) rotateTo -= 360;
         if (rotateTo < this->rotation  - 180) rotateTo += 360;
-
-        // ease rotation
         _trueRotation = (rotateTo - this->rotation ) / _rotateSpeedMax;
-
-        // update rotation
         this->rotation += _trueRotation;
     }
 }

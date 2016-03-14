@@ -6,8 +6,8 @@ Enemy::Enemy() : Entity(){
     this->currPathPoint = 0;
     this->collisionRadius = 20.0f;
     this->dead = false;
-    this->scale = Vector2(0.5f, 0.5f);
-    this->setPng("assets/cloud.png");
+    this->scale = Vector2(0.3f, 0.3f);
+    this->setPng("assets/Devilduck.png");
 }
 
 Enemy::~Enemy(){
@@ -16,12 +16,28 @@ Enemy::~Enemy(){
 
 void Enemy::update(float deltaTime){
     Vector2 dir = Vector2(this->curtarget, this->position);
-    this->rotation = dir.getAngle();
+
+    float _rotateSpeedMax = 100;
+    float _trueRotation = 0.0f;
+    float rotateTo = 0.0f;
+
+    rotateTo = atan2(dir.y, dir.x)*RAD_TO_DEG;
+
+    if (rotateTo > (this->rotation+90) + 180) rotateTo -= 360;
+    if (rotateTo < (this->rotation+90)  - 180) rotateTo += 360;
+
+    _trueRotation = (rotateTo - (this->rotation+90 )) / _rotateSpeedMax;
+
+    this->rotation += _trueRotation;
+
 
     if(dir.magnitude() < 10){
         atTarget = true;
     }
     dir.normalize();
-    float rads = this->rotation * DEG_TO_RAD;
-    this->position += (Vector2(cos(rads), sin(rads))*200)*deltaTime;
+
+
+
+    float rads = (this->rotation+90) * DEG_TO_RAD;
+    this->position += (Vector2(cos(rads), sin(rads))*150)*deltaTime;
 }
