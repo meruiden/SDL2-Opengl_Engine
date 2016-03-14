@@ -285,6 +285,7 @@ void Mainscene::fixedUpdate(){
 }
 
 void Mainscene::removeEnemy(Enemy* e){
+    std::cout << enemies.size() << std::endl;
     std::vector< Enemy* >::iterator it = enemies.begin();
     while (it != enemies.end()) {
         if ((*it)->getEntityId() == e->getEntityId()) {
@@ -313,6 +314,7 @@ void Mainscene::removeCloud(SimpleEntity* e){
 }
 
 bool Mainscene::assignWorker(Tower* tower){
+
     if(readyWorkers.size() > 0){
         std::vector< Worker* >::iterator it = readyWorkers.begin();
         std::vector< Worker* >::iterator curworkerIt = it;

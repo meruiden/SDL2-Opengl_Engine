@@ -17,6 +17,18 @@ if( CMAKE_BINARY_DIR MATCHES " " )
 	message( "Your Build Directory contains spaces. If you experience problems when compiling, this can be the cause." )
 endif()
 
+if(UNIX)
+	set(CMAKE_CXX_FLAGS "-Wall -std=c++0x -pedantic -O2 -g -pg")
+	set(CMAKE_CXX_FLAGS "-Wall -Wstrict-aliasing -std=c++0x -O2")
+
+	set(CMAKE_CXX_FLAGS "-Wall -std=c++11")
+
+	# valgrind --leak-check=full ./demo
+	# ./demo # creates cmon.out
+	# gprof demo gmon.out > analysis.txt
+	 set(CMAKE_CXX_FLAGS "-Wall -pg -std=c++11")
+endif(UNIX)
+
 
 
 # Look up SDL2 and add the include directory to our include path
@@ -77,6 +89,7 @@ add_definitions(
 	-DTW_NO_DIRECT3D
 	-DGLEW_STATIC
 	-D_CRT_SECURE_NO_WARNINGS
+	
 )
 
 # Project

@@ -3,7 +3,6 @@
 
 #include <engine/entity.h>
 #include <project/tower.h>
-#include <project/simpleentity.h>
 class Worker : public Entity{
 public:
     Worker();
