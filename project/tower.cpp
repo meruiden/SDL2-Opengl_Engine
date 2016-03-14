@@ -16,7 +16,7 @@ Tower::~Tower(){
 }
 
 void Tower::update(float deltaTime){
-    if(this->ready){
+    if(this->ready && this->target != NULL){
         this->shootcounter += deltaTime;
         float _rotateSpeedMax = 200.0f;
         float _trueRotation = 0.0f;
@@ -24,7 +24,6 @@ void Tower::update(float deltaTime){
         Vector2 disvec = Vector2(this->position, target->position);
         // which way to rotate
         float rotateTo = 0.0f;
-
 
         if(target != NULL && !target->dead){
             if( Vector2(target->position, this->position).magnitude() < 360 ){
@@ -53,6 +52,7 @@ Bullet* Tower::shoot(){
     b = new Bullet();
     b->position = this->position;
     b->target = this->target;
+    b->lastKnownPos = this->target->position;
     b->scale = Vector2(0.2f, 0.2f);
     b->setPng("assets/projectiel.png");
     return b;

@@ -14,10 +14,11 @@ public:
     void giveJob(Tower* tower);
     float buildProgress;
     float cloudCounter;
-    std::vector<SimpleEntity*> clouds;
 
-    void deleteClouds();
 
+    bool wantsCloud;
+    Vector2 cloudpos;
+    Vector2 homePos;
     int spriteCounter;
     float spriteTimer;
 

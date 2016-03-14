@@ -3,7 +3,7 @@ SimpleEntity::SimpleEntity() : Entity(){
 
 }
 
-SimpleEntity::~SimpleEntitym(){
+SimpleEntity::~SimpleEntity(){
 
 }
 

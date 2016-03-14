@@ -12,6 +12,9 @@ public:
     Enemy* target;
     float speed;
     float disToTarget;
+    Vector2 lastKnownPos;
+    bool hasTarget;
+    bool destroyMe;
 private:
 
 protected:

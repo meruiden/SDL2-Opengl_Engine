@@ -1,21 +1,24 @@
 #include "mainscene.h"
 
 Mainscene::Mainscene() : Scene(){
-    std::cout <<  rand() % 4 + 1 << std::endl;
     pathpoints.push_back(Vector2(300,300));
     pathpoints.push_back(Vector2(500,200));
     pathpoints.push_back(Vector2(700,600));
     pathpoints.push_back(Vector2(1000,100));
+    for(unsigned int i = 0; i < 4; i++){
+        Worker* worker = new Worker();
+        worker->homePos = Vector2(100+ (230*i), 100);
+        worker->position = worker->homePos;
+        addEntity(worker);
+        readyWorkers.push_back(worker);
+    }
 
-    worker = new Worker();
-    addEntity(worker);
     scrollvel = Vector2();
     scrollacc = Vector2();
     counter = 0;
     geluidje = new Sound("assets/geluidje.wav");
     shootSound = new Sound("assets/shoot.wav");
     explosionSound = new Sound("assets/explosion.wav");
-    tower = NULL;
 
     chooseframe = new HudObject();
     chooseframe->setTga("assets/chooseframe.tga");
@@ -27,31 +30,62 @@ Mainscene::Mainscene() : Scene(){
     choosedog->setPng("assets/hondje_sleeping.png");
     choosedog->position = Vector2(1280-245/2, 180);
     choosedog->scale = Vector2(0.7f, 0.7f);
-    spawnEnemies(5);
+    spawnEnemies(50);
 
     lockDog = false;
 }
 
 Mainscene::~Mainscene(){
-    delete worker;
     delete chooseframe;
-    delete choosedog;
     delete shootSound;
     delete explosionSound;
-    delete tower;
+
     delete geluidje;
+
+    removeHudObject(choosedog);
+    delete choosedog;
+
+    for(unsigned int i = 0; i < towers.size(); i++){
+        removeEntity(towers[i]);
+        delete towers[i];
+        towers[i] = NULL;
+    }
+    towers.clear();
     for(unsigned int i = 0; i < enemies.size(); i ++){
+        removeEntity(enemies[i]);
         delete enemies[i];
         enemies[i] = NULL;
     }
     enemies.clear();
 
     for(unsigned int i = 0; i < bullets.size(); i ++){
+        removeEntity(bullets[i]);
         delete bullets[i];
         bullets[i] = NULL;
     }
     pathpoints.clear();
     bullets.clear();
+    for(unsigned int i = 0; i < clouds.size(); i++){
+        removeCloud(clouds[i]);
+    }
+    clouds.clear();
+
+    for(unsigned int i = 0; i < busyWorkers.size(); i++){
+        removeEntity(busyWorkers[i]);
+        delete busyWorkers[i];
+
+        busyWorkers[i] = NULL;
+    }
+
+    busyWorkers.clear();
+
+    for(unsigned int i = 0; i < readyWorkers.size(); i++){
+        removeEntity(readyWorkers[i]);
+        delete readyWorkers[i];
+        readyWorkers[i] = NULL;
+    }
+    readyWorkers.clear();
+
 
 }
 
@@ -62,11 +96,8 @@ void Mainscene::update(float deltaTime){
         fixedUpdate();
         counter = 0;
     }
-
-
-
     if(choosedog != NULL){
-        choosedog->position.y = chooseframe->position.y - 180;
+
         if(input->getMouseToScreen().x < choosedog->position.x + 50 && input->getMouseToScreen().x > choosedog->position.x - 50
             && input->getMouseToScreen().y < choosedog->position.y + 50 && input->getMouseToScreen().y > choosedog->position.y - 50){
                 if(input->getMouseButtonDown(1)){
@@ -79,25 +110,31 @@ void Mainscene::update(float deltaTime){
         if(lockDog){
             choosedog->setPng("assets/hondje_active.png");
             choosedog->position = input->getMouseToScreen();
+        }else{
+            choosedog->position = Vector2(1280-245/2, chooseframe->position.y - 180);
         }
 
         if(input->getMouseButtonUp(1) && lockDog){
             lockDog = false;
-            removeHudObject(choosedog);
-            delete choosedog;
-            choosedog = NULL;
+            Tower* tower = new Tower();
 
-            tower = new Tower();
             addEntity(tower);
             tower->position = input->getMouseToWorld(camera);
-            worker->giveJob(tower);
+            if(!assignWorker(tower)){
+                removeEntity(tower);
+                delete tower;
+                tower = NULL;
+            }else{
+                towers.push_back(tower);
+            }
         }
-
     }
+
+
 
     for(unsigned int i = 0; i < enemies.size(); i ++){
         if(enemies[i]->atTarget){
-            if(pathpoints.size() > enemies[i]->currPathPoint){
+            if(pathpoints.size()-1 > enemies[i]->currPathPoint){
                 enemies[i]->atTarget = false;
                 enemies[i]->currPathPoint ++;
                 enemies[i]->curtarget = pathpoints[enemies[i]->currPathPoint];
@@ -105,44 +142,65 @@ void Mainscene::update(float deltaTime){
         }
     }
 
+    for(unsigned int i = 0; i < bullets.size(); i++){
+        bool done = false;
 
-    if(tower != NULL && !tower->ready){
-
-    }
-    if(tower != NULL && enemies.size() > 0){
-
-
-        Enemy* target = enemies[0];
-        for(unsigned int i = 0; i < enemies.size(); i ++){
-            Vector2 curdisvec = Vector2(target->position, tower->position);
-            Vector2 disvec = Vector2(enemies[i]->position, tower->position);
-            if(disvec.magnitude() < curdisvec.magnitude()){
-                target = enemies[i];
-            }
-
-
+        if(!bullets[i]->hasTarget && bullets[i]->disToTarget < 10){
+            removeBullet(bullets[i]);
+            done = true;
         }
-        tower->target = target;
 
-
-        for(unsigned int i = 0; i < bullets.size(); i++){
-            if(bullets[i]->disToTarget < bullets[i]->target->collisionRadius){
+        if(!done){
+            if(bullets[i]->disToTarget < bullets[i]->target->collisionRadius && bullets[i]->hasTarget){
                 bullets[i]->target->dead = true;
+                for(unsigned int b = 0; b < bullets.size(); b++){
+                    if(bullets[i]->target->getEntityId() == bullets[b]->target->getEntityId()){
+                        if(bullets[i]->getEntityId() != bullets[b]->getEntityId()){
+                            bullets[b]->lastKnownPos = bullets[i]->target->position;
+                            bullets[b]->hasTarget = false;
+                        }
+                    }
+                }
+
                 removeEnemy(bullets[i]->target);
-                removeBullet(bullets[i]);
+                bullets[i]->destroyMe = true;
                 explosionSound->play();
             }
+
+
         }
 
-        if(tower->wantsToShoot){
-            tower->shootcounter = 0;
-            tower->wantsToShoot = false;
-            Bullet* b;
-            b = tower->shoot();
-            addEntity(b);
-            bullets.push_back(b);
-            shootSound->play();
+    }
 
+    for(unsigned int i = 0; i < bullets.size(); i++){
+        if(bullets[i]->destroyMe){
+            removeBullet(bullets[i]);
+        }
+    }
+
+    if(towers.size() > 0 && enemies.size() > 0){
+        Enemy* target = enemies[0];
+
+        for(unsigned int t = 0; t < towers.size(); t++){
+            for(unsigned int i = 0; i < enemies.size(); i ++){
+                Vector2 curdisvec = Vector2(target->position, towers[t]->position);
+                Vector2 disvec = Vector2(enemies[i]->position, towers[t]->position);
+                if(disvec.magnitude() < curdisvec.magnitude() && !enemies[i]->dead){
+                    target = enemies[i];
+                }
+            }
+            towers[t]->target = target;
+
+            if(towers[t]->wantsToShoot && towers[t]->target != NULL && !towers[t]->target->dead){
+                towers[t]->shootcounter = 0;
+                towers[t]->wantsToShoot = false;
+                Bullet* b;
+                b = towers[t]->shoot();
+                addEntity(b);
+                b->hasTarget = true;
+                bullets.push_back(b);
+                shootSound->play();
+            }
         }
     }
 
@@ -169,6 +227,29 @@ void Mainscene::update(float deltaTime){
     if(input->getKey(SDLK_d)){
         camera->position += Vector2(150*deltaTime,0);
     }
+    for(unsigned int i = 0; i < busyWorkers.size(); i++){
+        if(busyWorkers[i]->wantsCloud){
+            SimpleEntity* c;
+            c = new SimpleEntity();
+            c->position = busyWorkers[i]->cloudpos;
+            c->setPng("assets/Bouwwolkje.png");
+            c->scale = Vector2(0.5f, 0.5f);
+            addEntity(c);
+            clouds.push_back(c);
+            busyWorkers[i]->wantsCloud = false;
+        }
+        if(!busyWorkers[i]->working){
+            clearWorker(busyWorkers[i]);
+        }
+    }
+    for(unsigned int i = 0; i < clouds.size(); i++){
+        clouds[i]->rotation += 15*deltaTime;
+        clouds[i]->color.a -= 50*deltaTime;
+
+        if(clouds[i]->color.a < 0){
+            removeCloud(clouds[i]);
+        }
+    }
 
 
 }
@@ -177,8 +258,8 @@ void Mainscene::spawnEnemies(int number){
     for(unsigned int i = 0; i < number; i ++){
         Enemy* e;
         e = new Enemy();
-        e->position = Vector2(-400,400);
-        e->position.x += 150*i;
+        e->position = Vector2(-100,400);
+        e->position.x -= 150*i;
         enemies.push_back(e);
         addEntity(e);
         e->curtarget = pathpoints[0];
@@ -201,11 +282,10 @@ void Mainscene::removeBullet(Bullet* b){
 
 void Mainscene::fixedUpdate(){
 
-
 }
 
-
 void Mainscene::removeEnemy(Enemy* e){
+    std::cout << enemies.size() << std::endl;
     std::vector< Enemy* >::iterator it = enemies.begin();
     while (it != enemies.end()) {
         if ((*it)->getEntityId() == e->getEntityId()) {
@@ -213,7 +293,45 @@ void Mainscene::removeEnemy(Enemy* e){
             delete (*it);
             (*it) = NULL;
             it = enemies.erase(it);
-        } else {
+        }else {
+            ++it;
+        }
+    }
+}
+
+void Mainscene::removeCloud(SimpleEntity* e){
+    std::vector< SimpleEntity* >::iterator it = clouds.begin();
+    while (it != clouds.end()) {
+        if ((*it)->getEntityId() == e->getEntityId()) {
+            removeEntity((*it));
+            delete (*it);
+            (*it) = NULL;
+            it = clouds.erase(it);
+        }else {
+            ++it;
+        }
+    }
+}
+
+bool Mainscene::assignWorker(Tower* tower){
+    if(readyWorkers.size() > 0){
+        std::vector< Worker* >::iterator it = readyWorkers.begin();
+
+        busyWorkers.push_back((*it));
+        (*it)->giveJob(tower);
+        it = readyWorkers.erase(it);
+        return true;
+    }
+    return false;
+}
+
+void Mainscene::clearWorker(Worker* worker){
+    std::vector< Worker* >::iterator it = busyWorkers.begin();
+    while (it != busyWorkers.end()) {
+        if ((*it)->getEntityId() == worker->getEntityId()) {
+            it = busyWorkers.erase(it);
+            readyWorkers.push_back(worker);
+        }else {
             ++it;
         }
     }

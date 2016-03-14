@@ -23,5 +23,5 @@ void Enemy::update(float deltaTime){
     }
     dir.normalize();
     float rads = this->rotation * DEG_TO_RAD;
-    this->position += (Vector2(cos(rads), sin(rads))*60)*deltaTime;
+    this->position += (Vector2(cos(rads), sin(rads))*200)*deltaTime;
 }

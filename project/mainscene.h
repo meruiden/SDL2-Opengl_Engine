@@ -7,7 +7,7 @@
 #include <engine/hudobject.h>
 #include <engine/sound.h>
 #include <project/worker.h>
-
+#include <project/simpleentity.h>
 #include <sstream>
 class Mainscene : public Scene{
 public:
@@ -15,7 +15,6 @@ public:
     virtual ~Mainscene();
     virtual void update(float deltaTime);
 
-    Worker* worker;
     std::vector<Vector2> pathpoints;
     Sound* geluidje;
     Vector2 scrollvel;
@@ -24,11 +23,16 @@ public:
     HudObject* choosedog;
     std::vector<Enemy*> enemies;
     std::vector<Bullet*> bullets;
-    Tower* tower;
+    std::vector<Tower*> towers;
     void spawnEnemies(int number);
     void removeBullet(Bullet* b);
     void removeEnemy(Enemy* e);
-
+    std::vector<Worker*> busyWorkers;
+    std::vector<Worker*> readyWorkers;
+    std::vector<SimpleEntity*> clouds;
+    void removeCloud(SimpleEntity* e);
+    bool assignWorker(Tower* tower);
+    void clearWorker(Worker* worker);
     Sound* shootSound;
     Sound* explosionSound;
     double counter;
