@@ -9,7 +9,6 @@ Sound::Sound(const char * filepath){
         return;
     }
 
-
 }
 
 Sound::~Sound(){
