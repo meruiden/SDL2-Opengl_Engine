@@ -11,7 +11,7 @@
 
 #include <SDL_mixer.h>
 
-#include <SDL_TTF.h>
+#include <SDL_ttf.h>
 // Include GLM
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>

@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <engine/image.h>
-#include <SDL_TTF.h>
+#include <SDL_ttf.h>
 class Recoursemanager{
 public:
     Recoursemanager();

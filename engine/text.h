@@ -3,7 +3,7 @@
 
 #include <GL/glew.h>
 #include <SDL.h>
-#include <SDL_TTF.h>
+#include <SDL_ttf.h>
 #include <string>
 #include <engine/vector2.h>
 #include <engine/color.h>

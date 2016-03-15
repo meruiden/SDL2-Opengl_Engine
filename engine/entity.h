@@ -30,6 +30,13 @@ public:
 
     std::string getExtention(){return extention;}
 
+    void collideTestObject(Entity* entity);
+
+    float width(){return _width;}
+    void width(float w){this->_width = w;}
+
+    float height(){return _height;}
+    void height(float h){this->_height = h;}
     Color color;
 private:
     std::string imagePath;
@@ -37,7 +44,8 @@ private:
     std::vector<Entity*> children;
     int entityId;
     static int idCounter;
-
+    float _width;
+    float _height;
 };
 
 

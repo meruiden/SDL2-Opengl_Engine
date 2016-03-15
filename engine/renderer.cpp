@@ -174,7 +174,6 @@ void Renderer::renderScene(Scene* scene){
         updateDeltaTime();
         counter += dt;
 
-
         scene->input = input;
         scene->camera = camera;
 
@@ -253,7 +252,13 @@ void Renderer::renderEntity(glm::mat4& modelMatrix, Entity* entity, bool isHud){
         if(entity->getExtention() == "png"){
             img = resman->getImage(entity->getImgPath(), false);
         }
+        if(img == NULL){
+            return;
+        }
 
+        entity->width(img->getWidth());
+        entity->height(img->getHeight());
+        
         if(img->getImgPath() != "NULL"){
             // Use our shader
             glm::mat4 MVP;
