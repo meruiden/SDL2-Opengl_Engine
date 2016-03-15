@@ -6,20 +6,40 @@ Mainscene::Mainscene() : Scene(){
     pathpoints.push_back(Vector2(700,600));
     pathpoints.push_back(Vector2(1000,100));
     pathpoints.push_back(Vector2(1600,100));
-    for(unsigned int i = 0; i < 2; i++){
+    for(unsigned int i = 0; i < 3; i++){
         Worker* worker = new Worker();
         worker->homePos = Vector2(100+ (230*i), 100);
         worker->position = worker->homePos;
         addEntity(worker);
         readyWorkers.push_back(worker);
     }
-
+    notEnoughText = new Text();
+    addText(notEnoughText);
+    notEnoughText->setText("Not enough coins!!");
+    notEnoughText->position = Vector2(350, 720/2);
+    notEnoughText->setFont("assets/agoestoesan.ttf", 40);
+    notEnoughText->color = Color(255,0,0, 0);
+    notEnoughText->isHud = true;
+    coins = 100;
+    coinsText = new Text();
+    addText(coinsText);
+    coinsText->isHud = true;
+    coinsText->setFont("assets/agoestoesan.ttf", 30);
+    coinsText->setText("Coins: ");
+    coinsText->position = Vector2(170, 720-30);
+    availableWorkersText = new Text();
+    availableWorkersText->isHud = true;
+    availableWorkersText->position = Vector2(170, 720-90);
+    availableWorkersText->setFont("assets/agoestoesan.ttf", 30);
+//    availableWorkersText->scale = Vector2(0.5f, 0.5f);
+    availableWorkersText->setText("Available Workers: 0");
+    addText(availableWorkersText);
     scrollvel = Vector2();
     scrollacc = Vector2();
     counter = 0;
     bgmusic = new Sound("assets/bg-music.wav");
     bgmusic->play(true);
-    bgmusic->setVolume(10);
+    bgmusic->setVolume(40);
     geluidje = new Sound("assets/geluidje.wav");
     shootSound = new Sound("assets/shoot.wav");
     explosionSound = new Sound("assets/explosion.wav");
@@ -33,20 +53,30 @@ Mainscene::Mainscene() : Scene(){
     choosedog = new HudObject();
     addHudObject(choosedog);
     choosedog->setPng("assets/hondje_sleeping.png");
-    choosedog->position = Vector2(1280-245/2, 180);
+    choosedog->position = Vector2((1280/2)-700, 180);
     choosedog->scale = Vector2(0.7f, 0.7f);
     spawnEnemies(50);
-
+    toolbar = new HudObject();
+    toolbar->setPng("assets/toolbar.png");
+    toolbar->position = Vector2(520, 720-(128/2));
+    toolbar->scale = Vector2(2,2);
+    addHudObject(toolbar);
     lockDog = false;
+    notEnoughTransition = false;
+    notenoughAlpha = 0;
+
 }
 
 Mainscene::~Mainscene(){
+    delete toolbar;
     delete chooseframe;
     delete shootSound;
     delete explosionSound;
-
+    delete bgmusic;
     delete geluidje;
-
+    delete availableWorkersText;
+    delete coinsText;
+    delete notEnoughText;
     removeHudObject(choosedog);
     delete choosedog;
 
@@ -95,6 +125,27 @@ Mainscene::~Mainscene(){
 }
 
 void Mainscene::update(float deltaTime){
+    if(notenoughAlpha < 0){
+        notenoughAlpha = 0;
+    }
+    if(notEnoughText->position.y < -100000){
+        notEnoughText->position.y = 720/2;
+    }
+    notenoughAlpha -= 150*deltaTime;
+    notEnoughText->position.y -= 10*deltaTime;
+
+    notEnoughText->color.a = notenoughAlpha;
+    std::ostringstream ss;
+    ss << "Available Workers: ";
+    ss << readyWorkers.size();
+    availableWorkersText->setText(ss.str());
+
+    std::ostringstream cc;
+
+    cc << "Coins: ";
+    cc << coins;
+    coinsText->setText(cc.str());
+
 
     counter += deltaTime;
     if(counter >= 1.0f/60){
@@ -125,12 +176,23 @@ void Mainscene::update(float deltaTime){
 
             addEntity(tower);
             tower->position = input->getMouseToWorld(camera);
-            if(!assignWorker(tower)){
+            if((coins-80) >= 0){
+                if(!assignWorker(tower)){
+                    removeEntity(tower);
+                    delete tower;
+                    tower = NULL;
+                }else{
+                    towers.push_back(tower);
+                    coins -= 80;
+                }
+            }else{
+                notenoughAlpha = 255;
+                notEnoughTransition = true;
+                notenoughAlpha = 255.0f;
+                notEnoughText->position.y = 720/2;
                 removeEntity(tower);
                 delete tower;
                 tower = NULL;
-            }else{
-                towers.push_back(tower);
             }
         }
     }
@@ -168,8 +230,10 @@ void Mainscene::update(float deltaTime){
                 }
 
                 removeEnemy(bullets[i]->target);
+                coins += 5;
                 bullets[i]->destroyMe = true;
                 explosionSound->play();
+
             }
 
 

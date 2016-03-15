@@ -13,6 +13,7 @@ public:
     int currPathPoint;
     bool atTarget;
     Vector2 curtarget;
+    float speed;
 private:
 
 protected:

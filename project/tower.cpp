@@ -28,7 +28,7 @@ void Tower::update(float deltaTime){
             if( Vector2(target->position, this->position).magnitude() < 360 ){
                 rotateTo = atan2(disvec.y, disvec.x)*RAD_TO_DEG;
                 rotateTo += 90;
-                if(this->shootcounter >= 2.0f && disvec.magnitude() < 360){
+                if(this->shootcounter >= 1.0f && disvec.magnitude() < 360){
                     this->wantsToShoot = true;
                 }
             }

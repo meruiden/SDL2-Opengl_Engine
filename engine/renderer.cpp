@@ -24,7 +24,7 @@ Renderer::Renderer(){
 
     // Open a window and create its OpenGL context
     window = SDL_CreateWindow(
-     "2D",                  // window title
+     "Dream Defenders",                  // window title
      SDL_WINDOWPOS_UNDEFINED,           // initial x position
      SDL_WINDOWPOS_UNDEFINED,           // initial y position
      window_width,                               // width, in pixels
@@ -83,7 +83,7 @@ Renderer::Renderer(){
     //glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 
     // Dark blue background
-    glClearColor(0.0f, 0.0f, 0.2f, 0.0f);
+    glClearColor(101/255.0f, 121/255.0f, 98/255.0f, 0.0f);
 
     // Enable depth test
     //glEnable(GL_DEPTH_TEST);

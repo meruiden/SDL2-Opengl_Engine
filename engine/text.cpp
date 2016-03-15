@@ -62,7 +62,7 @@ void Text::makeMesh(){
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
     SDL_Color c = {255, 255, 255, 0};
-    sFont = TTF_RenderText_Blended_Wrapped(this->f, this->curmessage.c_str(), c, this->curmessage.length()*(this->fontsize*this->scale.x));
+    sFont = TTF_RenderText_Blended_Wrapped(this->f, this->curmessage.c_str(), c, this->curmessage.length()*(this->fontsize*this->scale.x)+50);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, sFont->w, sFont->h, 0, GL_BGRA, GL_UNSIGNED_BYTE, sFont->pixels);

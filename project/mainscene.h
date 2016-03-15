@@ -15,7 +15,8 @@ public:
     virtual ~Mainscene();
     virtual void update(float deltaTime);
 
-
+    Text* coinsText;
+    int coins;
     std::vector<Vector2> pathpoints;
     Sound* geluidje;
     Sound* bgmusic;
@@ -39,9 +40,12 @@ public:
     Sound* explosionSound;
     double counter;
     void fixedUpdate();
-
-
+    HudObject* toolbar;
+    Text* availableWorkersText;
     bool lockDog;
+    bool notEnoughTransition;
+    Text* notEnoughText;
+    float notenoughAlpha;
 private:
 
 protected:

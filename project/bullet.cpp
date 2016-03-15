@@ -2,7 +2,7 @@
 #include <iostream>
 Bullet::Bullet() : Entity(){
     //this->scale = Vector2(0.3f, 0.3f);
-    this->speed = 400.0f;
+    this->speed = 500.0f;
     this->disToTarget = 1000.0f;
     this->target = NULL;
     this->hasTarget = false;
