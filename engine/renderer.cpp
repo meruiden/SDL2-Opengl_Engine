@@ -105,6 +105,7 @@ Renderer::Renderer(){
     rfloat = glGetUniformLocation(programID, "r");
     gfloat = glGetUniformLocation(programID, "g");
     bfloat = glGetUniformLocation(programID, "b");
+    uvoffset = glGetUniformLocation(programID, "uvOffset");
     // Get a handle for our "MVP" uniform
     matrixID = glGetUniformLocation(programID, "MVP");
     // Get a handle for our "myTextureSampler" uniform
@@ -242,7 +243,9 @@ void Renderer::renderScene(Scene* scene){
 
 
 void Renderer::renderEntity(glm::mat4& modelMatrix, Entity* entity, bool isHud){
-    if(entity->getImgPath() != "NULL" ){
+
+    if(entity->getImgPath() != "NULL" && entity->getImgPath() != "" && entity->getImgPath() != " " ){
+        glUniform2f(uvoffset, entity->uvOffset.x, entity->uvOffset.y);
         Image* img;
         img = NULL;
         modelMatrix *= getModelMatrix(entity->position, entity->scale, entity->rotation);
@@ -258,8 +261,8 @@ void Renderer::renderEntity(glm::mat4& modelMatrix, Entity* entity, bool isHud){
 
         entity->width(img->getWidth());
         entity->height(img->getHeight());
-        
-        if(img->getImgPath() != "NULL"){
+
+        if(img->getImgPath() != "NULL" && img->getImgPath() != "" && img->getImgPath() != " "){
             // Use our shader
             glm::mat4 MVP;
             glUseProgram(programID);
@@ -323,18 +326,18 @@ void Renderer::renderEntity(glm::mat4& modelMatrix, Entity* entity, bool isHud){
 
             glDisableVertexAttribArray(vertexPosition_modelspaceID);
             glDisableVertexAttribArray(vertexUVID);
+        }
+    }
 
-            // Render all Children (recursively)
-            std::vector<Entity*> children = entity->getChildren();
-            std::vector<Entity*>::iterator child;
-            for (child = children.begin(); child != children.end(); child++) {
-                this->renderEntity(modelMatrix, *child, isHud);
-                if((*child)->parent != NULL){
-                      modelMatrix = this->getModelMatrix( (*child)->parent->position,  (*child)->parent->scale, (*child)->parent->rotation);
-                }else{
-                      modelMatrix = this->getModelMatrix(entity->position, entity->scale, entity->rotation);
-                }
-            }
+    // Render all Children (recursively)
+    std::vector<Entity*> children = entity->getChildren();
+    std::vector<Entity*>::iterator child;
+    for (child = children.begin(); child != children.end(); child++) {
+        this->renderEntity(modelMatrix, *child, isHud);
+        if((*child)->parent != NULL){
+              modelMatrix = this->getModelMatrix( (*child)->parent->position,  (*child)->parent->scale, (*child)->parent->rotation);
+        }else{
+              modelMatrix = this->getModelMatrix(entity->position, entity->scale, entity->rotation);
         }
     }
 }
@@ -407,6 +410,7 @@ void Renderer::displayFPS(){
 }
 
 void Renderer::renderText(Text* t){
+    glUniform2f(uvoffset, 0, 0);
     t->f = resman->getFont(t->getFontPath(), t->getFontSize());
 
     if(t->getCurMessage() != t->getLastMessage()){

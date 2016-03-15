@@ -59,7 +59,7 @@ public:
     GLuint matrixID;
     GLuint rfloat,gfloat,bfloat;
     GLuint alphafloat;
-
+    GLuint uvoffset;
     GLuint vertexPosition_modelspaceID;
     GLuint vertexUVID;
     Recoursemanager* resman;

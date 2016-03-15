@@ -12,6 +12,7 @@ Entity::Entity(){
     this->position = Vector2(0,0);
     this->scale = Vector2(1,1);
     this->rotation = 0;
+    this->uvOffset = Vector2();
 }
 
 Entity::~Entity(){

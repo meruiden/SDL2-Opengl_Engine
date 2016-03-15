@@ -2,15 +2,24 @@
 
 Mainscene::Mainscene() : Scene(){
 
-
-    pathpoints.push_back(Vector2(300,300));
-    pathpoints.push_back(Vector2(500,200));
-    pathpoints.push_back(Vector2(700,600));
-    pathpoints.push_back(Vector2(1000,100));
-    pathpoints.push_back(Vector2(1600,100));
+    background = new SimpleEntity();
+    addEntity(background);
+    background->setPng("assets/map_0-1.png");
+    background->position = Vector2(1024/2, 1296/2);
+    pathpoints.push_back(Vector2(801,357));
+    pathpoints.push_back(Vector2(478,357));
+    pathpoints.push_back(Vector2(477,170));
+    pathpoints.push_back(Vector2(631,161));
+    pathpoints.push_back(Vector2(639,40));
+    pathpoints.push_back(Vector2(141,40));
+    pathpoints.push_back(Vector2(135,650));
+    pathpoints.push_back(Vector2(802,650));
+    pathpoints.push_back(Vector2(802,958));
+    pathpoints.push_back(Vector2(137,967));
+    pathpoints.push_back(Vector2(131,1426));
     for(unsigned int i = 0; i < 3; i++){
         Worker* worker = new Worker();
-        worker->homePos = Vector2(100+ (230*i), 100);
+        worker->homePos = Vector2(280+ (230*i), 490);
         worker->position = worker->homePos;
         addEntity(worker);
         readyWorkers.push_back(worker);
@@ -33,7 +42,7 @@ Mainscene::Mainscene() : Scene(){
     availableWorkersText->isHud = true;
     availableWorkersText->position = Vector2(170, 720-90);
     availableWorkersText->setFont("assets/agoestoesan.ttf", 30);
-//    availableWorkersText->scale = Vector2(0.5f, 0.5f);
+    //availableWorkersText->scale = Vector2(0.5f, 0.5f);
     availableWorkersText->setText("Available Workers: 0");
     addText(availableWorkersText);
     scrollvel = Vector2();
@@ -64,13 +73,11 @@ Mainscene::Mainscene() : Scene(){
     toolbar->scale = Vector2(2,2);
     addHudObject(toolbar);
     lockDog = false;
-    notEnoughTransition = false;
     notenoughAlpha = 0;
-
 }
 
 Mainscene::~Mainscene(){
-
+    delete background;
     delete toolbar;
     delete chooseframe;
     delete shootSound;
@@ -191,7 +198,6 @@ void Mainscene::update(float deltaTime){
                 }
             }else{
                 notenoughAlpha = 255;
-                notEnoughTransition = true;
                 notenoughAlpha = 255.0f;
                 notEnoughText->position.y = 720/2;
                 removeEntity(tower);
@@ -289,7 +295,7 @@ void Mainscene::update(float deltaTime){
     }
 
     if(input->getKeyDown(SDLK_g)){
-        //geluidje->play();
+        std::cout << "X: " << input->getMouseToWorld(camera).x << " Y: " << input->getMouseToWorld(camera).y << std::endl;
     }
     if(input->getKey(SDLK_a)){
         camera->position += Vector2(-150*deltaTime,0);
@@ -333,8 +339,8 @@ void Mainscene::spawnEnemies(int number){
     for(unsigned int i = 0; i < number; i ++){
         Enemy* e;
         e = new Enemy();
-        e->position = Vector2(-400,400);
-        e->position.x -= 150*i;
+        e->position = Vector2(801,-1400);
+        e->position.y -= 200*i;
         enemies.push_back(e);
         addEntity(e);
         e->curtarget = pathpoints[0];

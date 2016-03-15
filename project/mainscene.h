@@ -43,9 +43,11 @@ public:
     HudObject* toolbar;
     Text* availableWorkersText;
     bool lockDog;
-    bool notEnoughTransition;
+
     Text* notEnoughText;
     float notenoughAlpha;
+
+    SimpleEntity* background;
 
 private:
 

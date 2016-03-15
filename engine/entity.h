@@ -27,7 +27,7 @@ public:
     Input* input;
     void addText(Text* t);
     void removeText(Text* t);
-
+    Vector2 uvOffset;
     std::string getExtention(){return extention;}
 
     bool collideTestObject(Entity* entity);
