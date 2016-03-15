@@ -46,6 +46,7 @@ public:
     bool notEnoughTransition;
     Text* notEnoughText;
     float notenoughAlpha;
+
 private:
 
 protected:

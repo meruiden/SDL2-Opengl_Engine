@@ -72,6 +72,7 @@ include_directories(
 	.
 )
 
+
 set(ALL_LIBS
 	${OPENGL_LIBRARY}
 	engine
@@ -80,7 +81,6 @@ set(ALL_LIBS
 	${SDL2_TTF_LIBRARY}
 	${SDL2IMAGE_LIBRARY}
 	${GLEW_LIBRARIES}
-
 )
 
 add_definitions(
@@ -143,6 +143,12 @@ add_executable(project
 target_link_libraries(project
 	${ALL_LIBS}
 )
+
+	IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+		target_link_libraries(project
+			-lGL
+		)
+	ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 # Xcode and Visual working directories
 #set_target_properties(project PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/project/“)

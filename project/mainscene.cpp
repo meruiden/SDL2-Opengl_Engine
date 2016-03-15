@@ -1,6 +1,8 @@
 #include "mainscene.h"
 
 Mainscene::Mainscene() : Scene(){
+
+
     pathpoints.push_back(Vector2(300,300));
     pathpoints.push_back(Vector2(500,200));
     pathpoints.push_back(Vector2(700,600));
@@ -68,6 +70,7 @@ Mainscene::Mainscene() : Scene(){
 }
 
 Mainscene::~Mainscene(){
+
     delete toolbar;
     delete chooseframe;
     delete shootSound;
@@ -125,6 +128,7 @@ Mainscene::~Mainscene(){
 }
 
 void Mainscene::update(float deltaTime){
+
     if(notenoughAlpha < 0){
         notenoughAlpha = 0;
     }
@@ -319,7 +323,9 @@ void Mainscene::update(float deltaTime){
             removeCloud(clouds[i]);
         }
     }
-    
+    if(choosedog->collideTestObject(chooseframe)){
+
+    }
 
 }
 
