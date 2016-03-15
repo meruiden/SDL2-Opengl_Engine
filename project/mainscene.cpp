@@ -2,8 +2,14 @@
 
 Mainscene::Mainscene() : Scene(){
 
+    for(unsigned int i = 0; i < 5; i++){
+        SimpleEntity* s = new SimpleEntity();
+        addEntity(s);
+        layer.push_back(s);
+    }
+
     background = new SimpleEntity();
-    addEntity(background);
+    layer[0]->addChild(background);
     background->setPng("assets/map_0-1.png");
     background->position = Vector2(1024/2, 1296/2);
     pathpoints.push_back(Vector2(801,357));
@@ -21,7 +27,7 @@ Mainscene::Mainscene() : Scene(){
         Worker* worker = new Worker();
         worker->homePos = Vector2(280+ (230*i), 490);
         worker->position = worker->homePos;
-        addEntity(worker);
+        layer[4]->addChild(worker);
         readyWorkers.push_back(worker);
     }
     notEnoughText = new Text();
@@ -131,20 +137,22 @@ Mainscene::~Mainscene(){
     }
     readyWorkers.clear();
 
+    for(unsigned int i = 0; i < layer.size(); i++){
+        removeEntity(layer[i]);
+        layer[i] = NULL;
+    }
 
+    layer.clear();
 }
 
 void Mainscene::update(float deltaTime){
-
     if(notenoughAlpha < 0){
         notenoughAlpha = 0;
     }
-    if(notEnoughText->position.y < -100000){
-        notEnoughText->position.y = 720/2;
-    }
     notenoughAlpha -= 150*deltaTime;
-    notEnoughText->position.y -= 10*deltaTime;
-
+    if(notEnoughText->color.a > 0){
+        notEnoughText->position.y -= 10*deltaTime;
+    }
     notEnoughText->color.a = notenoughAlpha;
     std::ostringstream ss;
     ss << "Available Workers: ";
@@ -185,11 +193,11 @@ void Mainscene::update(float deltaTime){
             lockDog = false;
             Tower* tower = new Tower();
 
-            addEntity(tower);
+            layer[1]->addChild(tower);
             tower->position = input->getMouseToWorld(camera);
             if((coins-80) >= 0){
                 if(!assignWorker(tower)){
-                    removeEntity(tower);
+                    layer[1]->removeChild(tower);
                     delete tower;
                     tower = NULL;
                 }else{
@@ -200,7 +208,7 @@ void Mainscene::update(float deltaTime){
                 notenoughAlpha = 255;
                 notenoughAlpha = 255.0f;
                 notEnoughText->position.y = 720/2;
-                removeEntity(tower);
+                layer[1]->removeChild(tower);
                 delete tower;
                 tower = NULL;
             }
@@ -313,7 +321,7 @@ void Mainscene::update(float deltaTime){
             c->position = busyWorkers[i]->cloudpos;
             c->setPng("assets/Bouwwolkje.png");
             c->scale = Vector2(0.5f, 0.5f);
-            addEntity(c);
+            layer[3]->addChild(c);
             clouds.push_back(c);
             busyWorkers[i]->wantsCloud = false;
         }
@@ -342,7 +350,7 @@ void Mainscene::spawnEnemies(int number){
         e->position = Vector2(801,-1400);
         e->position.y -= 200*i;
         enemies.push_back(e);
-        addEntity(e);
+        layer[2]->addChild(e);
         e->curtarget = pathpoints[0];
     }
 }
@@ -370,7 +378,7 @@ void Mainscene::removeEnemy(Enemy* e){
     std::vector< Enemy* >::iterator it = enemies.begin();
     while (it != enemies.end()) {
         if ((*it)->getEntityId() == e->getEntityId()) {
-            removeEntity((*it));
+            layer[2]->removeChild((*it));
             delete (*it);
             (*it) = NULL;
             it = enemies.erase(it);
@@ -384,7 +392,7 @@ void Mainscene::removeCloud(SimpleEntity* e){
     std::vector< SimpleEntity* >::iterator it = clouds.begin();
     while (it != clouds.end()) {
         if ((*it)->getEntityId() == e->getEntityId()) {
-            removeEntity((*it));
+            layer[3]->removeChild((*it));
             delete (*it);
             (*it) = NULL;
             it = clouds.erase(it);

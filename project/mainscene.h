@@ -14,7 +14,7 @@ public:
     Mainscene();
     virtual ~Mainscene();
     virtual void update(float deltaTime);
-
+    std::vector<SimpleEntity*>layer;
     Text* coinsText;
     int coins;
     std::vector<Vector2> pathpoints;
