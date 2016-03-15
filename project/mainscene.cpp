@@ -319,7 +319,7 @@ void Mainscene::update(float deltaTime){
             removeCloud(clouds[i]);
         }
     }
-
+    
 
 }
 

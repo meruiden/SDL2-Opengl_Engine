@@ -30,7 +30,7 @@ public:
 
     std::string getExtention(){return extention;}
 
-    void collideTestObject(Entity* entity);
+    bool collideTestObject(Entity* entity);
 
     float width(){return _width;}
     void width(float w){this->_width = w;}
