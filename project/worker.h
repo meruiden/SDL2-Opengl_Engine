@@ -21,6 +21,7 @@ public:
     int spriteCounter;
     float spriteTimer;
 
+
 private:
     Tower* target;
 protected:

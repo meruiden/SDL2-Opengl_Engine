@@ -16,6 +16,13 @@ Tower::~Tower(){
 }
 
 void Tower::update(float deltaTime){
+
+    if(this->ready && this->target != NULL){
+        if(target->dead){
+            this->target = NULL;
+        }
+    }
+
     if(this->ready && this->target != NULL){
         this->shootcounter += deltaTime;
         float _rotateSpeedMax = 200.0f;
@@ -31,13 +38,18 @@ void Tower::update(float deltaTime){
                 if(this->shootcounter >= 1.0f && disvec.magnitude() < 360){
                     this->wantsToShoot = true;
                 }
+            }else{
+                this->target = NULL;
             }
+
         }
         if (rotateTo > this->rotation + 180) rotateTo -= 360;
         if (rotateTo < this->rotation  - 180) rotateTo += 360;
         _trueRotation = (rotateTo - this->rotation ) / _rotateSpeedMax;
         this->rotation += _trueRotation;
     }
+
+
 }
 
 Bullet* Tower::shoot(){

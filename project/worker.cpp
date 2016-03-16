@@ -20,11 +20,12 @@ Worker::~Worker(){
 
 void Worker::update(float deltaTime){
 
+
     if(this->working && target != NULL){
         Vector2 thisToTarget = Vector2(this->position, target->position);
         this->rotation = thisToTarget.getAngle()+90;
         float rads = (this->rotation+90) * DEG_TO_RAD;
-        if(thisToTarget.magnitude() > 100){
+        if(thisToTarget.magnitude() > 120){
             this->position += (Vector2(cos(rads), sin(rads))*100)*deltaTime;
             spriteTimer += deltaTime;
 
@@ -102,6 +103,8 @@ void Worker::update(float deltaTime){
             this->rotation = 0;
         }
     }
+
+
 
 }
 

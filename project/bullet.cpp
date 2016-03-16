@@ -7,6 +7,7 @@ Bullet::Bullet() : Entity(){
     this->target = NULL;
     this->hasTarget = false;
     this->destroyMe = false;
+    this->damage = 0;
 }
 
 Bullet::~Bullet(){
@@ -22,6 +23,7 @@ void Bullet::update(float deltaTime){
         this->vel.normalize();
         this->vel *= this->speed;
         this->position += vel*deltaTime;
+        this->lastKnownPos = this->target->position;
     }else{
         Vector2 subvec = Vector2(this->position, lastKnownPos);
         this->disToTarget = subvec.magnitude();

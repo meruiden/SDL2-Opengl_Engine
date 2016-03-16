@@ -15,6 +15,7 @@ public:
     Vector2 lastKnownPos;
     bool hasTarget;
     bool destroyMe;
+    int damage;
 private:
 
 protected:

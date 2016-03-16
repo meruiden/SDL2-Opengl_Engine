@@ -27,27 +27,27 @@ Mainscene::Mainscene() : Scene(){
         Worker* worker = new Worker();
         worker->homePos = Vector2(280+ (230*i), 490);
         worker->position = worker->homePos;
-        layer[4]->addChild(worker);
+        layer[3]->addChild(worker);
         readyWorkers.push_back(worker);
     }
     notEnoughText = new Text();
     addText(notEnoughText);
     notEnoughText->setText("Not enough coins!!");
     notEnoughText->position = Vector2(350, 720/2);
-    notEnoughText->setFont("assets/agoestoesan.ttf", 40);
+    notEnoughText->setFont("assets/PrintClearly.ttf", 40);
     notEnoughText->color = Color(255,0,0, 0);
     notEnoughText->isHud = true;
     coins = 100;
     coinsText = new Text();
     addText(coinsText);
     coinsText->isHud = true;
-    coinsText->setFont("assets/agoestoesan.ttf", 30);
+    coinsText->setFont("assets/PrintClearly.ttf", 30);
     coinsText->setText("Coins: ");
     coinsText->position = Vector2(170, 720-30);
     availableWorkersText = new Text();
     availableWorkersText->isHud = true;
     availableWorkersText->position = Vector2(170, 720-90);
-    availableWorkersText->setFont("assets/agoestoesan.ttf", 30);
+    availableWorkersText->setFont("assets/PrintClearly.ttf", 2);
     //availableWorkersText->scale = Vector2(0.5f, 0.5f);
     availableWorkersText->setText("Available Workers: 0");
     addText(availableWorkersText);
@@ -122,7 +122,7 @@ Mainscene::~Mainscene(){
     clouds.clear();
 
     for(unsigned int i = 0; i < busyWorkers.size(); i++){
-        removeEntity(busyWorkers[i]);
+        layer[3]->removeChild(busyWorkers[i]);
         delete busyWorkers[i];
 
         busyWorkers[i] = NULL;
@@ -131,7 +131,7 @@ Mainscene::~Mainscene(){
     busyWorkers.clear();
 
     for(unsigned int i = 0; i < readyWorkers.size(); i++){
-        removeEntity(readyWorkers[i]);
+        layer[3]->removeChild(readyWorkers[i]);
         delete readyWorkers[i];
         readyWorkers[i] = NULL;
     }
@@ -146,6 +146,9 @@ Mainscene::~Mainscene(){
 }
 
 void Mainscene::update(float deltaTime){
+
+
+
     if(notenoughAlpha < 0){
         notenoughAlpha = 0;
     }
@@ -217,15 +220,8 @@ void Mainscene::update(float deltaTime){
 
 
 
-    for(unsigned int i = 0; i < enemies.size(); i ++){
-        if(enemies[i]->atTarget){
-            if(pathpoints.size()-1 > enemies[i]->currPathPoint){
-                enemies[i]->atTarget = false;
-                enemies[i]->currPathPoint ++;
-                enemies[i]->curtarget = pathpoints[enemies[i]->currPathPoint];
-            }
-        }
-    }
+
+
 
     for(unsigned int i = 0; i < bullets.size(); i++){
         bool done = false;
@@ -237,26 +233,40 @@ void Mainscene::update(float deltaTime){
 
         if(!done){
             if(bullets[i]->disToTarget < bullets[i]->target->collisionRadius && bullets[i]->hasTarget){
-                bullets[i]->target->dead = true;
-                for(unsigned int b = 0; b < bullets.size(); b++){
-                    if(bullets[i]->target->getEntityId() == bullets[b]->target->getEntityId()){
-                        if(bullets[i]->getEntityId() != bullets[b]->getEntityId()){
-                            bullets[b]->lastKnownPos = bullets[i]->target->position;
-                            bullets[b]->hasTarget = false;
+
+                bullets[i]->target->health -= bullets[i]->damage;
+                coins += 2;
+
+                bullets[i]->destroyMe = true;
+                explosionSound->play();
+                if(bullets[i]->target->health <= 0){
+                    bullets[i]->target->dead = true;
+                }
+                if(bullets[i]->target->dead){
+                    for(unsigned int b = 0; b < bullets.size(); b++){
+                        if(bullets[i]->target->getEntityId() == bullets[b]->target->getEntityId()){
+                            if(bullets[i]->getEntityId() != bullets[b]->getEntityId()){
+                                bullets[b]->lastKnownPos = bullets[i]->lastKnownPos;
+                                bullets[b]->hasTarget = false;
+                            }
                         }
                     }
                 }
-
-                removeEnemy(bullets[i]->target);
-                coins += 5;
-                bullets[i]->destroyMe = true;
-                explosionSound->play();
-
             }
-
-
         }
+    }
 
+    for(unsigned int i = 0; i < enemies.size(); i ++){
+        if(enemies[i]->atTarget){
+            if(pathpoints.size()-1 > enemies[i]->currPathPoint){
+                enemies[i]->atTarget = false;
+                enemies[i]->currPathPoint ++;
+                enemies[i]->curtarget = pathpoints[enemies[i]->currPathPoint];
+            }
+        }
+        if(enemies[i]->dead){
+            removeEnemy(enemies[i]);
+        }
     }
 
     for(unsigned int i = 0; i < bullets.size(); i++){
@@ -266,6 +276,7 @@ void Mainscene::update(float deltaTime){
     }
 
     if(towers.size() > 0 && enemies.size() > 0){
+
         Enemy* target = enemies[0];
 
         for(unsigned int t = 0; t < towers.size(); t++){
@@ -276,19 +287,24 @@ void Mainscene::update(float deltaTime){
                     target = enemies[i];
                 }
             }
-            towers[t]->target = target;
+            if((towers[t]->target == NULL || towers[t]->target->dead )&& towers[t]->ready){
+                towers[t]->target = target;
+            }
 
             if(towers[t]->wantsToShoot && towers[t]->target != NULL && !towers[t]->target->dead){
                 towers[t]->shootcounter = 0;
                 towers[t]->wantsToShoot = false;
                 Bullet* b;
+
                 b = towers[t]->shoot();
+                b->damage = 25;
                 addEntity(b);
                 b->hasTarget = true;
                 bullets.push_back(b);
                 shootSound->play();
             }
         }
+
     }
 
     if(input->scrollDown()){
@@ -321,7 +337,7 @@ void Mainscene::update(float deltaTime){
             c->position = busyWorkers[i]->cloudpos;
             c->setPng("assets/Bouwwolkje.png");
             c->scale = Vector2(0.5f, 0.5f);
-            layer[3]->addChild(c);
+            layer[4]->addChild(c);
             clouds.push_back(c);
             busyWorkers[i]->wantsCloud = false;
         }
@@ -347,7 +363,7 @@ void Mainscene::spawnEnemies(int number){
     for(unsigned int i = 0; i < number; i ++){
         Enemy* e;
         e = new Enemy();
-        e->position = Vector2(801,-1400);
+        e->position = Vector2(801,-500);
         e->position.y -= 200*i;
         enemies.push_back(e);
         layer[2]->addChild(e);
@@ -392,7 +408,7 @@ void Mainscene::removeCloud(SimpleEntity* e){
     std::vector< SimpleEntity* >::iterator it = clouds.begin();
     while (it != clouds.end()) {
         if ((*it)->getEntityId() == e->getEntityId()) {
-            layer[3]->removeChild((*it));
+            layer[4]->removeChild((*it));
             delete (*it);
             (*it) = NULL;
             it = clouds.erase(it);

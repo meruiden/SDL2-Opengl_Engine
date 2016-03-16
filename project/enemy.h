@@ -14,6 +14,9 @@ public:
     bool atTarget;
     Vector2 curtarget;
     float speed;
+    float r, g, b;
+
+    int health;
 private:
 
 protected:
