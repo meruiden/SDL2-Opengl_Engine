@@ -44,7 +44,9 @@ find_package(SDL2_ttf REQUIRED)
 
 find_package(SDL2_image REQUIRED)
 
+
 add_subdirectory (external)
+
 
 
 # Compile external dependencies

@@ -32,6 +32,7 @@
 # (To distribute this file outside of CMake, substitute the full
 #  License text for the above reference.)
 
+message(${CMAKE_CURRENT_SOURCE_DIR})
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
   set(SDL2_ARCH_64 TRUE)
   set(SDL2_PROCESSOR_ARCH "x64")

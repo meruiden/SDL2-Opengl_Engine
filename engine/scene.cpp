@@ -100,10 +100,3 @@ bool Scene::hasEntity(Entity* child){
 
     return false;
 }
-
-Vector2 Scene::getCursor(){
-    int xpos, ypos;
-    SDL_GetMouseState(&xpos, &ypos);
-    Vector2 cursor = Vector2(xpos, ypos);
-    return cursor;
-}

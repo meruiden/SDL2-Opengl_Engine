@@ -46,10 +46,10 @@ void Entity::addChild(Entity* child){
 
 bool Entity::collideTestObject(Entity* entity){
 
-    if (this->position.x < entity->position.x + entity->width() &&
-        this->position.x + this->width() > entity->position.x &&
-        this->position.y < entity->position.y + entity->height() &&
-        this->height() + this->position.y > entity->position.y) {
+    if (this->position.x < entity->position.x + (entity->width()*entity->scale.x) &&
+        this->position.x + (this->width()*this->scale.x) > entity->position.x &&
+        this->position.y < entity->position.y + (entity->height()*entity->scale.y) &&
+        (this->height()*this->scale.y) + this->position.y > entity->position.y) {
 
         return true;
     }

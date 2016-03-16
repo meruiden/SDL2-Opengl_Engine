@@ -24,6 +24,16 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 # See the License for more information.
 #=============================================================================
+SET(SDL2_SEARCH_PATHS
+  ~/Library/Frameworks
+  /Library/Frameworks
+  /usr/local
+  /usr
+  /sw # Fink
+  /opt/local # DarwinPorts
+  /opt/csw # Blastwave
+  /opt
+)
 
 if(NOT SDL2_TTF_INCLUDE_DIR AND SDL2TTF_INCLUDE_DIR)
   set(SDL2_TTF_INCLUDE_DIR ${SDL2TTF_INCLUDE_DIR} CACHE PATH "directory cache
@@ -34,6 +44,7 @@ find_path(SDL2_TTF_INCLUDE_DIR SDL_ttf.h
     ENV SDLTTFDIR
     ENV SDLDIR
   PATH_SUFFIXES include/SDL2 include
+  PATHS ${SDL2_SEARCH_PATHS}
 )
 
 if(NOT SDL2_TTF_LIBRARY AND SDL2TTF_LIBRARY)
@@ -46,6 +57,7 @@ find_library(SDL2_TTF_LIBRARY
     ENV SDLTTFDIR
     ENV SDLDIR
   PATH_SUFFIXES lib
+  PATHS ${SDL2_SEARCH_PATHS}
 )
 
 if(SDL2_TTF_INCLUDE_DIR AND EXISTS "${SDL2_TTF_INCLUDE_DIR}/SDL_ttf.h")
