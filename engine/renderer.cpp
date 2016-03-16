@@ -29,7 +29,7 @@ Renderer::Renderer(){
      SDL_WINDOWPOS_UNDEFINED,           // initial y position
      window_width,                               // width, in pixels
      window_height,                               // height, in pixels
-     SDL_WINDOW_OPENGL                 // flags - see below
+     SDL_WINDOW_OPENGL | SDL_WINDOW_FULLSCREEN_DESKTOP           // flags - see below
     );
 
 
@@ -162,14 +162,20 @@ Renderer::Renderer(){
 
     timer->isHud = true;
     fpsText->isHud = true;
-
     std::cout << "Press F10 to view fps and time" << std::endl;
-
-
+    int xx;
+    int yy;
+    SDL_GetWindowSize(window, &xx, &yy);
+    window_width = xx;
+    window_height = yy;
 
 }
 
 void Renderer::renderScene(Scene* scene){
+        scene->window_width = this->window_width;
+        scene->window_height = this->window_height;
+        this->input->window_width = this->window_width;
+        this->input->window_height= this->window_height;
 
         displayFPS();
         updateDeltaTime();

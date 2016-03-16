@@ -24,11 +24,13 @@ Input::Input(){
 }
 
 Vector2 Input::getMouseToScreen(){
-    return mousepos;
+    Vector2 mpos = Vector2((mousepos.x/window_width)*1280, (mousepos.y/window_height)*720);
+    return mpos;
 }
 
 Vector2 Input::getMouseToWorld(Camera* camera){
-    Vector2 mousepostocam = Vector2(mousepos.x + camera->position.x, mousepos.y + camera->position.y);
+
+    Vector2 mousepostocam = Vector2(getMouseToScreen().x + camera->position.x, getMouseToScreen().y + camera->position.y);
     return mousepostocam;
 }
 

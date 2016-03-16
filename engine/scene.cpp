@@ -3,6 +3,8 @@
 Scene::Scene(){
     this->input = NULL;
     this->camera = NULL;
+    this->window_width = 0;
+    this->window_height = 0;
 }
 
 Scene::~Scene(){

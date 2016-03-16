@@ -28,7 +28,8 @@ public:
     bool scrollUp(){return scrollup;}
     bool scrollDown(){return scrolldown;}
 
-
+    int window_width;
+    int window_height;
 
 private:
     bool keys[282];

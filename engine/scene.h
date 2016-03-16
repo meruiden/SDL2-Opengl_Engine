@@ -32,6 +32,9 @@ public:
     Input* input;
 
     Camera* camera;
+
+    int window_width;
+    int window_height;
 private:
 
 };

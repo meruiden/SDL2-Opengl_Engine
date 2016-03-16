@@ -7,7 +7,7 @@ Mainscene::Mainscene() : Scene(){
         addEntity(s);
         layer.push_back(s);
     }
-
+    captureMouseDistance = false;
     background = new SimpleEntity();
     layer[0]->addChild(background);
     background->setPng("assets/map_0-1.png");
@@ -30,6 +30,8 @@ Mainscene::Mainscene() : Scene(){
         layer[3]->addChild(worker);
         readyWorkers.push_back(worker);
     }
+    lastDistance = Vector2();
+    mouseDistance = Vector2();
     notEnoughText = new Text();
     addText(notEnoughText);
     notEnoughText->setText("Not enough coins!!");
@@ -146,9 +148,13 @@ Mainscene::~Mainscene(){
 }
 
 void Mainscene::update(float deltaTime){
+    if(input->getMouseToScreen().y > 620){
+        camera->position.y += (((input->getMouseToScreen().y - 620)/100)*400)*deltaTime;
+    }
 
-
-
+    if(input->getMouseToScreen().y < 120){
+        camera->position.y -= (((120-input->getMouseToScreen().y)/100)*400)*deltaTime;
+    }
     if(notenoughAlpha < 0){
         notenoughAlpha = 0;
     }
@@ -353,8 +359,12 @@ void Mainscene::update(float deltaTime){
             removeCloud(clouds[i]);
         }
     }
-    if(choosedog->collideTestObject(chooseframe)){
+    if(camera->position.y < 0){
+        camera->position.y = 0;
+    }
 
+    if(camera->position.y > 1296-720){
+        camera->position.y = 1296-720;
     }
 
 }

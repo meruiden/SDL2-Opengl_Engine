@@ -1,6 +1,7 @@
 #ifndef RENDERER_H
 #define RENDERER_H
 
+
 // Include GLEW
 #include <GL/glew.h>
 

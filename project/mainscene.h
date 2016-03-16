@@ -1,3 +1,5 @@
+
+
 #ifndef MAINSCENE_H
 #define MAINSCENE_H
 
@@ -43,7 +45,9 @@ public:
     HudObject* toolbar;
     Text* availableWorkersText;
     bool lockDog;
-
+    bool captureMouseDistance;
+    Vector2 mouseDistance;
+    Vector2 lastDistance;
     Text* notEnoughText;
     float notenoughAlpha;
 
