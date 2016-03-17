@@ -140,6 +140,8 @@ add_executable(project
 	project/worker.h
 	project/simpleentity.cpp
 	project/simpleentity.h
+	project/particle.cpp
+	project/particle.h
 )
 
 target_link_libraries(project

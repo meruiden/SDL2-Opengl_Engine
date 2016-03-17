@@ -10,6 +10,7 @@
 #include <engine/sound.h>
 #include <project/worker.h>
 #include <project/simpleentity.h>
+#include <project/particle.h>
 #include <sstream>
 class Mainscene : public Scene{
 public:
@@ -26,6 +27,8 @@ public:
     Vector2 scrollacc;
     HudObject* chooseframe;
     HudObject* choosedog;
+    HudObject* choosebunny;
+    bool lockBunny;
     std::vector<Enemy*> enemies;
     std::vector<Bullet*> bullets;
     std::vector<Tower*> towers;
@@ -50,9 +53,12 @@ public:
     Vector2 lastDistance;
     Text* notEnoughText;
     float notenoughAlpha;
-
+    HudObject* cursor;
     SimpleEntity* background;
 
+    std::vector<Particle*> twinkles;
+
+    void removeTwinkle(Particle* p);
 private:
 
 protected:

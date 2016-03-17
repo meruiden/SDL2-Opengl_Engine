@@ -1,14 +1,27 @@
 #include "tower.h"
 #include <iostream>
-Tower::Tower() : Entity(){
-    this->setPng("assets/hondje_top_down.png");
+Tower::Tower(int tt) : Entity(){
+
     this->target = NULL;
-    this->scale = Vector2(0.5f, 0.5f);
+
     this->shootcounter = 0;
     this->wantsToShoot = false;
     this->ready = false;
     this->color.a = 100;
+    this->towerType = tt;
+    this->damage = 0;
+    switch (this->towerType) {
+        case 1:
+            this->setPng("assets/hondje_top_down.png");
+            this->scale = Vector2(0.5f, 0.5f);
+        break;
 
+        case 2:
+            this->setPng("assets/bunny.png");
+            this->scale = Vector2(0.4f, 0.4f);
+
+        break;
+    }
 }
 
 Tower::~Tower(){
@@ -54,11 +67,12 @@ void Tower::update(float deltaTime){
 
 Bullet* Tower::shoot(){
     Bullet* b;
-    b = new Bullet();
+    b = new Bullet(this->towerType);
     b->position = this->position;
     b->target = this->target;
     b->lastKnownPos = this->target->position;
     b->scale = Vector2(0.2f, 0.2f);
-    b->setPng("assets/projectiel.png");
+    b->damage = this->damage;
+
     return b;
 }

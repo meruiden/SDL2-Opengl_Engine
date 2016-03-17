@@ -6,7 +6,7 @@
 #include <project/enemy.h>
 class Tower : public Entity{
 public:
-    Tower();
+    Tower(int tt);
     virtual ~Tower();
     virtual void update(float deltaTime);
 
@@ -16,6 +16,8 @@ public:
     Enemy* target;
     Bullet* shoot();
     bool ready;
+    int towerType;
+    int damage;
 
 private:
 

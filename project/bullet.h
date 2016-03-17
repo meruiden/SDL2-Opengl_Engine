@@ -3,9 +3,11 @@
 
 #include <engine/entity.h>
 #include <project/enemy.h>
+
+
 class Bullet : public Entity{
 public:
-    Bullet();
+    Bullet(int bt);
     virtual ~Bullet();
     virtual void update(float deltaTime);
     Vector2 vel;
@@ -16,6 +18,10 @@ public:
     bool hasTarget;
     bool destroyMe;
     int damage;
+    int bulletType;
+    bool wantsTwinkle;
+    float twinkleCounter;
+
 private:
 
 protected:

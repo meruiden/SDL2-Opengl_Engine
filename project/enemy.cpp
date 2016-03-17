@@ -13,6 +13,7 @@ Enemy::Enemy() : Entity(){
     this->g = 255.0f;
     this->b = 255.0f;
     this->health = 100;
+
 }
 
 Enemy::~Enemy(){
@@ -20,7 +21,6 @@ Enemy::~Enemy(){
 }
 
 void Enemy::update(float deltaTime){
-
 
     Vector2 dir = Vector2(this->curtarget, this->position);
     speed += deltaTime;

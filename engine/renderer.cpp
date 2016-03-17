@@ -24,14 +24,13 @@ Renderer::Renderer(){
 
     // Open a window and create its OpenGL context
     window = SDL_CreateWindow(
-     "Dream Defenders",                  // window title
-     SDL_WINDOWPOS_UNDEFINED,           // initial x position
-     SDL_WINDOWPOS_UNDEFINED,           // initial y position
-     window_width,                               // width, in pixels
-     window_height,                               // height, in pixels
-     SDL_WINDOW_OPENGL | SDL_WINDOW_FULLSCREEN_DESKTOP           // flags - see below
+     "Dream Defenders",
+     SDL_WINDOWPOS_UNDEFINED,
+     SDL_WINDOWPOS_UNDEFINED,
+     window_width,
+     window_height,
+     SDL_WINDOW_OPENGL | SDL_WINDOW_FULLSCREEN_DESKTOP
     );
-
 
     if( window == NULL )
     {
