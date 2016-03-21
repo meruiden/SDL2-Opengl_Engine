@@ -4,6 +4,7 @@
 int Text::textIdCounter = 0;
 
 Text::Text(){
+    this->layer = 1;
     this->fontsize = 0;
     this->curmessage = "";
     this->lastmessage = "";

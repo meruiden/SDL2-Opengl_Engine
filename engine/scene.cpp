@@ -63,6 +63,30 @@ void Scene::removeEntity(Entity* child){
     }
 }
 
+void Scene::addShape(Shape* s){
+    std::vector< Shape* >::iterator it = shapes.begin();
+    while (it != shapes.end()) {
+        if ((*it)->getShapeId() == s->getShapeId()) {
+            return;
+        } else {
+            ++it;
+        }
+    }
+
+    shapes.push_back(s);
+}
+
+void Scene::removeShape(Shape* s){
+    std::vector< Shape* >::iterator it = shapes.begin();
+    while (it != shapes.end()) {
+        if ((*it)->getShapeId() == s->getShapeId()) {
+            it = shapes.erase(it);
+        } else {
+            ++it;
+        }
+    }
+}
+
 
 void Scene::addHudObject(HudObject* hudobject){
     std::vector< HudObject* >::iterator it = hudObjects.begin();
@@ -77,8 +101,6 @@ void Scene::addHudObject(HudObject* hudobject){
 }
 
 void Scene::removeHudObject(HudObject* hudobject){
-    GLuint ti = 0;
-
     std::vector< HudObject* >::iterator it = hudObjects.begin();
     while (it != hudObjects.end()) {
         if ((*it)->getEntityId() == hudobject->getEntityId()) {

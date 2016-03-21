@@ -30,6 +30,7 @@
 #include <engine/input.h>
 #include <engine/hudobject.h>
 #include <engine/text.h>
+#include <engine/shape.h>
 
 #include <sstream>
 class Renderer{
@@ -78,6 +79,8 @@ public:
     void updateDeltaTime();
     void displayFPS();
     void renderText(Text* t);
+    void renderShape(Shape* s);
+
     Camera* camera;
 private:
     double current_time;

@@ -40,6 +40,8 @@ public:
     void makeMesh();
     TTF_Font* f;
 
+    int layer;
+
 private:
     GLuint GLuintData[1];
     int w;

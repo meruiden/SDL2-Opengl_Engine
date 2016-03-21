@@ -12,6 +12,7 @@
 #include <project/simpleentity.h>
 #include <project/particle.h>
 #include <sstream>
+#include <engine/shape.h>
 class Mainscene : public Scene{
 public:
     Mainscene();
@@ -19,7 +20,7 @@ public:
     virtual void update(float deltaTime);
 
     bool toolbarMustPop;
-    std::vector<SimpleEntity*>layer;
+    
     Text* coinsText;
     int coins;
     std::vector<Vector2> pathpoints;

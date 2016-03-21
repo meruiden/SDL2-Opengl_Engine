@@ -10,9 +10,12 @@
 #include <iostream>
 class Entity{
 public:
+
     Entity();
     virtual ~Entity();
     virtual void update(float deltaTime);
+
+    int layer;
     void setTga(std::string imagepath);
     void setPng(std::string imagepath);
     Vector2 position;

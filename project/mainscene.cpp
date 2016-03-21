@@ -2,11 +2,8 @@
 
 Mainscene::Mainscene() : Scene(){
     SDL_ShowCursor(0);
-    for(unsigned int i = 0; i < 6; i++){
-        SimpleEntity* s = new SimpleEntity();
-        addEntity(s);
-        layer.push_back(s);
-    }
+    background = new SimpleEntity();
+    addEntity(background);
     cursor = new HudObject();
     lockBunny = false;
     choosebunny = new HudObject();
@@ -17,8 +14,8 @@ Mainscene::Mainscene() : Scene(){
     cursor->setPng("assets/pointer.png");
 
     captureMouseDistance = false;
-    background = new SimpleEntity();
-    layer[0]->addChild(background);
+
+
     background->setPng("assets/map_0-1.png");
     background->position = Vector2(1024/2, 1296/2);
     pathpoints.push_back(Vector2(801,357));
@@ -36,7 +33,8 @@ Mainscene::Mainscene() : Scene(){
         Worker* worker = new Worker();
         worker->homePos = Vector2(280+ (230*i), 490);
         worker->position = worker->homePos;
-        layer[3]->addChild(worker);
+        addEntity(worker);
+        worker->layer = 3;
         readyWorkers.push_back(worker);
     }
     lastDistance = Vector2();
@@ -50,7 +48,7 @@ Mainscene::Mainscene() : Scene(){
     notEnoughText->isHud = true;
     coins = 100;
     coinsText = new Text();
-    addText(coinsText);
+
     coinsText->isHud = true;
     coinsText->setFont("assets/ChunkFive-Roman.ttf", 30);
     coinsText->setText("Coins: ");
@@ -59,12 +57,14 @@ Mainscene::Mainscene() : Scene(){
     availableWorkersText = new Text();
     availableWorkersText->isHud = true;
     availableWorkersText->position =  Vector2(1280-230, 40);
-    availableWorkersText->setFont("assets/ChunkFive-Roman.ttf", 2);
+    availableWorkersText->setFont("assets/ChunkFive-Roman.ttf", 30);
     availableWorkersText->scale = Vector2(0.5f, 0.5f);
 
     //availableWorkersText->scale = Vector2(0.5f, 0.5f);
     availableWorkersText->setText("Available Workers: 0");
     addText(availableWorkersText);
+    addText(coinsText);
+
     scrollvel = Vector2();
     scrollacc = Vector2();
     counter = 0;
@@ -82,11 +82,12 @@ Mainscene::Mainscene() : Scene(){
     chooseframe->position = Vector2(1280-256/2, 720/2);
 
     choosedog = new HudObject();
-    addHudObject(choosedog);
+
     choosedog->setPng("assets/hondje_sleeping.png");
 
     choosedog->position = Vector2((1280/2)-750, 180);
     choosedog->scale = Vector2(0.3f, 0.3f);
+
     spawnEnemies(50);
     toolbar = new HudObject();
     toolbar->setPng("assets/toolbar.png");
@@ -96,7 +97,11 @@ Mainscene::Mainscene() : Scene(){
     lockDog = false;
     notenoughAlpha = 0;
     cursor->scale = Vector2(0.1f, 0.1f);
+    cursor->layer = 4;
+    choosedog->layer = 2;
+    choosebunny->layer = 2;
     addHudObject(choosebunny);
+    addHudObject(choosedog);
     addHudObject(cursor);
 }
 
@@ -140,7 +145,7 @@ Mainscene::~Mainscene(){
     clouds.clear();
 
     for(unsigned int i = 0; i < busyWorkers.size(); i++){
-        layer[3]->removeChild(busyWorkers[i]);
+        removeEntity(busyWorkers[i]);
         delete busyWorkers[i];
 
         busyWorkers[i] = NULL;
@@ -149,7 +154,7 @@ Mainscene::~Mainscene(){
     busyWorkers.clear();
 
     for(unsigned int i = 0; i < readyWorkers.size(); i++){
-        layer[3]->removeChild(readyWorkers[i]);
+        removeEntity(readyWorkers[i]);
         delete readyWorkers[i];
         readyWorkers[i] = NULL;
     }
@@ -161,13 +166,6 @@ Mainscene::~Mainscene(){
     }
     twinkles.clear();
 
-
-    for(unsigned int i = 0; i < layer.size(); i++){
-        removeEntity(layer[i]);
-        layer[i] = NULL;
-    }
-
-    layer.clear();
 }
 
 void Mainscene::update(float deltaTime){
@@ -215,7 +213,8 @@ void Mainscene::update(float deltaTime){
             Particle* t;
             t = new Particle(bullets[i]->rotation);
             twinkles.push_back(t);
-            layer[3]->addChild(t);
+            addEntity(t);
+            t->layer = 3;
             t->position = bullets[i]->position;
             bullets[i]->wantsTwinkle = false;
 
@@ -252,12 +251,13 @@ void Mainscene::update(float deltaTime){
             lockDog = false;
             Tower* tower = new Tower(1);
 
-            layer[1]->addChild(tower);
+            addEntity(tower);
+            tower->layer = 1;
             tower->position = input->getMouseToWorld(camera);
             if(choosedog->position.x < (chooseframe->position.x-(chooseframe->width()/2))){
                 if((coins-80) >= 0){
                     if(!assignWorker(tower)){
-                        layer[1]->removeChild(tower);
+                        removeEntity(tower);
                         delete tower;
                         tower = NULL;
                     }else{
@@ -269,12 +269,12 @@ void Mainscene::update(float deltaTime){
                     notenoughAlpha = 255;
                     notenoughAlpha = 255.0f;
                     notEnoughText->position.y = 720/2;
-                    layer[1]->removeChild(tower);
+                    removeEntity(tower);
                     delete tower;
                     tower = NULL;
                 }
             }else{
-                layer[1]->removeChild(tower);
+                removeEntity(tower);
                 delete tower;
                 tower = NULL;
             }
@@ -307,12 +307,13 @@ void Mainscene::update(float deltaTime){
             lockBunny = false;
             Tower* tower = new Tower(2);
 
-            layer[1]->addChild(tower);
+            addEntity(tower);
+            tower->layer = 1;
             tower->position = input->getMouseToWorld(camera);
             if(choosebunny->position.x < (chooseframe->position.x-(chooseframe->width()/2))){
                 if((coins-100) >= 0){
                     if(!assignWorker(tower)){
-                        layer[1]->removeChild(tower);
+                        removeEntity(tower);
                         delete tower;
                         tower = NULL;
                     }else{
@@ -324,12 +325,12 @@ void Mainscene::update(float deltaTime){
                     notenoughAlpha = 255;
                     notenoughAlpha = 255.0f;
                     notEnoughText->position.y = 720/2;
-                    layer[1]->removeChild(tower);
+                    removeEntity(tower);
                     delete tower;
                     tower = NULL;
                 }
             }else{
-                layer[1]->removeChild(tower);
+                removeEntity(tower);
                 delete tower;
                 tower = NULL;
             }
@@ -411,6 +412,7 @@ void Mainscene::update(float deltaTime){
                 b = towers[t]->shoot();
 
                 addEntity(b);
+                b->layer = 4;
                 b->hasTarget = true;
                 bullets.push_back(b);
                 shootSound->play();
@@ -426,7 +428,8 @@ void Mainscene::update(float deltaTime){
             c->position = busyWorkers[i]->cloudpos;
             c->setPng("assets/Bouwwolkje.png");
             c->scale = Vector2(0.5f, 0.5f);
-            layer[4]->addChild(c);
+            addEntity(c);
+            c->layer = 4;
             clouds.push_back(c);
             busyWorkers[i]->wantsCloud = false;
         }
@@ -469,7 +472,8 @@ void Mainscene::spawnEnemies(int number){
         e->position = Vector2(801,-500);
         e->position.y -= 200*i;
         enemies.push_back(e);
-        layer[2]->addChild(e);
+        addEntity(e);
+        e->layer = 2;
         e->curtarget = pathpoints[0];
     }
 }
@@ -497,7 +501,7 @@ void Mainscene::removeEnemy(Enemy* e){
     std::vector< Enemy* >::iterator it = enemies.begin();
     while (it != enemies.end()) {
         if ((*it)->getEntityId() == e->getEntityId()) {
-            layer[2]->removeChild((*it));
+            removeEntity((*it));
             delete (*it);
             (*it) = NULL;
             it = enemies.erase(it);
@@ -511,7 +515,7 @@ void Mainscene::removeCloud(SimpleEntity* e){
     std::vector< SimpleEntity* >::iterator it = clouds.begin();
     while (it != clouds.end()) {
         if ((*it)->getEntityId() == e->getEntityId()) {
-            layer[4]->removeChild((*it));
+            removeEntity((*it));
             delete (*it);
             (*it) = NULL;
             it = clouds.erase(it);
@@ -560,7 +564,7 @@ void Mainscene::removeTwinkle(Particle* p){
     std::vector< Particle* >::iterator it = twinkles.begin();
     while (it != twinkles.end()) {
         if ((*it)->getEntityId() == p->getEntityId()) {
-            layer[3]->removeChild((*it));
+            removeEntity((*it));
             delete (*it);
             (*it) = NULL;
             it = twinkles.erase(it);

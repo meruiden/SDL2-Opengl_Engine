@@ -2,9 +2,9 @@
 #define VECTOR2_H
 
 
-#define PI 3.14159265359f;
-#define RAD_TO_DEG 57.2957795f;
-#define DEG_TO_RAD 0.0174532925f;
+#define PI 3.14159265359
+#define RAD_TO_DEG 57.2957795
+#define DEG_TO_RAD 0.0174532925
 
 #include <string>
 #include <math.h>

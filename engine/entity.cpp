@@ -2,6 +2,7 @@
 
 int Entity::idCounter = 0;
 Entity::Entity(){
+    this->layer = 1;
     this->color = Color();
     this->input = NULL;
     this->parent = NULL;

@@ -29,7 +29,7 @@ Renderer::Renderer(){
      SDL_WINDOWPOS_UNDEFINED,
      window_width,
      window_height,
-     SDL_WINDOW_OPENGL | SDL_WINDOW_FULLSCREEN_DESKTOP
+     SDL_WINDOW_OPENGL /*| SDL_WINDOW_FULLSCREEN_DESKTOP*/
     );
 
     if( window == NULL )
@@ -171,6 +171,8 @@ Renderer::Renderer(){
 }
 
 void Renderer::renderScene(Scene* scene){
+        // Clear the screen
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         scene->window_width = this->window_width;
         scene->window_height = this->window_height;
         this->input->window_width = this->window_width;
@@ -195,43 +197,73 @@ void Renderer::renderScene(Scene* scene){
         }
         input->update();
         scene->update(dt);
-        // Clear the screen
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 
         camera->computeMatricesFromInputs(dt);
 
         ViewMatrix = camera->getViewMatrix();
 
-        //render all entities, hudObjects and texts
+        //render all entities, hudObjects, shapes and texts
+        int curlayer = 1;
+        bool needHigherLayer = true;
+        do{
+            needHigherLayer = false;
+            for(unsigned int i = 0; i < scene->entities.size(); i ++){
+                glm::mat4 mm = glm::mat4(1.0f);
+                if(scene->entities[i]->parent == NULL && scene->entities[i]->layer == curlayer){
+                    renderEntity(mm, scene->entities[i], false);
+                }
 
-        for(unsigned int i = 0; i < scene->entities.size(); i ++){
-            glm::mat4 mm = glm::mat4(1.0f);
-            if(scene->entities[i]->parent == NULL){
-                renderEntity(mm, scene->entities[i], false);
+                if(scene->entities[i]->parent == NULL && scene->entities[i]->layer > curlayer){
+                    needHigherLayer = true;
+                }
             }
-        }
 
-        for(unsigned int i = 0; i < scene->texts.size(); i ++){
-            if(scene->texts[i] != NULL && !scene->texts[i]->isHud){
-                renderText(scene->texts[i]);
+            for(unsigned int i = 0; i < scene->texts.size(); i ++){
+                if(scene->texts[i] != NULL && !scene->texts[i]->isHud && scene->texts[i]->layer == curlayer){
+                    renderText(scene->texts[i]);
+                }
+
+                if(scene->texts[i] != NULL && !scene->texts[i]->isHud && scene->texts[i]->layer > curlayer){
+                    needHigherLayer = true;
+                }
             }
-        }
+            curlayer++;
+        }while(needHigherLayer);
 
+        curlayer = 1;
+        needHigherLayer = true;
 
-        for(unsigned int i = 0; i < scene->hudObjects.size(); i ++){
-            glm::mat4 mm = glm::mat4(1.0f);
-            if(scene->hudObjects[i]->parent == NULL){
-                renderEntity(mm, scene->hudObjects[i], true);
+        do{
+
+            needHigherLayer = false;
+            for(unsigned int i = 0; i < scene->hudObjects.size(); i ++){
+                glm::mat4 mm = glm::mat4(1.0f);
+                if(scene->hudObjects[i]->parent == NULL && scene->hudObjects[i]->layer == curlayer){
+                    renderEntity(mm, scene->hudObjects[i], true);
+
+                }
+
+                if(scene->hudObjects[i]->parent == NULL && scene->hudObjects[i]->layer > curlayer){
+                    needHigherLayer = true;
+
+                }
             }
-        }
 
+            for(unsigned int i = 0; i < scene->texts.size(); i ++){
+                if(scene->texts[i] != NULL && scene->texts[i]->isHud && scene->texts[i]->layer == curlayer){
+                    renderText(scene->texts[i]);
 
+                }
 
-        for(unsigned int i = 0; i < scene->texts.size(); i ++){
-            if(scene->texts[i] != NULL && scene->texts[i]->isHud){
-                renderText(scene->texts[i]);
+                if(scene->texts[i] != NULL && scene->texts[i]->isHud && scene->texts[i]->layer > curlayer){
+                    needHigherLayer = true;
+
+                }
             }
-        }
+            curlayer ++;
+
+        }while(needHigherLayer);
 
         std::ostringstream ss;
         ss << "Time: ";
@@ -369,6 +401,7 @@ Renderer::~Renderer(){
     delete resman;
     delete input;
     delete camera;
+
     Mix_CloseAudio();
 
     glDeleteProgram(programID);
@@ -416,6 +449,7 @@ void Renderer::displayFPS(){
 }
 
 void Renderer::renderText(Text* t){
+
     glUniform2f(uvoffset, 0, 0);
     t->f = resman->getFont(t->getFontPath(), t->getFontSize());
 
@@ -484,6 +518,75 @@ void Renderer::renderText(Text* t){
 
     // Draw the triangles !
     glDrawArrays(GL_TRIANGLES, 0, 2*3); // 2*3 indices starting at 0 -> 2 triangles
+
+    glDisableVertexAttribArray(vertexPosition_modelspaceID);
+    glDisableVertexAttribArray(vertexUVID);
+}
+
+void Renderer::renderShape(Shape* t){
+    glUniform2f(uvoffset, 0, 0);
+
+    glm::mat4 MVP;
+    glm::mat4 modelMatrix = getModelMatrix(t->position, t->scale, t->rotation);
+
+
+    if(t->isHud){
+        glm::mat4 vm = glm::lookAt(
+                glm::vec3(0, 0, 5), // Camera is at (xpos,ypos,5), in World Space
+                glm::vec3(0, 0, 0), // and looks towards Z
+                glm::vec3(0, 1, 0)  // Head is up (set to 0,-1,0 to look upside-down)
+                );
+        MVP = ProjectionMatrix * vm * modelMatrix;
+    }else{
+        MVP = ProjectionMatrix * ViewMatrix * modelMatrix;
+    }
+
+    glUseProgram(programID);
+
+
+    // Send our transformation to the currently bound shader,
+    // in the "MVP" uniform
+    glUniformMatrix4fv(matrixID, 1, GL_FALSE, &MVP[0][0]);
+    glUniform1f(alphafloat, (float)t->color.a/255.0f);
+    glUniform1f(rfloat, (float)t->color.r/255.0f);
+    glUniform1f(gfloat, (float)t->color.g/255.0f);
+    glUniform1f(bfloat, (float)t->color.b/255.0f);
+    // Bind our texture in Texture Unit 0
+
+    glActiveTexture(GL_TEXTURE0);
+
+    glBindTexture(GL_TEXTURE_2D, t->texId());
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    // Set our "myTextureSampler" sampler to user Texture Unit 0
+    glUniform1i(textureID, 0);
+
+    // 1st attribute buffer : vertices
+    glEnableVertexAttribArray(vertexPosition_modelspaceID);
+    glBindBuffer(GL_ARRAY_BUFFER, t->getVtbuffer());
+    glVertexAttribPointer(
+                          vertexPosition_modelspaceID,  // The attribute we want to configure
+                          3,                            // size : x+y+z => 3
+                          GL_FLOAT,                     // type
+                          GL_FALSE,                     // normalized?
+                          0,                            // stride
+                          (void*)0                      // array buffer offset
+                          );
+
+    // 2nd attribute buffer : UVs
+    glEnableVertexAttribArray(vertexUVID);
+    glBindBuffer(GL_ARRAY_BUFFER, t->getUvbuffer());
+    glVertexAttribPointer(
+                          vertexUVID,                   // The attribute we want to configure
+                          2,                            // size : U+V => 2
+                          GL_FLOAT,                     // type
+                          GL_FALSE,                     // normalized?
+                          0,                            // stride
+                          (void*)0                      // array buffer offset
+                          );
+
+    // Draw the triangles !
+    glDrawArrays(GL_TRIANGLES, 0, t->numverts()); // 2*3 indices starting at 0 -> 2 triangles
 
     glDisableVertexAttribArray(vertexPosition_modelspaceID);
     glDisableVertexAttribArray(vertexUVID);

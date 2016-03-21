@@ -40,8 +40,9 @@ Image* Recoursemanager::getImage(std::string imagepath, bool tga){
 
 TTF_Font* Recoursemanager::getFont(std::string fontpath, int size){
     for(unsigned int i = 0; i < fontPaths.size(); i++){
-        if(this->fontPaths[i]== fontpath){
+        if(this->fontPaths[i] == fontpath){
             return this->loadedFonts[i];
+
         }
     }
     std::cout << "loading font: " << fontpath << std::endl;
