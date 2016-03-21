@@ -11,8 +11,8 @@ Mainscene::Mainscene() : Scene(){
     lockBunny = false;
     choosebunny = new HudObject();
     choosebunny->setPng("assets/bunny.png");
-
-    choosebunny->scale = Vector2(0.5f, 0.5f);
+    toolbarMustPop = false;
+    choosebunny->scale = Vector2(0.3f, 0.3f);
     choosebunny->position = Vector2(600, 360);
     cursor->setPng("assets/pointer.png");
 
@@ -52,13 +52,16 @@ Mainscene::Mainscene() : Scene(){
     coinsText = new Text();
     addText(coinsText);
     coinsText->isHud = true;
-    coinsText->setFont("assets/PrintClearly.ttf", 30);
+    coinsText->setFont("assets/ChunkFive-Roman.ttf", 30);
     coinsText->setText("Coins: ");
-    coinsText->position = Vector2(170, 720-30);
+    coinsText->position = Vector2(1280-230, 20);
+    coinsText->scale = Vector2(0.5f, 0.5f);
     availableWorkersText = new Text();
     availableWorkersText->isHud = true;
-    availableWorkersText->position = Vector2(170, 720-90);
-    availableWorkersText->setFont("assets/PrintClearly.ttf", 2);
+    availableWorkersText->position =  Vector2(1280-230, 40);
+    availableWorkersText->setFont("assets/ChunkFive-Roman.ttf", 2);
+    availableWorkersText->scale = Vector2(0.5f, 0.5f);
+
     //availableWorkersText->scale = Vector2(0.5f, 0.5f);
     availableWorkersText->setText("Available Workers: 0");
     addText(availableWorkersText);
@@ -74,7 +77,7 @@ Mainscene::Mainscene() : Scene(){
     shootSound->setVolume(30);
     explosionSound->setVolume(30);
     chooseframe = new HudObject();
-    chooseframe->setTga("assets/chooseframe.tga");
+    chooseframe->setPng("assets/chooseframe.png");
     addHudObject(chooseframe);
     chooseframe->position = Vector2(1280-256/2, 720/2);
 
@@ -82,12 +85,12 @@ Mainscene::Mainscene() : Scene(){
     addHudObject(choosedog);
     choosedog->setPng("assets/hondje_sleeping.png");
 
-    choosedog->position = Vector2((1280/2)-700, 180);
-    choosedog->scale = Vector2(0.5f, 0.5f);
+    choosedog->position = Vector2((1280/2)-750, 180);
+    choosedog->scale = Vector2(0.3f, 0.3f);
     spawnEnemies(50);
     toolbar = new HudObject();
     toolbar->setPng("assets/toolbar.png");
-    toolbar->position = Vector2(520, 720-(128/2));
+    toolbar->position = Vector2(520, 720+(64));
     toolbar->scale = Vector2(2,2);
     addHudObject(toolbar);
     lockDog = false;
@@ -235,10 +238,12 @@ void Mainscene::update(float deltaTime){
             choosedog->setPng("assets/hondje_sleeping.png");
         }
         if(lockDog){
+            choosedog->scale = Vector2(0.5f, 0.5f);
             choosedog->setPng("assets/hondje_active.png");
             choosedog->position = input->getMouseToScreen();
         }else{
-            choosedog->position = Vector2(1280-245/2, chooseframe->position.y - 180);
+            choosedog->scale = Vector2(0.3f, 0.3f);
+            choosedog->position = Vector2(1280-175, chooseframe->position.y - 254);
         }
 
 
@@ -287,11 +292,15 @@ void Mainscene::update(float deltaTime){
 
         }
         if(lockBunny){
+            choosebunny->scale = Vector2(0.5f, 0.5f);
             choosebunny->position = input->getMouseToScreen();
         }else{
-            choosebunny->position = Vector2(1280-245/2, chooseframe->position.y + 180);
+            choosebunny->scale = Vector2(0.3f, 0.3f);
+            choosebunny->position = Vector2(1280-80, chooseframe->position.y - 254);
         }
-
+        if(input->getMouseButtonDown(3)){
+            toolbarMustPop = true;
+        }
 
         if(input->getMouseButtonUp(1) && lockBunny){
 
@@ -410,29 +419,6 @@ void Mainscene::update(float deltaTime){
 
     }
 
-    if(input->scrollDown()){
-        chooseframe->position += Vector2(0, 30);
-    }
-
-    if(input->scrollUp()){
-        chooseframe->position += Vector2(0, -30);
-    }
-    if(input->getKey(SDLK_w)){
-        camera->position += Vector2(0,-150*deltaTime);
-    }
-
-    if(input->getKeyDown(SDLK_g)){
-        std::cout << "X: " << input->getMouseToWorld(camera).x << " Y: " << input->getMouseToWorld(camera).y << std::endl;
-    }
-    if(input->getKey(SDLK_a)){
-        camera->position += Vector2(-150*deltaTime,0);
-    }
-    if(input->getKey(SDLK_s)){
-        camera->position += Vector2(0,150*deltaTime);
-    }
-    if(input->getKey(SDLK_d)){
-        camera->position += Vector2(150*deltaTime,0);
-    }
     for(unsigned int i = 0; i < busyWorkers.size(); i++){
         if(busyWorkers[i]->wantsCloud){
             SimpleEntity* c;
@@ -462,6 +448,16 @@ void Mainscene::update(float deltaTime){
 
     if(camera->position.y > 1296-720){
         camera->position.y = 1296-720;
+    }
+
+    if(toolbarMustPop){
+        if(toolbar->position.y > 720-62){
+            toolbar->position.y -= 300*deltaTime;
+        }
+    }else{
+        if(toolbar->position.y < 720+64){
+            toolbar->position.y += 300*deltaTime;
+        }
     }
 
 }

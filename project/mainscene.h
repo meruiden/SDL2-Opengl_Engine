@@ -17,6 +17,8 @@ public:
     Mainscene();
     virtual ~Mainscene();
     virtual void update(float deltaTime);
+
+    bool toolbarMustPop;
     std::vector<SimpleEntity*>layer;
     Text* coinsText;
     int coins;

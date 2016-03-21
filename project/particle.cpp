@@ -4,7 +4,7 @@ Particle::Particle(float dirRot) : Entity(){
     float rads = dirRot*DEG_TO_RAD;
     this->dir = Vector2(cos(rads), sin(rads));
     this->dir.normalize();
-    this->dir *= 250;
+    this->dir *= 350;
     this->setPng("assets/twinkle.png");
 }
 

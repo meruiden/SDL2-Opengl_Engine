@@ -136,6 +136,7 @@ void Image::loadTGA(std::string ip){
 
     int sprite_width = width;
     int sprite_height = height;
+
     GLfloat g_vertex_buffer_data[] = {
         0.5f * sprite_width, -0.5f * sprite_height, 0.0f,
         -0.5f * sprite_width, -0.5f * sprite_height, 0.0f,

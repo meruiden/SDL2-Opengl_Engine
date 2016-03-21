@@ -161,13 +161,13 @@ Renderer::Renderer(){
 
     timer->isHud = true;
     fpsText->isHud = true;
-    std::cout << "Press F10 to view fps and time" << std::endl;
+
     int xx;
     int yy;
     SDL_GetWindowSize(window, &xx, &yy);
     window_width = xx;
     window_height = yy;
-
+    std::cout << "Press F10 to view fps and time" << std::endl;
 }
 
 void Renderer::renderScene(Scene* scene){
@@ -368,18 +368,19 @@ Renderer::~Renderer(){
     delete fpsText;
     delete resman;
     delete input;
+    delete camera;
     Mix_CloseAudio();
 
     glDeleteProgram(programID);
     glDeleteTextures(1, &textureID);
 
-    SDL_GL_DeleteContext(gContext);
+
     // Close and destroy the window
     SDL_DestroyWindow(window);
-
+    SDL_GL_DeleteContext(gContext);
     // Clean up
     SDL_Quit();
-    delete camera;
+
     std::cout << "DELETED RENDERER" << std::endl;
 }
 
