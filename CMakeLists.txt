@@ -124,6 +124,8 @@ add_library(engine
 	engine/text.h
 	engine/color.cpp
 	engine/color.h
+	engine/shape.cpp
+	engine/shape.h
 )
 
 add_executable(project
@@ -142,6 +144,7 @@ add_executable(project
 	project/simpleentity.h
 	project/particle.cpp
 	project/particle.h
+	
 )
 
 target_link_libraries(project

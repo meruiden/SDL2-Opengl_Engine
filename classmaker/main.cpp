@@ -4,7 +4,6 @@
 #include <string>
 #include <locale>
 
-
 int main () {
 	std::ofstream myfile;
 
@@ -12,11 +11,17 @@ int main () {
 	std::cout << "Enter the classname" << std::endl;
 	std::cin >> classname;
 	std::locale loc;
-
-
-
 	std::string fixedClassname;
-
+	std::string destdir;
+	std::cout << "Destination folder? type this for current location." << std::endl;
+	std::cin >> destdir;
+	if(destdir == "this"){
+		destdir = "";
+	}else{
+		if(destdir[destdir.length()-1] != 47){
+			destdir += "/";
+		}
+	}
 	std::toupper(fixedClassname[1],loc);
 	for (std::string::size_type i = 0; i < classname.length(); ++i){
 		if(i == 0){
@@ -41,7 +46,7 @@ int main () {
 	cppContent += "\n \n";
 	cppContent += fixedClassname + "::" + "~" + fixedClassname + "(){\n\n}";
 
-	myfile.open (lowercaseclass + "." + "cpp");
+	myfile.open (destdir + lowercaseclass + "." + "cpp");
 	myfile << cppContent;
 	myfile.close();
 
@@ -55,9 +60,12 @@ int main () {
 	hContent += uppercaseclass + "_H\n";
 	hContent += "#define " + uppercaseclass + "_H\n\n";
 	hContent += "class " + fixedClassname + "\n{\n";
-	hContent += "public:\n\nprivate:\n\n};\n\n#endif";
+	hContent += "public:\n\t";
+	hContent += fixedClassname + "();\n";
+	hContent += "\tvirtual ~" + fixedClassname + "();\n";
+	hContent += "\nprivate:\n\n};\n\n#endif";
 
-	myfile.open (lowercaseclass + "." + "h");
+	myfile.open (destdir + lowercaseclass + "." + "h");
 	myfile << hContent;
 	myfile.close();
 
