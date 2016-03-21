@@ -20,7 +20,7 @@ public:
     virtual void update(float deltaTime);
 
     bool toolbarMustPop;
-    
+    Shape* shape;
     Text* coinsText;
     int coins;
     std::vector<Vector2> pathpoints;

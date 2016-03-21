@@ -1,6 +1,9 @@
 #include "mainscene.h"
 
 Mainscene::Mainscene() : Scene(){
+    shape = new Shape();
+    shape->circle(300);
+    //addShape(shape);
     SDL_ShowCursor(0);
     background = new SimpleEntity();
     addEntity(background);
@@ -119,6 +122,7 @@ Mainscene::~Mainscene(){
     delete cursor;
     delete choosebunny;
     delete choosedog;
+    delete shape;
     for(unsigned int i = 0; i < towers.size(); i++){
         removeEntity(towers[i]);
         delete towers[i];

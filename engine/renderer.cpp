@@ -228,6 +228,16 @@ void Renderer::renderScene(Scene* scene){
                     needHigherLayer = true;
                 }
             }
+
+            for(unsigned int i = 0; i < scene->shapes.size(); i ++){
+                if(scene->shapes[i] != NULL && !scene->shapes[i]->isHud && scene->shapes[i]->layer == curlayer){
+                    renderShape(scene->shapes[i]);
+                }
+
+                if(scene->shapes[i] != NULL && !scene->shapes[i]->isHud && scene->shapes[i]->layer > curlayer){
+                    needHigherLayer = true;
+                }
+            }
             curlayer++;
         }while(needHigherLayer);
 
@@ -259,6 +269,16 @@ void Renderer::renderScene(Scene* scene){
                 if(scene->texts[i] != NULL && scene->texts[i]->isHud && scene->texts[i]->layer > curlayer){
                     needHigherLayer = true;
 
+                }
+            }
+
+            for(unsigned int i = 0; i < scene->shapes.size(); i ++){
+                if(scene->shapes[i] != NULL && scene->shapes[i]->isHud && scene->shapes[i]->layer == curlayer){
+                    renderShape(scene->shapes[i]);
+                }
+
+                if(scene->shapes[i] != NULL && scene->shapes[i]->isHud && scene->shapes[i]->layer > curlayer){
+                    needHigherLayer = true;
                 }
             }
             curlayer ++;
