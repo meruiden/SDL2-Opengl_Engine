@@ -91,7 +91,7 @@ add_definitions(
 	-DTW_NO_DIRECT3D
 	-DGLEW_STATIC
 	-D_CRT_SECURE_NO_WARNINGS
-	
+
 )
 
 # Project
@@ -144,7 +144,14 @@ add_executable(project
 	project/simpleentity.h
 	project/particle.cpp
 	project/particle.h
-	
+	project/towers/dogTower.h
+	project/towers/dogTower.cpp
+    project/bullets/dogbullet.cpp
+    project/bullets/dogbullet.h
+    project/bullets/bunnyBullet.h
+    project/bullets/bunnyBullet.cpp
+    project/towers/bunnytower.cpp
+    project/towers/bunnytower.h
 )
 
 target_link_libraries(project

@@ -29,7 +29,7 @@ Renderer::Renderer(){
      SDL_WINDOWPOS_UNDEFINED,
      window_width,
      window_height,
-     SDL_WINDOW_OPENGL /*| SDL_WINDOW_FULLSCREEN_DESKTOP*/
+     SDL_WINDOW_OPENGL | SDL_WINDOW_FULLSCREEN_DESKTOP
     );
 
     if( window == NULL )
@@ -418,22 +418,23 @@ glm::mat4 Renderer::getModelMatrix(Vector2 pos, Vector2 scal, float rot){
 Renderer::~Renderer(){
     delete timer;
     delete fpsText;
-    delete resman;
+
     delete input;
     delete camera;
-
+    delete resman;
     Mix_CloseAudio();
 
     glDeleteProgram(programID);
     glDeleteTextures(1, &textureID);
-
-
+    std::cout << "DELETED SHADER" << std::endl;
+    SDL_GL_DeleteContext(gContext);
+    std::cout << "DELETED CONTEXT" << std::endl;
     // Close and destroy the window
     SDL_DestroyWindow(window);
-    SDL_GL_DeleteContext(gContext);
+    std::cout << "DELETED WINDOW" << std::endl;
     // Clean up
-    SDL_Quit();
 
+    SDL_Quit();
     std::cout << "DELETED RENDERER" << std::endl;
 }
 

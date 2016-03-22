@@ -13,14 +13,20 @@
 #include <project/particle.h>
 #include <sstream>
 #include <engine/shape.h>
+#include <project/towers/dogTower.h>
+#include <project/towers/bunnyTower.h>
+
 class Mainscene : public Scene{
 public:
     Mainscene();
     virtual ~Mainscene();
     virtual void update(float deltaTime);
 
+    Text* rangeText;
+    Text* damageText;
+    bool canPlace;
     bool toolbarMustPop;
-    Shape* shape;
+    Shape* hudRangeIndicator;
     Text* coinsText;
     int coins;
     std::vector<Vector2> pathpoints;
@@ -62,6 +68,9 @@ public:
     std::vector<Particle*> twinkles;
 
     void removeTwinkle(Particle* p);
+    void checkIfCanPlace();
+
+    void setToolBarContent(float range, int damage);
 private:
 
 protected:

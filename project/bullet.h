@@ -7,9 +7,10 @@
 
 class Bullet : public Entity{
 public:
-    Bullet(int bt);
+    Bullet();
     virtual ~Bullet();
     virtual void update(float deltaTime);
+    void handleTarget(float deltaTime);
     Vector2 vel;
     Enemy* target;
     float speed;

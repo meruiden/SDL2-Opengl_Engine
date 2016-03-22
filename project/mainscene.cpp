@@ -1,10 +1,8 @@
 #include "mainscene.h"
 
 Mainscene::Mainscene() : Scene(){
-    shape = new Shape();
-    shape->circle(300);
-    //addShape(shape);
     SDL_ShowCursor(0);
+    canPlace = true;
     background = new SimpleEntity();
     addEntity(background);
     cursor = new HudObject();
@@ -18,7 +16,15 @@ Mainscene::Mainscene() : Scene(){
 
     captureMouseDistance = false;
 
-
+    hudRangeIndicator = new Shape();
+    hudRangeIndicator->isHud = true;
+    hudRangeIndicator->color = Color(252, 61, 61, 100);
+    damageText = new Text();
+    damageText->setFont("assets/ChunkFive-Roman.ttf", 30);
+    damageText->setText("Damage: 5");
+    damageText->isHud = true;
+    addText(damageText);
+    damageText->position = Vector2(300,750);
     background->setPng("assets/map_0-1.png");
     background->position = Vector2(1024/2, 1296/2);
     pathpoints.push_back(Vector2(801,357));
@@ -63,11 +69,15 @@ Mainscene::Mainscene() : Scene(){
     availableWorkersText->setFont("assets/ChunkFive-Roman.ttf", 30);
     availableWorkersText->scale = Vector2(0.5f, 0.5f);
 
-    //availableWorkersText->scale = Vector2(0.5f, 0.5f);
     availableWorkersText->setText("Available Workers: 0");
     addText(availableWorkersText);
     addText(coinsText);
-
+    rangeText = new Text();
+    rangeText->setFont("assets/ChunkFive-Roman.ttf", 30);
+    rangeText->setText("Shooting range: 100");
+    rangeText->isHud = true;
+    addText(rangeText);
+    rangeText->position = Vector2(300,750);
     scrollvel = Vector2();
     scrollacc = Vector2();
     counter = 0;
@@ -122,7 +132,10 @@ Mainscene::~Mainscene(){
     delete cursor;
     delete choosebunny;
     delete choosedog;
-    delete shape;
+    delete hudRangeIndicator;
+    delete rangeText;
+    delete damageText;
+
     for(unsigned int i = 0; i < towers.size(); i++){
         removeEntity(towers[i]);
         delete towers[i];
@@ -173,6 +186,9 @@ Mainscene::~Mainscene(){
 }
 
 void Mainscene::update(float deltaTime){
+    rangeText->position = Vector2(300,toolbar->position.y-30);
+    damageText->position = Vector2(300,toolbar->position.y+30);
+    checkIfCanPlace();
     cursor->position = input->getMouseToScreen()+(Vector2(3,cursor->height()*cursor->scale.y-15));
     if(input->getMouseButton(1)){
         cursor->setPng("assets/pointerClick.png");
@@ -230,10 +246,13 @@ void Mainscene::update(float deltaTime){
         }
     }
 
+
     if(choosedog != NULL){
         if(input->getMouseToScreen().x < choosedog->position.x + 50 && input->getMouseToScreen().x > choosedog->position.x - 50
             && input->getMouseToScreen().y < choosedog->position.y + 50 && input->getMouseToScreen().y > choosedog->position.y - 50){
                 if(input->getMouseButtonDown(1)){
+                    addShape(hudRangeIndicator);
+                    hudRangeIndicator->circle(200);
                     lockDog = true;
                 }
                 choosedog->setPng("assets/hondje_active.png");
@@ -241,9 +260,11 @@ void Mainscene::update(float deltaTime){
             choosedog->setPng("assets/hondje_sleeping.png");
         }
         if(lockDog){
+
             choosedog->scale = Vector2(0.5f, 0.5f);
             choosedog->setPng("assets/hondje_active.png");
             choosedog->position = input->getMouseToScreen();
+            hudRangeIndicator->position = choosedog->position;
         }else{
             choosedog->scale = Vector2(0.3f, 0.3f);
             choosedog->position = Vector2(1280-175, chooseframe->position.y - 254);
@@ -251,14 +272,15 @@ void Mainscene::update(float deltaTime){
 
 
         if(input->getMouseButtonUp(1) && lockDog){
+            removeShape(hudRangeIndicator);
 
             lockDog = false;
-            Tower* tower = new Tower(1);
+            DogTower* tower = new DogTower();
 
             addEntity(tower);
             tower->layer = 1;
             tower->position = input->getMouseToWorld(camera);
-            if(choosedog->position.x < (chooseframe->position.x-(chooseframe->width()/2))){
+            if(choosedog->position.x < (chooseframe->position.x-(chooseframe->width()/2)) && canPlace){
                 if((coins-80) >= 0){
                     if(!assignWorker(tower)){
                         removeEntity(tower);
@@ -281,7 +303,9 @@ void Mainscene::update(float deltaTime){
                 removeEntity(tower);
                 delete tower;
                 tower = NULL;
+
             }
+
         }
     }
 
@@ -289,6 +313,8 @@ void Mainscene::update(float deltaTime){
         if(input->getMouseToScreen().x < choosebunny->position.x + 50 && input->getMouseToScreen().x > choosebunny->position.x - 50
             && input->getMouseToScreen().y < choosebunny->position.y + 50 && input->getMouseToScreen().y > choosebunny->position.y - 50){
                 if(input->getMouseButtonDown(1)){
+                    addShape(hudRangeIndicator);
+                    hudRangeIndicator->circle(250);
                     lockBunny = true;
                 }
 
@@ -296,25 +322,24 @@ void Mainscene::update(float deltaTime){
 
         }
         if(lockBunny){
+
             choosebunny->scale = Vector2(0.5f, 0.5f);
             choosebunny->position = input->getMouseToScreen();
+            hudRangeIndicator->position = choosebunny->position;
         }else{
             choosebunny->scale = Vector2(0.3f, 0.3f);
             choosebunny->position = Vector2(1280-80, chooseframe->position.y - 254);
         }
-        if(input->getMouseButtonDown(3)){
-            toolbarMustPop = true;
-        }
 
         if(input->getMouseButtonUp(1) && lockBunny){
-
+            removeShape(hudRangeIndicator);
             lockBunny = false;
-            Tower* tower = new Tower(2);
+            BunnyTower* tower = new BunnyTower();
 
             addEntity(tower);
             tower->layer = 1;
             tower->position = input->getMouseToWorld(camera);
-            if(choosebunny->position.x < (chooseframe->position.x-(chooseframe->width()/2))){
+            if(choosebunny->position.x < (chooseframe->position.x-(chooseframe->width()/2)) && canPlace){
                 if((coins-100) >= 0){
                     if(!assignWorker(tower)){
                         removeEntity(tower);
@@ -421,6 +446,8 @@ void Mainscene::update(float deltaTime){
                 bullets.push_back(b);
                 shootSound->play();
             }
+
+
         }
 
     }
@@ -458,12 +485,26 @@ void Mainscene::update(float deltaTime){
     }
 
     if(toolbarMustPop){
-        if(toolbar->position.y > 720-62){
+        if(toolbar->position.y > 720-60){
             toolbar->position.y -= 300*deltaTime;
         }
     }else{
         if(toolbar->position.y < 720+64){
             toolbar->position.y += 300*deltaTime;
+        }
+    }
+
+    for(unsigned int i = 0; i < towers.size(); i++){
+        if(input->getMouseButtonDown(1)){
+            if(Vector2(input->getMouseToWorld(camera), towers[i]->position).magnitude() < 30 && towers[i]->ready){
+
+                toolbarMustPop = true;
+                setToolBarContent(towers[i]->shootingRange, towers[i]->damage);
+                i = towers.size();
+
+            }else{
+                toolbarMustPop = false;
+            }
         }
     }
 
@@ -577,4 +618,33 @@ void Mainscene::removeTwinkle(Particle* p){
             ++it;
         }
     }
+}
+
+void Mainscene::checkIfCanPlace(){
+
+    for(unsigned int i = 0; i< towers.size(); i++){
+        if(Vector2(input->getMouseToWorld(camera), towers[i]->position).magnitude() < 100 && (lockDog || lockBunny)){
+
+            towers[i]->color = Color(255,0,0, towers[i]->color.a);
+            canPlace = false;
+        }else{
+            towers[i]->color = Color(255,255,255, towers[i]->color.a);
+            canPlace = true;
+        }
+    }
+
+}
+
+void Mainscene::setToolBarContent(float range, int damage){
+
+    std::ostringstream ss;
+    ss << "Shooting range: ";
+    ss << range;
+    rangeText->setText(ss.str());
+    ss.str("");
+    ss.clear();
+    ss << "Damage: ";
+    ss << damage;
+    damageText->setText(ss.str());
+
 }

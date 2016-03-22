@@ -4,9 +4,10 @@
 #include <engine/entity.h>
 #include <project/bullet.h>
 #include <project/enemy.h>
+#include <engine/shape.h>
 class Tower : public Entity{
 public:
-    Tower(int tt);
+    Tower();
     virtual ~Tower();
     virtual void update(float deltaTime);
 
@@ -14,10 +15,12 @@ public:
 
     bool wantsToShoot;
     Enemy* target;
-    Bullet* shoot();
+    virtual Bullet* shoot();
     bool ready;
-    int towerType;
+
     int damage;
+    Shape* shootingRangeShape;
+    float shootingRange;
 
 private:
 

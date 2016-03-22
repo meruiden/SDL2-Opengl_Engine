@@ -4,7 +4,7 @@ Enemy::Enemy() : Entity(){
     this->atTarget = false;
     this->curtarget = Vector2();
     this->currPathPoint = 0;
-    this->collisionRadius = 20.0f;
+    this->collisionRadius = 30.0f;
     this->dead = false;
     this->scale = Vector2(0.3f, 0.3f);
     this->setPng("assets/Devilduck.png");
@@ -13,6 +13,7 @@ Enemy::Enemy() : Entity(){
     this->g = 255.0f;
     this->b = 255.0f;
     this->health = 100;
+
 
 }
 

@@ -3,6 +3,7 @@
 
 #include <engine/entity.h>
 #include <sstream>
+
 class Enemy : public Entity{
 public:
     Enemy();

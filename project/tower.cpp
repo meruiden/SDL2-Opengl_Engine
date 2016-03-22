@@ -1,31 +1,22 @@
 #include "tower.h"
 #include <iostream>
-Tower::Tower(int tt) : Entity(){
-
+Tower::Tower() : Entity(){
+    this->shootingRange = 100;
     this->target = NULL;
 
     this->shootcounter = 0;
     this->wantsToShoot = false;
     this->ready = false;
     this->color.a = 100;
-    this->towerType = tt;
     this->damage = 0;
-    switch (this->towerType) {
-        case 1:
-            this->setPng("assets/hondje_top_down.png");
-            this->scale = Vector2(0.5f, 0.5f);
-        break;
 
-        case 2:
-            this->setPng("assets/bunny.png");
-            this->scale = Vector2(0.4f, 0.4f);
-
-        break;
-    }
+    this->shootingRangeShape = new Shape();
+    this->shootingRangeShape->circle(shootingRange);
+    this->shootingRangeShape->color = Color(252, 61, 61, 100);
 }
 
 Tower::~Tower(){
-
+    delete this->shootingRangeShape;
 }
 
 void Tower::update(float deltaTime){
@@ -45,10 +36,10 @@ void Tower::update(float deltaTime){
         float rotateTo = 0.0f;
 
         if(target != NULL && !target->dead){
-            if( Vector2(target->position, this->position).magnitude() < 360 ){
+            if( disvec.magnitude() < (this->shootingRange + target->collisionRadius) ){
                 rotateTo = atan2(disvec.y, disvec.x)*RAD_TO_DEG;
                 rotateTo += 90;
-                if(this->shootcounter >= 1.0f && disvec.magnitude() < 360){
+                if(this->shootcounter >= 1.0f && disvec.magnitude() < (this->shootingRange + target->collisionRadius)){
                     this->wantsToShoot = true;
                 }
             }else{
@@ -67,11 +58,10 @@ void Tower::update(float deltaTime){
 
 Bullet* Tower::shoot(){
     Bullet* b;
-    b = new Bullet(this->towerType);
+    b = new Bullet();
     b->position = this->position;
     b->target = this->target;
     b->lastKnownPos = this->target->position;
-    b->scale = Vector2(0.2f, 0.2f);
     b->damage = this->damage;
 
     return b;
