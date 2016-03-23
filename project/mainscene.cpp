@@ -400,7 +400,7 @@ void Mainscene::update(float deltaTime){
 
     for(unsigned int i = 0; i < enemies.size(); i ++){
         if(enemies[i]->atTarget){
-            if(pathpoints.size()-1 > enemies[i]->currPathPoint){
+            if(pathpoints.size()-1 > (unsigned)enemies[i]->currPathPoint){
                 enemies[i]->atTarget = false;
                 enemies[i]->currPathPoint ++;
                 enemies[i]->curtarget = pathpoints[enemies[i]->currPathPoint];
@@ -517,7 +517,8 @@ void Mainscene::update(float deltaTime){
 }
 
 void Mainscene::spawnEnemies(int number){
-    for(unsigned int i = 0; i < number; i ++){
+
+    for(unsigned int i = 0; i < (unsigned)number; i ++){
         Enemy* e;
         e = new Enemy();
         e->position = Vector2(801,-500);
