@@ -144,12 +144,12 @@ add_executable(project
 	project/simpleentity.h
 	project/particle.cpp
 	project/particle.h
-	project/towers/dogTower.h
-	project/towers/dogTower.cpp
+	project/towers/dogtower.h
+	project/towers/dogtower.cpp
     project/bullets/dogbullet.cpp
     project/bullets/dogbullet.h
-    project/bullets/bunnyBullet.h
-    project/bullets/bunnyBullet.cpp
+    project/bullets/bunnybullet.h
+    project/bullets/bunnybullet.cpp
     project/towers/bunnytower.cpp
     project/towers/bunnytower.h
 )

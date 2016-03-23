@@ -267,7 +267,7 @@ void Mainscene::update(float deltaTime){
             hudRangeIndicator->position = choosedog->position;
         }else{
             choosedog->scale = Vector2(0.3f, 0.3f);
-            choosedog->position = Vector2(1280-175, chooseframe->position.y - 254);
+            choosedog->position = Vector2(1280-190, chooseframe->position.y - 240);
         }
 
 
@@ -278,7 +278,7 @@ void Mainscene::update(float deltaTime){
             DogTower* tower = new DogTower();
 
             addEntity(tower);
-            tower->layer = 1;
+            tower->layer = 2;
             tower->position = input->getMouseToWorld(camera);
             if(choosedog->position.x < (chooseframe->position.x-(chooseframe->width()/2)) && canPlace){
                 if((coins-80) >= 0){
@@ -327,8 +327,8 @@ void Mainscene::update(float deltaTime){
             choosebunny->position = input->getMouseToScreen();
             hudRangeIndicator->position = choosebunny->position;
         }else{
-            choosebunny->scale = Vector2(0.3f, 0.3f);
-            choosebunny->position = Vector2(1280-80, chooseframe->position.y - 254);
+            choosebunny->scale = Vector2(0.25f, 0.25f);
+            choosebunny->position = Vector2(1280-66, chooseframe->position.y - 240);
         }
 
         if(input->getMouseButtonUp(1) && lockBunny){
@@ -337,7 +337,7 @@ void Mainscene::update(float deltaTime){
             BunnyTower* tower = new BunnyTower();
 
             addEntity(tower);
-            tower->layer = 1;
+            tower->layer = 2;
             tower->position = input->getMouseToWorld(camera);
             if(choosebunny->position.x < (chooseframe->position.x-(chooseframe->width()/2)) && canPlace){
                 if((coins-100) >= 0){
@@ -494,16 +494,22 @@ void Mainscene::update(float deltaTime){
         }
     }
 
+    if(input->getMouseButtonDown(1)){
+        for(unsigned int i = 0; i < towers.size(); i++){
+            removeShape(towers[i]->shootingRangeShape);
+        }
+    }
     for(unsigned int i = 0; i < towers.size(); i++){
         if(input->getMouseButtonDown(1)){
             if(Vector2(input->getMouseToWorld(camera), towers[i]->position).magnitude() < 30 && towers[i]->ready){
-
+                towers[i]->shootingRangeShape->circle(towers[i]->shootingRange);
+                addShape(towers[i]->shootingRangeShape);
                 toolbarMustPop = true;
                 setToolBarContent(towers[i]->shootingRange, towers[i]->damage);
                 i = towers.size();
-
             }else{
                 toolbarMustPop = false;
+
             }
         }
     }

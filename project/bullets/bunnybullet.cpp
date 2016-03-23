@@ -2,7 +2,6 @@
 
 BunnyBullet::BunnyBullet() : Bullet(){
     this->setPng("assets/regenboog_projectiel.png");
-    
 }
 
 BunnyBullet::~BunnyBullet(){

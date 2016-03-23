@@ -13,8 +13,8 @@
 #include <project/particle.h>
 #include <sstream>
 #include <engine/shape.h>
-#include <project/towers/dogTower.h>
-#include <project/towers/bunnyTower.h>
+#include <project/towers/dogtower.h>
+#include <project/towers/bunnytower.h>
 
 class Mainscene : public Scene{
 public:

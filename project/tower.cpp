@@ -20,7 +20,7 @@ Tower::~Tower(){
 }
 
 void Tower::update(float deltaTime){
-
+    this->shootingRangeShape->position = this->position;
     if(this->ready && this->target != NULL){
         if(target->dead){
             this->target = NULL;
