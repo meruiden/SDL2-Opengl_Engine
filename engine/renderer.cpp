@@ -29,7 +29,7 @@ Renderer::Renderer(){
      SDL_WINDOWPOS_UNDEFINED,
      window_width,
      window_height,
-     SDL_WINDOW_OPENGL | SDL_WINDOW_FULLSCREEN_DESKTOP
+     SDL_WINDOW_OPENGL /*| SDL_WINDOW_FULLSCREEN_DESKTOP*/
     );
 
     if( window == NULL )
