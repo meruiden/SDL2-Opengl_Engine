@@ -15,7 +15,7 @@ Mainscene::Mainscene() : Scene(){
     cursor->setPng("assets/pointer.png");
 
     captureMouseDistance = false;
-
+    dreamHealth = 100.0f;
     hudRangeIndicator = new Shape();
     hudRangeIndicator->isHud = true;
     hudRangeIndicator->color = Color(252, 61, 61, 100);
@@ -116,6 +116,24 @@ Mainscene::Mainscene() : Scene(){
     addHudObject(choosebunny);
     addHudObject(choosedog);
     addHudObject(cursor);
+    statusBarAnger = new HudObject();
+    statusBarAnger->setPng("assets/status_bar_anger.png");
+    addHudObject(statusBarAnger);
+    statusBarAnger->position = Vector2(440,18);
+    statusBarAnger->scale = Vector2(0.92f, 1);
+
+    statusBarHappiness = new HudObject();
+    statusBarHappiness->setPng("assets/status_bar_happiness.png");
+    addHudObject(statusBarHappiness);
+    statusBarHappiness->position = Vector2(620,18);
+    statusBarHappiness->scale = Vector2(0.92f, 1);
+    statusBarFrame = new HudObject();
+    statusBarFrame->setPng("assets/status_bar_frame.png");
+    addHudObject(statusBarFrame);
+    statusBarFrame->position = Vector2(530, 18);
+
+    statusBarAnger->uvOffset = Vector2(-0.5f, 0);
+
 }
 
 Mainscene::~Mainscene(){
@@ -135,7 +153,8 @@ Mainscene::~Mainscene(){
     delete hudRangeIndicator;
     delete rangeText;
     delete damageText;
-
+    delete statusBarFrame;
+    delete statusBarAnger;
     for(unsigned int i = 0; i < towers.size(); i++){
         removeEntity(towers[i]);
         delete towers[i];
@@ -186,6 +205,13 @@ Mainscene::~Mainscene(){
 }
 
 void Mainscene::update(float deltaTime){
+    if(dreamHealth > 100.0f){
+        statusBarHappiness->uvOffset = Vector2(((1.0f/100)*(-(dreamHealth-100))+1), 0);
+        statusBarAnger->uvOffset = Vector2(-1, 0);
+    }
+
+    dreamHealth += deltaTime*10;
+    std::cout << dreamHealth << std::endl;
     rangeText->position = Vector2(300,toolbar->position.y-30);
     damageText->position = Vector2(300,toolbar->position.y+30);
     checkIfCanPlace();

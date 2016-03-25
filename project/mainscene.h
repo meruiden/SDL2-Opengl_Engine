@@ -71,6 +71,12 @@ public:
     void checkIfCanPlace();
 
     void setToolBarContent(float range, int damage);
+
+    HudObject* statusBarFrame;
+    HudObject* statusBarAnger;
+    HudObject* statusBarHappiness;
+
+    float dreamHealth;
 private:
 
 protected:

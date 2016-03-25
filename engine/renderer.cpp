@@ -302,7 +302,7 @@ void Renderer::renderScene(Scene* scene){
 void Renderer::renderEntity(glm::mat4& modelMatrix, Entity* entity, bool isHud){
 
     if(entity->getImgPath() != "NULL" && entity->getImgPath() != "" && entity->getImgPath() != " " ){
-        glUniform2f(uvoffset, entity->uvOffset.x, entity->uvOffset.y);
+
         Image* img;
         img = NULL;
         modelMatrix *= getModelMatrix(entity->position, entity->scale, entity->rotation);
@@ -339,7 +339,7 @@ void Renderer::renderEntity(glm::mat4& modelMatrix, Entity* entity, bool isHud){
             // Send our transformation to the currently bound shader,
             // in the "MVP" uniform
             glUniformMatrix4fv(matrixID, 1, GL_FALSE, &MVP[0][0]);
-
+            glUniform2f(uvoffset, entity->uvOffset.x, entity->uvOffset.y);
             glUniform1f(alphafloat, (float)entity->color.a/255.0f);
             glUniform1f(rfloat, (float)entity->color.r/255.0f);
             glUniform1f(gfloat, (float)entity->color.g/255.0f);
