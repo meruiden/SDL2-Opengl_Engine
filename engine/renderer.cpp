@@ -29,8 +29,9 @@ Renderer::Renderer(){
      SDL_WINDOWPOS_UNDEFINED,
      window_width,
      window_height,
-     SDL_WINDOW_OPENGL /*| SDL_WINDOW_FULLSCREEN_DESKTOP*/
+     SDL_WINDOW_OPENGL
     );
+
 
     if( window == NULL )
     {
@@ -162,16 +163,18 @@ Renderer::Renderer(){
     timer->isHud = true;
     fpsText->isHud = true;
 
-    int xx;
-    int yy;
-    SDL_GetWindowSize(window, &xx, &yy);
-    window_width = xx;
-    window_height = yy;
     std::cout << "Press F10 to view fps and time" << std::endl;
+
 }
 
 void Renderer::renderScene(Scene* scene){
         // Clear the screen
+        int xx;
+        int yy;
+        SDL_GetWindowSize(window, &xx, &yy);
+        window_width = xx;
+        window_height = yy;
+
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         scene->window_width = this->window_width;
         scene->window_height = this->window_height;

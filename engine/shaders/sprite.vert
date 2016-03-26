@@ -6,7 +6,7 @@ attribute vec2 vertexUV;
 
 // Output data ; will be interpolated for each fragment.
 varying vec2 UV;
-uniform uvOffset vec2;
+uniform vec2 uvOffset;
 
 // Values that stay constant for the whole mesh.
 uniform mat4 MVP;

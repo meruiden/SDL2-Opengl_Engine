@@ -1,6 +1,7 @@
 #include "mainscene.h"
 
 Mainscene::Mainscene() : Scene(){
+    
     SDL_ShowCursor(0);
     canPlace = true;
     background = new SimpleEntity();
@@ -205,13 +206,7 @@ Mainscene::~Mainscene(){
 }
 
 void Mainscene::update(float deltaTime){
-    if(dreamHealth > 100.0f){
-        statusBarHappiness->uvOffset = Vector2(((1.0f/100)*(-(dreamHealth-100))+1), 0);
-        statusBarAnger->uvOffset = Vector2(-1, 0);
-    }
 
-    dreamHealth += deltaTime*10;
-    std::cout << dreamHealth << std::endl;
     rangeText->position = Vector2(300,toolbar->position.y-30);
     damageText->position = Vector2(300,toolbar->position.y+30);
     checkIfCanPlace();
@@ -221,13 +216,14 @@ void Mainscene::update(float deltaTime){
     }else{
         cursor->setPng("assets/pointer.png");
     }
-    if(input->getMouseToScreen().y > 620){
-        camera->position.y += (((input->getMouseToScreen().y - 620)/100)*400)*deltaTime;
+    if(input->getMouseToScreen().y > 640){
+        camera->position.y += (((input->getMouseToScreen().y - 640)/100)*400)*deltaTime;
     }
 
-    if(input->getMouseToScreen().y < 120){
-        camera->position.y -= (((120-input->getMouseToScreen().y)/100)*400)*deltaTime;
+    if(input->getMouseToScreen().y < 80){
+        camera->position.y -= (((80-input->getMouseToScreen().y)/100)*400)*deltaTime;
     }
+
     if(notenoughAlpha < 0){
         notenoughAlpha = 0;
     }
@@ -432,8 +428,14 @@ void Mainscene::update(float deltaTime){
                 enemies[i]->curtarget = pathpoints[enemies[i]->currPathPoint];
             }
         }
-        if(enemies[i]->dead){
+        if(enemies[i]->atTarget ){
             removeEnemy(enemies[i]);
+            if(enemies[i]->dead){
+                dreamHealth += 5;
+
+            }else{
+                dreamHealth -= 10;
+            }
         }
     }
 
@@ -538,6 +540,27 @@ void Mainscene::update(float deltaTime){
 
             }
         }
+    }
+
+
+
+    if(dreamHealth > 200){
+        dreamHealth = 200;
+    }
+
+    if(dreamHealth < 0){
+        dreamHealth = 0;
+    }
+
+    if(dreamHealth > 100.0f){
+        statusBarHappiness->uvOffset = Vector2(((1.0f/100)*(-(dreamHealth-100))+1), 0);
+        statusBarAnger->uvOffset = Vector2(-1, 0);
+    }else if(dreamHealth < 100.0f){
+        statusBarHappiness->uvOffset = Vector2(1, 0);
+        statusBarAnger->uvOffset = Vector2(-(1.0f/100.0f)*dreamHealth, 0);
+    }else{
+        statusBarHappiness->uvOffset = Vector2(1, 0);
+        statusBarAnger->uvOffset = Vector2(-1, 0);
     }
 
 }
