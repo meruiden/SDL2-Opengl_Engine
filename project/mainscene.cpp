@@ -1,7 +1,7 @@
 #include "mainscene.h"
 
 Mainscene::Mainscene() : Scene(){
-    
+
     SDL_ShowCursor(0);
     canPlace = true;
     background = new SimpleEntity();
@@ -38,7 +38,7 @@ Mainscene::Mainscene() : Scene(){
     pathpoints.push_back(Vector2(802,650));
     pathpoints.push_back(Vector2(802,958));
     pathpoints.push_back(Vector2(137,967));
-    pathpoints.push_back(Vector2(131,1426));
+    pathpoints.push_back(Vector2(131,1300));
     for(unsigned int i = 0; i < 3; i++){
         Worker* worker = new Worker();
         worker->homePos = Vector2(280+ (230*i), 490);
@@ -292,7 +292,6 @@ void Mainscene::update(float deltaTime){
             choosedog->position = Vector2(1280-190, chooseframe->position.y - 240);
         }
 
-
         if(input->getMouseButtonUp(1) && lockDog){
             removeShape(hudRangeIndicator);
 
@@ -429,13 +428,12 @@ void Mainscene::update(float deltaTime){
             }
         }
         if(enemies[i]->atTarget ){
-            removeEnemy(enemies[i]);
             if(enemies[i]->dead){
-                dreamHealth += 5;
-
+                dreamHealth += 1;
             }else{
                 dreamHealth -= 10;
             }
+            removeEnemy(enemies[i]);
         }
     }
 
@@ -446,19 +444,29 @@ void Mainscene::update(float deltaTime){
     }
 
     if(towers.size() > 0 && enemies.size() > 0){
+        Enemy* target;
+        for(unsigned int i = 0; i < enemies.size(); i++){
+            if(!enemies[i]->dead){
+                target = enemies[i];
+                i = enemies.size();
+            }
+        }
 
-        Enemy* target = enemies[0];
 
         for(unsigned int t = 0; t < towers.size(); t++){
             for(unsigned int i = 0; i < enemies.size(); i ++){
-                Vector2 curdisvec = Vector2(target->position, towers[t]->position);
-                Vector2 disvec = Vector2(enemies[i]->position, towers[t]->position);
-                if(disvec.magnitude() < curdisvec.magnitude() && !enemies[i]->dead){
-                    target = enemies[i];
+                if(!enemies[i]->dead){
+                    Vector2 curdisvec = Vector2(target->position, towers[t]->position);
+                    Vector2 disvec = Vector2(enemies[i]->position, towers[t]->position);
+                    if(disvec.magnitude() < curdisvec.magnitude()){
+                        target = enemies[i];
+                    }
+
                 }
             }
             if((towers[t]->target == NULL || towers[t]->target->dead )&& towers[t]->ready){
                 towers[t]->target = target;
+
             }
 
             if(towers[t]->wantsToShoot && towers[t]->target != NULL && !towers[t]->target->dead){

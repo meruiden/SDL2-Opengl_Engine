@@ -9,9 +9,7 @@ Enemy::Enemy() : Entity(){
     this->scale = Vector2(0.3f, 0.3f);
     this->setPng("assets/Devilduck.png");
     speed = 40.0f;
-    this->r = 255.0f;
-    this->g = 255.0f;
-    this->b = 255.0f;
+
     this->health = 100;
 
 
@@ -22,7 +20,11 @@ Enemy::~Enemy(){
 }
 
 void Enemy::update(float deltaTime){
-
+    if(this->dead){
+        this->color = Color(600,600,600);
+    }else{
+        this->color = Color(255,255,255);
+    }
     Vector2 dir = Vector2(this->curtarget, this->position);
     speed += deltaTime;
 
@@ -49,7 +51,4 @@ void Enemy::update(float deltaTime){
     float rads = (dir.getAngle()) * DEG_TO_RAD;
     this->position += (Vector2(cos(rads), sin(rads))*speed)*deltaTime;
 
-    this->color.r = this->r;
-    this->color.g = this->g;
-    this->color.b = this->b;
 }
