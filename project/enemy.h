@@ -16,7 +16,8 @@ public:
     Vector2 curtarget;
     float speed;
     float r, g, b;
-
+    float spriteTimer;
+    
     int health;
 private:
 

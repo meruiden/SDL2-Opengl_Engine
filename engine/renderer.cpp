@@ -198,6 +198,19 @@ void Renderer::renderScene(Scene* scene){
             }
             scene->entities[i]->update(dt);
         }
+
+
+        for(unsigned int i = 0; i < scene->hudObjects.size(); i ++){
+            scene->hudObjects[i]->input = input;
+            for(unsigned int a = 0; a < scene->hudObjects[i]->getChildren().size(); a++){
+                if(!scene->hasEntity(scene->hudObjects[i]->getChildren()[a])){
+                    scene->hudObjects[i]->getChildren()[a]->input = input;
+                    scene->hudObjects[i]->getChildren()[a]->update(dt);
+                }
+            }
+            scene->hudObjects[i]->update(dt);
+        }
+
         input->update();
         scene->update(dt);
 

@@ -23,6 +23,19 @@ void Entity::update(float deltaTime){
 
 }
 
+bool Entity::mouseOver(Camera* camera){
+    Vector2 v = input->getMouseToWorld(camera);
+
+    if(v.x < this->position.x+((this->width()/2)*this->scale.x)
+    && v.x > this->position.x-((this->width()/2)*this->scale.x)
+    && v.y < this->position.y+((this->height()/2)*this->scale.y)
+    && v.y > this->position.y-((this->height()/2)*this->scale.y)){
+        return true;
+    }
+
+    return false;
+}
+
 void Entity::setTga(std::string imagepath){
     this->imagePath = imagepath;
     this->extention = "tga";

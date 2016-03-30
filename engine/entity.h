@@ -41,6 +41,8 @@ public:
     float height(){return _height;}
     void height(float h){this->_height = h;}
     Color color;
+
+    bool mouseOver(Camera* camera);
 private:
     std::string imagePath;
     std::string extention;

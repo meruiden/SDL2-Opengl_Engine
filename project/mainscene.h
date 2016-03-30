@@ -15,6 +15,7 @@
 #include <engine/shape.h>
 #include <project/towers/dogtower.h>
 #include <project/towers/bunnytower.h>
+#include <project/menuitem.h>
 
 class Mainscene : public Scene{
 public:
@@ -35,8 +36,8 @@ public:
     Vector2 scrollvel;
     Vector2 scrollacc;
     HudObject* chooseframe;
-    HudObject* choosedog;
-    HudObject* choosebunny;
+    
+    void setMenuItems();
     bool lockBunny;
     std::vector<Enemy*> enemies;
     std::vector<Bullet*> bullets;
@@ -69,14 +70,19 @@ public:
 
     void removeTwinkle(Particle* p);
     void checkIfCanPlace();
-
-    void setToolBarContent(float range, int damage);
-
+    Tower* selectedTower;
+    Text* upgradePriceText;
+    void setToolBarContent(float range, int damage, int price);
+    Text* upgradetxt;
+    HudObject* upgradeBtn;
     HudObject* statusBarFrame;
     HudObject* statusBarAnger;
     HudObject* statusBarHappiness;
 
     float dreamHealth;
+    std::vector<MenuItem*> menuItems;
+    void handleMenuItems();
+    MenuItem* lockedItem;
 private:
 
 protected:

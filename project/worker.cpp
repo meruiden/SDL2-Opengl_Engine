@@ -5,7 +5,7 @@ Worker::Worker() : Entity(){
     this->wantsCloud = false;
     this->cloudpos = Vector2();
     this->setPng("assets/worker.png");
-    this->scale = Vector2(0.5f, 0.5f);
+    this->scale = Vector2(0.4f, 0.4f);
     this->working = false;
     this->target = NULL;
     this->buildProgress = 0;
@@ -25,7 +25,7 @@ void Worker::update(float deltaTime){
         Vector2 thisToTarget = Vector2(this->position, target->position);
         this->rotation = thisToTarget.getAngle()+90;
         float rads = (this->rotation+90) * DEG_TO_RAD;
-        if(thisToTarget.magnitude() > 120){
+        if(thisToTarget.magnitude() > 100){
             this->position += (Vector2(cos(rads), sin(rads))*100)*deltaTime;
             spriteTimer += deltaTime;
 

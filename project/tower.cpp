@@ -9,11 +9,12 @@ Tower::Tower() : Entity(){
     this->ready = false;
     this->color.a = 100;
     this->damage = 0;
-
+    this->level = 0;
     this->shootingRangeShape = new Shape();
     this->shootingRangeShape->circle(shootingRange);
     this->shootingRangeShape->color = Color(252, 61, 61, 100);
-
+    this->upgrade();
+    this->upgradePrice = 10;
 }
 
 Tower::~Tower(){
@@ -41,7 +42,6 @@ void Tower::update(float deltaTime){
 
         if(target != NULL && !target->dead){
             if( disvec.magnitude() < (this->shootingRange + target->collisionRadius) ){
-
                 rotateTo = atan2(disvec.y, disvec.x)*RAD_TO_DEG;
                 rotateTo += 90;
                 if(this->shootcounter >= 1.0f){
@@ -60,6 +60,18 @@ void Tower::update(float deltaTime){
     }
 
 
+}
+
+void Tower::upgrade(){
+    this->level ++;
+    this->shootingRange += 5*this->level;
+    this->shootingRangeShape->circle(shootingRange);
+
+    this->upgradePrice += 15*this->level;
+    if(this->level == 5){
+        this->upgradePrice = 0;
+    }
+    this->damage += 3*this->level;
 }
 
 Bullet* Tower::shoot(){

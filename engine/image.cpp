@@ -174,6 +174,10 @@ void Image::loadPNG(std::string ip){
 
     SDL_Surface * plaatje = NULL;
     plaatje = IMG_Load(ip.c_str());
+    if(plaatje == NULL){
+        printf("Can't open %s.\n", ip.c_str());
+        return;
+    }
     int mode = GL_BGRA;
     switch (plaatje->format->BytesPerPixel)
         {

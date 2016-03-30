@@ -152,6 +152,8 @@ add_executable(project
     project/bullets/bunnybullet.cpp
     project/towers/bunnytower.cpp
     project/towers/bunnytower.h
+    project/menuitem.cpp
+    project/menuitem.h
 )
 
 target_link_libraries(project

@@ -8,6 +8,8 @@ public:
 	DogTower();
 	virtual ~DogTower();
 	virtual Bullet* shoot();
+
+
 private:
 
 };

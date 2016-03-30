@@ -4,10 +4,11 @@ BunnyTower::BunnyTower() : Tower(){
     this->setPng("assets/bunny.png");
     this->scale = Vector2(0.4f, 0.4f);
     this->shootingRange = 250;
+    this->damage = 40;
 }
 
 BunnyTower::~BunnyTower(){
-    
+
 }
 
 Bullet* BunnyTower::shoot(){

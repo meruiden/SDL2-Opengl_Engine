@@ -4,6 +4,7 @@ DogTower::DogTower() : Tower(){
     this->setPng("assets/hondje_top_down.png");
     this->scale = Vector2(0.5f, 0.5f);
     this->shootingRange = 200;
+    this->damage = 25;
 }
 
 DogTower::~DogTower(){

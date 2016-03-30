@@ -9,7 +9,7 @@ Enemy::Enemy() : Entity(){
     this->scale = Vector2(0.3f, 0.3f);
     this->setPng("assets/Devilduck.png");
     speed = 40.0f;
-
+    this->spriteTimer = 0;
     this->health = 100;
 
 
@@ -20,6 +20,15 @@ Enemy::~Enemy(){
 }
 
 void Enemy::update(float deltaTime){
+    spriteTimer += deltaTime;
+    if(spriteTimer >= 0.3f){
+        this->setPng("assets/devil_duck_walk1.png");
+        if(spriteTimer >= 0.6f){
+            spriteTimer = 0;
+        }
+    }else if(spriteTimer < 0.3f){
+        this->setPng("assets/devil_duck_walk2.png");
+    }
     if(this->dead){
         this->color = Color(600,600,600);
     }else{

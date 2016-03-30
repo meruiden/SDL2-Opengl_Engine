@@ -12,15 +12,17 @@ public:
     virtual void update(float deltaTime);
 
     float shootcounter;
-
+    int level;
     bool wantsToShoot;
     Enemy* target;
     virtual Bullet* shoot();
     bool ready;
-
+    int upgradePrice;
     int damage;
     Shape* shootingRangeShape;
     float shootingRange;
+
+    virtual void upgrade();
 
 private:
 

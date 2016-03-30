@@ -8,6 +8,7 @@ public:
     HudObject();
     virtual ~HudObject();
 
+    bool mouseOver();
 private:
 
 };
