@@ -10,7 +10,7 @@ Mainscene::Mainscene() : Scene(){
     cursor = new HudObject();
     lockBunny = false;
     toolbarMustPop = false;
-
+    createColliders();
     cursor->setPng("assets/pointer.png");
     lockedItem = NULL;
     captureMouseDistance = false;
@@ -81,7 +81,7 @@ Mainscene::Mainscene() : Scene(){
     scrollacc = Vector2();
     counter = 0;
     bgmusic = new Sound("assets/bg-music.wav");
-    bgmusic->play(true);
+    //bgmusic->play(true);
     bgmusic->setVolume(40);
     geluidje = new Sound("assets/geluidje.wav");
     shootSound = new Sound("assets/shoot.wav");
@@ -138,6 +138,8 @@ Mainscene::Mainscene() : Scene(){
     upgradePriceText->setText("Upgrade Price: 10");
     addText(upgradePriceText);
 
+    tmpH = 100;
+    tmpW = 100;
 
 }
 
@@ -213,17 +215,46 @@ Mainscene::~Mainscene(){
 
     for(unsigned int i = 0; i < menuItems.size(); i++){
         removeHudObject(menuItems[i]);
-        menuItems[i] = NULL;
         delete menuItems[i];
-    }
+        menuItems[i] = NULL;
 
+    }
     menuItems.clear();
+
+    for(unsigned int i = 0; i < worldColliders.size(); i++){
+        removeShape(worldColliders[i]);
+        worldColliders[i] = NULL;
+        delete worldColliders[i];
+    }
 
 }
 
 void Mainscene::update(float deltaTime){
+    worldColliders[0]->position = input->getMouseToWorld(camera);
+    if(!input->getKey(SDLK_RSHIFT)){
+        if(input->getKey(SDLK_o)){
+            tmpW += 100*deltaTime;
+        }
+        if(input->getKey(SDLK_p)){
+            tmpH += 100*deltaTime;
+        }
+    }else{
+        if(input->getKey(SDLK_o)){
+            tmpW -= 100*deltaTime;
+        }
+
+        if(input->getKey(SDLK_p)){
+            tmpH -= 100*deltaTime;
+        }
+    }
+    if(input->getKeyDown(SDLK_r)){
+        worldColliders[0]->rotation += 90;
+    }
+    worldColliders[0]->square(tmpW,tmpH);
     if(input->getKeyDown(SDLK_g)){
-        std::cout << "X: " << input->getMouseToWorld(camera).x << "      Y: " << input->getMouseToWorld(camera).y << std::endl;
+        std::cout << "X: " << worldColliders[0]->position.x << "      Y: " << worldColliders[0]->position.y << std::endl;
+
+        std::cout << "W: " << worldColliders[0]->width()<< "      H: " << worldColliders[0]->height() << std::endl;
     }
     upgradeBtn->position =  Vector2(740,toolbar->position.y);
     upgradetxt->position = upgradeBtn->position+Vector2(-upgradetxt->getWidth()/2,0);
@@ -750,4 +781,76 @@ void Mainscene::setMenuItems(){
     addHudObject(item);
     item->layer = 2;
 
+}
+
+void Mainscene::createColliders(){
+    Shape* col;
+    col = new Shape();
+    col->square(100,100);
+    addShape(col);
+    worldColliders.push_back(col);
+
+
+    col = NULL;
+    col = new Shape();
+    col->position = Vector2(648, 330);
+    col->square(410,78);
+    addShape(col);
+    worldColliders.push_back(col);
+
+    col = NULL;
+    col = new Shape();
+    col->position = Vector2(813, 147);
+    col->square(81,306);
+    addShape(col);
+    worldColliders.push_back(col);
+
+    col = NULL;
+    col = new Shape();
+    col->position = Vector2(482, 175);
+    col->square(77,272);
+    addShape(col);
+    worldColliders.push_back(col);
+
+    col = NULL;
+    col = new Shape();
+    col->position = Vector2(319, 77);
+    col->square(267,77);
+    addShape(col);
+    worldColliders.push_back(col);
+
+    col = NULL;
+    col = new Shape();
+    col->position = Vector2(225, 395);
+    col->square(79,561);
+    addShape(col);
+    worldColliders.push_back(col);
+
+    col = NULL;
+    col = new Shape();
+    col->position = Vector2(225, 882);
+    col->square(79,414);
+    addShape(col);
+    worldColliders.push_back(col);
+
+    col = NULL;
+    col = new Shape();
+    col->position = Vector2(394, 1057);
+    col->square(290,72);
+    addShape(col);
+    worldColliders.push_back(col);
+
+    col = NULL;
+    col = new Shape();
+    col->position = Vector2(496, 761);
+    col->square(80,518);
+    addShape(col);
+    worldColliders.push_back(col);
+
+    col = NULL;
+    col = new Shape();
+    col->position = Vector2(675, 531);
+    col->square(285,74);
+    addShape(col);
+    worldColliders.push_back(col);
 }

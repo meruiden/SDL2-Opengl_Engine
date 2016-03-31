@@ -36,7 +36,7 @@ public:
     Vector2 scrollvel;
     Vector2 scrollacc;
     HudObject* chooseframe;
-    
+
     void setMenuItems();
     bool lockBunny;
     std::vector<Enemy*> enemies;
@@ -55,6 +55,8 @@ public:
     Sound* explosionSound;
     double counter;
     void fixedUpdate();
+
+    void createColliders();
     HudObject* toolbar;
     Text* availableWorkersText;
     bool lockDog;
@@ -82,7 +84,11 @@ public:
     float dreamHealth;
     std::vector<MenuItem*> menuItems;
     void handleMenuItems();
+    std::vector<Shape*> worldColliders;
     MenuItem* lockedItem;
+
+    float tmpH;
+    float tmpW;
 private:
 
 protected:

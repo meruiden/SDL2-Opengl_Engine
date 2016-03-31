@@ -23,8 +23,12 @@ public:
     float rotation;
     Color color;
     int layer;
-
+    void square(float w, float h);
     int getShapeId(){return shapeId;}
+
+    float width(){return this->w;}
+    float height(){return this->h;}
+    float radius(){return _radius;}
 private:
     GLuint vertexbuffer;
     GLuint textureid;
@@ -32,6 +36,10 @@ private:
     int _numverts;
     int shapeId;
     static int idCounter;
+
+    float _radius;
+    float w;
+    float h;
 };
 
 #endif

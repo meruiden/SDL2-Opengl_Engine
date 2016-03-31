@@ -18,9 +18,8 @@ Renderer::Renderer(){
     fragment_shader	= "shaders/sprite.frag";
     vertex_shader	= "shaders/sprite.vert";
 
-    //Use OpenGL 2.1
-    SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, 2 );
-    SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, 1 );
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
 
     // Open a window and create its OpenGL context
     window = SDL_CreateWindow(

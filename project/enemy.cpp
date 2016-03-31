@@ -16,7 +16,7 @@ Enemy::Enemy() : Entity(){
 }
 
 Enemy::~Enemy(){
-
+    
 }
 
 void Enemy::update(float deltaTime){

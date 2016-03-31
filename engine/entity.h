@@ -6,6 +6,7 @@
 #include <engine/input.h>
 #include <engine/text.h>
 #include <engine/color.h>
+#include <engine/shape.h>
 #include <vector>
 #include <iostream>
 class Entity{
@@ -34,6 +35,7 @@ public:
     std::string getExtention(){return extention;}
 
     bool collideTestObject(Entity* entity);
+    bool collideTestObject(Shape* shape);
 
     float width(){return _width;}
     void width(float w){this->_width = w;}

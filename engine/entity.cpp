@@ -69,6 +69,17 @@ bool Entity::collideTestObject(Entity* entity){
     return false;
 }
 
+bool Entity::collideTestObject(Shape* shape){
+    if (this->position.x < shape->position.x + (shape->width()*shape->scale.x) &&
+        this->position.x + (this->width()*this->scale.x) > shape->position.x &&
+        this->position.y < shape->position.y + (shape->height()*shape->scale.y) &&
+        (this->height()*this->scale.y) + this->position.y > shape->position.y) {
+
+        return true;
+    }
+    return false;
+}
+
 void Entity::removeChild(Entity* child){
     std::vector< Entity* >::iterator it = children.begin();
 	while (it != children.end()) {
