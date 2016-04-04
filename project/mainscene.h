@@ -56,7 +56,6 @@ public:
     double counter;
     void fixedUpdate();
 
-    void createColliders();
     HudObject* toolbar;
     Text* availableWorkersText;
     bool lockDog;
@@ -80,11 +79,10 @@ public:
     HudObject* statusBarFrame;
     HudObject* statusBarAnger;
     HudObject* statusBarHappiness;
-
+    bool canPlaceMenuItem(MenuItem* m);
     float dreamHealth;
     std::vector<MenuItem*> menuItems;
     void handleMenuItems();
-    std::vector<Shape*> worldColliders;
     MenuItem* lockedItem;
 
     float tmpH;

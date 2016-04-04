@@ -10,7 +10,6 @@ Mainscene::Mainscene() : Scene(){
     cursor = new HudObject();
     lockBunny = false;
     toolbarMustPop = false;
-    createColliders();
     cursor->setPng("assets/pointer.png");
     lockedItem = NULL;
     captureMouseDistance = false;
@@ -19,22 +18,23 @@ Mainscene::Mainscene() : Scene(){
     hudRangeIndicator->isHud = true;
     hudRangeIndicator->color = Color(252, 61, 61, 100);
     damageText = new Text();
-    damageText->setFont("assets/ChunkFive-Roman.ttf", 30);
+    damageText->setFont("assets/Inder-Regular.ttf", 30);
     damageText->setText("Damage: 5");
     damageText->isHud = true;
     addText(damageText);
     damageText->position = Vector2(300,750);
     background->setPng("assets/map_0-1.png");
     background->position = Vector2(1024/2, 1296/2);
+    pathpoints.push_back(Vector2(804,- 50));
     pathpoints.push_back(Vector2(804,330));
     pathpoints.push_back(Vector2(474,330));
     pathpoints.push_back(Vector2(474,72));
     pathpoints.push_back(Vector2(210,72));
     pathpoints.push_back(Vector2(210,1063));
-    pathpoints.push_back(Vector2(489,1063));
-    pathpoints.push_back(Vector2(494,529));
-    pathpoints.push_back(Vector2(778,531));
-    pathpoints.push_back(Vector2(772,1286));
+    pathpoints.push_back(Vector2(491,1063));
+    pathpoints.push_back(Vector2(491,531));
+    pathpoints.push_back(Vector2(790,531));
+    pathpoints.push_back(Vector2(790,1286));
 
     for(unsigned int i = 0; i < 3; i++){
         Worker* worker = new Worker();
@@ -51,28 +51,28 @@ Mainscene::Mainscene() : Scene(){
     addText(notEnoughText);
     notEnoughText->setText("Not enough coins!!");
     notEnoughText->position = Vector2(350, 720/2);
-    notEnoughText->setFont("assets/PrintClearly.ttf", 40);
+    notEnoughText->setFont("assets/Inder-Regular.ttf", 40);
     notEnoughText->color = Color(255,0,0, 0);
     notEnoughText->isHud = true;
     coins = 100;
     coinsText = new Text();
 
     coinsText->isHud = true;
-    coinsText->setFont("assets/ChunkFive-Roman.ttf", 30);
+    coinsText->setFont("assets/Inder-Regular.ttf", 30);
     coinsText->setText("Coins: ");
     coinsText->position = Vector2(1280-230, 20);
     coinsText->scale = Vector2(0.5f, 0.5f);
     availableWorkersText = new Text();
     availableWorkersText->isHud = true;
     availableWorkersText->position =  Vector2(1280-230, 40);
-    availableWorkersText->setFont("assets/ChunkFive-Roman.ttf", 30);
+    availableWorkersText->setFont("assets/Inder-Regular.ttf", 30);
     availableWorkersText->scale = Vector2(0.5f, 0.5f);
 
     availableWorkersText->setText("Available Workers: 0");
     addText(availableWorkersText);
     addText(coinsText);
     rangeText = new Text();
-    rangeText->setFont("assets/ChunkFive-Roman.ttf", 30);
+    rangeText->setFont("assets/Inder-Regular.ttf", 30);
     rangeText->setText("Shooting range: 100");
     rangeText->isHud = true;
     addText(rangeText);
@@ -127,14 +127,14 @@ Mainscene::Mainscene() : Scene(){
     upgradeBtn->scale = Vector2(0.7f, 0.7f);
     upgradeBtn->setPng("assets/upgrade_button.png");
     upgradetxt = new Text();
-    upgradetxt->setFont("assets/ChunkFive-Roman.ttf", 30);
+    upgradetxt->setFont("assets/Inder-Regular.ttf", 30);
     upgradetxt->isHud = true;
     upgradetxt->setText("Upgrade");
     addText(upgradetxt);
 
     upgradePriceText = new Text();
     upgradePriceText->isHud = true;
-    upgradePriceText->setFont("assets/ChunkFive-Roman.ttf", 30);
+    upgradePriceText->setFont("assets/Inder-Regular.ttf", 30);
     upgradePriceText->setText("Upgrade Price: 10");
     addText(upgradePriceText);
 
@@ -221,48 +221,19 @@ Mainscene::~Mainscene(){
     }
     menuItems.clear();
 
-    for(unsigned int i = 0; i < worldColliders.size(); i++){
-        removeShape(worldColliders[i]);
-        worldColliders[i] = NULL;
-        delete worldColliders[i];
-    }
+
 
 }
 
 void Mainscene::update(float deltaTime){
-    worldColliders[0]->position = input->getMouseToWorld(camera);
-    if(!input->getKey(SDLK_RSHIFT)){
-        if(input->getKey(SDLK_o)){
-            tmpW += 100*deltaTime;
-        }
-        if(input->getKey(SDLK_p)){
-            tmpH += 100*deltaTime;
-        }
-    }else{
-        if(input->getKey(SDLK_o)){
-            tmpW -= 100*deltaTime;
-        }
-
-        if(input->getKey(SDLK_p)){
-            tmpH -= 100*deltaTime;
-        }
-    }
-    if(input->getKeyDown(SDLK_r)){
-        worldColliders[0]->rotation += 90;
-    }
-    worldColliders[0]->square(tmpW,tmpH);
-    if(input->getKeyDown(SDLK_g)){
-        std::cout << "X: " << worldColliders[0]->position.x << "      Y: " << worldColliders[0]->position.y << std::endl;
-
-        std::cout << "W: " << worldColliders[0]->width()<< "      H: " << worldColliders[0]->height() << std::endl;
-    }
+    handleMenuItems();
     upgradeBtn->position =  Vector2(740,toolbar->position.y);
     upgradetxt->position = upgradeBtn->position+Vector2(-upgradetxt->getWidth()/2,0);
     upgradePriceText->position = Vector2(200,toolbar->position.y+30);
 
     rangeText->position = Vector2(200,toolbar->position.y-30);
     damageText->position = Vector2(200,toolbar->position.y);
-    checkIfCanPlace();
+
     cursor->position = input->getMouseToScreen()+(Vector2(3,cursor->height()*cursor->scale.y-15));
     if(input->getMouseButton(1)){
         cursor->setPng("assets/pointerClick.png");
@@ -280,6 +251,7 @@ void Mainscene::update(float deltaTime){
     if(notenoughAlpha < 0){
         notenoughAlpha = 0;
     }
+
 
     notenoughAlpha -= 150*deltaTime;
     if(notEnoughText->color.a > 0){
@@ -368,6 +340,7 @@ void Mainscene::update(float deltaTime){
             }else{
                 dreamHealth -= 10;
             }
+
             removeEnemy(enemies[i]);
         }
     }
@@ -379,7 +352,7 @@ void Mainscene::update(float deltaTime){
     }
 
     if(towers.size() > 0 && enemies.size() > 0){
-        Enemy* target;
+        Enemy* target = NULL;
         for(unsigned int i = 0; i < enemies.size(); i++){
             if(!enemies[i]->dead){
                 target = enemies[i];
@@ -512,8 +485,15 @@ void Mainscene::update(float deltaTime){
         }
     }
 
-
-
+    if(lockedItem != NULL ){
+        if(canPlaceMenuItem(lockedItem)){
+            lockedItem->color.g = 255;
+            lockedItem->color.b = 255;
+        }else{
+            lockedItem->color.g = 50;
+            lockedItem->color.b = 50;
+        }
+    }
     if(dreamHealth > 200){
         dreamHealth = 200;
     }
@@ -532,7 +512,7 @@ void Mainscene::update(float deltaTime){
         statusBarHappiness->uvOffset = Vector2(1, 0);
         statusBarAnger->uvOffset = Vector2(-1, 0);
     }
-    handleMenuItems();
+
 }
 
 void Mainscene::spawnEnemies(int number){
@@ -646,21 +626,6 @@ void Mainscene::removeTwinkle(Particle* p){
     }
 }
 
-void Mainscene::checkIfCanPlace(){
-
-    for(unsigned int i = 0; i< towers.size(); i++){
-        if(Vector2(input->getMouseToWorld(camera), towers[i]->position).magnitude() < 100 && (lockDog || lockBunny)){
-
-            towers[i]->color = Color(255,0,0, towers[i]->color.a);
-            canPlace = false;
-        }else{
-            towers[i]->color = Color(255,255,255, towers[i]->color.a);
-            canPlace = true;
-        }
-    }
-
-}
-
 void Mainscene::setToolBarContent(float range, int damage, int price){
     std::ostringstream ss;
     ss << "Shooting range: ";
@@ -682,7 +647,9 @@ void Mainscene::setToolBarContent(float range, int damage, int price){
 }
 
 void Mainscene::handleMenuItems(){
+
     for(unsigned int i = 0; i < menuItems.size(); i++){
+
         if(menuItems[i] != NULL){
             if(input->getMouseToScreen().x < menuItems[i]->position.x + 50 && input->getMouseToScreen().x > menuItems[i]->position.x - 50
                 && input->getMouseToScreen().y < menuItems[i]->position.y + 50 && input->getMouseToScreen().y > menuItems[i]->position.y - 50){
@@ -703,6 +670,7 @@ void Mainscene::handleMenuItems(){
 
         menuItems[i]->scale = Vector2(0.25f, 0.25f);
         menuItems[i]->position = Vector2(1280-menuItems[i]->offsetpos.x, chooseframe->position.y - menuItems[i]->offsetpos.y);
+
     }
 
 
@@ -713,7 +681,7 @@ void Mainscene::handleMenuItems(){
         hudRangeIndicator->position = lockedItem->position;
     }
 
-    if(input->getMouseButtonUp(1) && lockedItem != NULL){
+    if(input->getMouseButtonUp(1) && lockedItem != NULL ){
         removeShape(hudRangeIndicator);
         Tower* tower;
         switch(lockedItem->spawnId){
@@ -728,7 +696,7 @@ void Mainscene::handleMenuItems(){
         addEntity(tower);
         tower->layer = 2;
         tower->position = input->getMouseToWorld(camera);
-        if(lockedItem->position.x < (chooseframe->position.x-(chooseframe->width()/2)) && canPlace){
+        if(lockedItem->position.x < (chooseframe->position.x-(chooseframe->width()/2)) && canPlaceMenuItem(lockedItem)){
             if((coins-lockedItem->price) >= 0){
                 if(!assignWorker(tower)){
                     removeEntity(tower);
@@ -740,7 +708,7 @@ void Mainscene::handleMenuItems(){
 
                 }
             }else{
-                notenoughAlpha = 255;
+                notEnoughText->setText("Not enough coins!!");
                 notenoughAlpha = 255.0f;
                 notEnoughText->position.y = 720/2;
                 removeEntity(tower);
@@ -748,11 +716,18 @@ void Mainscene::handleMenuItems(){
                 tower = NULL;
 
             }
+            lockedItem->color.g = 255;
+            lockedItem->color.b = 255;
             lockedItem = NULL;
         }else{
+            notenoughAlpha = 255.0f;
+
+            notEnoughText->setText("Tower can't be placed here!");
             removeEntity(tower);
             delete tower;
             tower = NULL;
+            lockedItem->color.g = 255;
+            lockedItem->color.b = 255;
             lockedItem = NULL;
         }
     }
@@ -765,6 +740,7 @@ void Mainscene::setMenuItems(){
     item->range = 250.0f;
     item->price = 100;
     item->notHoverImgPath = "assets/bunny.png";
+
     item->setPng(item->notHoverImgPath.c_str());
     addHudObject(item);
     item->layer = 2;
@@ -780,77 +756,65 @@ void Mainscene::setMenuItems(){
     item->hoverImgPath = "assets/hondje_active.png";
     addHudObject(item);
     item->layer = 2;
-
 }
 
-void Mainscene::createColliders(){
-    Shape* col;
-    col = new Shape();
-    col->square(100,100);
-    addShape(col);
-    worldColliders.push_back(col);
+bool Mainscene::canPlaceMenuItem(MenuItem* m){
+
+    for(unsigned int i = 0; i < towers.size(); i++){
+        if(Vector2(m->getPosToWorld(camera), towers[i]->position).magnitude() < 70){
+            return false;
+        }
+    }
+    for(unsigned int i = 0; i < pathpoints.size()-1; i++){
+            bool canfalse = true;
+            Vector2 a = pathpoints[i];
+            Vector2 b = pathpoints[i + 1];
+
+            Vector2 normal = Vector2::getNormalPoint(m->getPosToWorld(camera), a, b);
+            float distance = Vector2(m->getPosToWorld(camera), normal).magnitude();
+
+            if(a.x < b.x && normal.x < a.x){
+                canfalse = false;
+            }
+
+            if(a.y < b.y && normal.y < a.y){
+                canfalse = false;
+            }
+
+            if(a.x < b.x && normal.x > b.x){
+                canfalse = false;
+            }
+
+            if(a.y < b.y && normal.y > b.y){
+                canfalse = false;
+            }
 
 
-    col = NULL;
-    col = new Shape();
-    col->position = Vector2(648, 330);
-    col->square(410,78);
-    addShape(col);
-    worldColliders.push_back(col);
 
-    col = NULL;
-    col = new Shape();
-    col->position = Vector2(813, 147);
-    col->square(81,306);
-    addShape(col);
-    worldColliders.push_back(col);
+            if(b.x < a.x && normal.x < b.x){
+                canfalse = false;
+            }
 
-    col = NULL;
-    col = new Shape();
-    col->position = Vector2(482, 175);
-    col->square(77,272);
-    addShape(col);
-    worldColliders.push_back(col);
+            if(b.y < a.y && normal.y < b.y){
+                canfalse = false;
+            }
 
-    col = NULL;
-    col = new Shape();
-    col->position = Vector2(319, 77);
-    col->square(267,77);
-    addShape(col);
-    worldColliders.push_back(col);
+            if(b.x < a.x && normal.x > a.x){
+                canfalse = false;
+            }
 
-    col = NULL;
-    col = new Shape();
-    col->position = Vector2(225, 395);
-    col->square(79,561);
-    addShape(col);
-    worldColliders.push_back(col);
+            if(b.y < a.y && normal.y > a.y){
+                canfalse = false;
+            }
 
-    col = NULL;
-    col = new Shape();
-    col->position = Vector2(225, 882);
-    col->square(79,414);
-    addShape(col);
-    worldColliders.push_back(col);
 
-    col = NULL;
-    col = new Shape();
-    col->position = Vector2(394, 1057);
-    col->square(290,72);
-    addShape(col);
-    worldColliders.push_back(col);
 
-    col = NULL;
-    col = new Shape();
-    col->position = Vector2(496, 761);
-    col->square(80,518);
-    addShape(col);
-    worldColliders.push_back(col);
 
-    col = NULL;
-    col = new Shape();
-    col->position = Vector2(675, 531);
-    col->square(285,74);
-    addShape(col);
-    worldColliders.push_back(col);
+            if (distance < 80 && canfalse){
+                return false;
+            }
+
+
+    }
+    return true;
 }

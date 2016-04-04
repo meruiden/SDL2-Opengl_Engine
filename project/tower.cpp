@@ -22,23 +22,28 @@ Tower::~Tower(){
 }
 
 void Tower::update(float deltaTime){
+
     this->shootingRangeShape->position = this->position;
+
     if(this->ready && this->target != NULL){
+
         if(target->dead){
             this->target = NULL;
 
         }
     }
 
+    float rotateTo = 0.0f;
+    float _rotateSpeedMax = 200.0f;
+    float _trueRotation = 0.0f;
     if(this->ready && this->target != NULL){
 
         this->shootcounter += deltaTime;
-        float _rotateSpeedMax = 200.0f;
-        float _trueRotation = 0.0f;
+
 
         Vector2 disvec = Vector2(this->position, target->position);
 
-        float rotateTo = 0.0f;
+
 
         if(target != NULL && !target->dead){
             if( disvec.magnitude() < (this->shootingRange + target->collisionRadius) ){
@@ -49,15 +54,19 @@ void Tower::update(float deltaTime){
                 }
             }else{
                 this->target = NULL;
-
             }
 
         }
-        if (rotateTo > this->rotation + 180) rotateTo -= 360;
-        if (rotateTo < this->rotation  - 180) rotateTo += 360;
-        _trueRotation = (rotateTo - this->rotation ) / _rotateSpeedMax;
-        this->rotation += _trueRotation;
+
     }
+
+    if (rotateTo > this->rotation + 180) rotateTo -= 360;
+    if (rotateTo < this->rotation  - 180) rotateTo += 360;
+    _trueRotation = (rotateTo - this->rotation ) / _rotateSpeedMax;
+    _trueRotation *= 300;
+    this->rotation += _trueRotation*deltaTime;
+
+
 
 
 }

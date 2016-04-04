@@ -8,6 +8,7 @@
 
 #include <string>
 #include <math.h>
+#include <iostream>
 class Vector2
 {
 public:
@@ -51,6 +52,9 @@ public:
     void limit(float value);
 
     std::string returnString();
+
+    static Vector2 getNormalPoint(Vector2 p, Vector2 a, Vector2 b);
+    float dot(Vector2 b);
 private:
 
 };

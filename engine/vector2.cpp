@@ -1,5 +1,5 @@
 #include "vector2.h"
-#include <iostream>
+
 Vector2::Vector2(float xx, float yy){
     this->x = xx;
     this->y = yy;
@@ -16,7 +16,8 @@ Vector2::~Vector2(){
 
 void Vector2::normalize(){
     if(magnitude() != 0){
-        Vector2(x,y) /= magnitude();
+        x /= magnitude();
+        y /= magnitude();
     }
 }
 
@@ -143,4 +144,20 @@ void Vector2::limit(float value){
         normalize();
         Vector2(x,y) *= value;
     }
+}
+
+
+Vector2 Vector2::getNormalPoint(Vector2 p, Vector2 a, Vector2 b){
+    Vector2 ap = p - a;
+    Vector2 ab = b - a;
+    ab.normalize();
+
+    ab *= ap.dot(ab);
+    
+    Vector2 normalPoint = a + ab;
+    return normalPoint;
+}
+
+float Vector2::dot(Vector2 b){
+    return ((x * b.x) + (y * b.y));
 }

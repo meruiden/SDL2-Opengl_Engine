@@ -16,24 +16,39 @@ Enemy::Enemy() : Entity(){
 }
 
 Enemy::~Enemy(){
-    
+
 }
 
 void Enemy::update(float deltaTime){
     spriteTimer += deltaTime;
-    if(spriteTimer >= 0.3f){
+    if(spriteTimer <= 0.3f && !this->dead){
         this->setPng("assets/devil_duck_walk1.png");
+
+    }else if(spriteTimer > 0.3f&& !this->dead){
+        this->setPng("assets/devil_duck_walk2.png");
+    }
+
+    if(spriteTimer <= 0.1f && this->dead){
+        this->setPng("assets/sheep/Loop0001.png");
+    }else if(spriteTimer <= 0.15f&& this->dead){
+        this->setPng("assets/sheep/Loop0002.png");
+    }else if(spriteTimer <= 0.2f&& this->dead){
+        this->setPng("assets/sheep/Loop0003.png");
+    }else if(spriteTimer <= 0.25f&& this->dead){
+        this->setPng("assets/sheep/Loop0004.png");
+    }else if(spriteTimer <= 0.3f&& this->dead){
+        this->setPng("assets/sheep/Loop0005.png");
+    }
+    if(!this->dead){
         if(spriteTimer >= 0.6f){
             spriteTimer = 0;
         }
-    }else if(spriteTimer < 0.3f){
-        this->setPng("assets/devil_duck_walk2.png");
-    }
-    if(this->dead){
-        this->color = Color(600,600,600);
     }else{
-        this->color = Color(255,255,255);
+        if(spriteTimer >= 0.35f){
+            spriteTimer = 0;
+        }
     }
+
     Vector2 dir = Vector2(this->curtarget, this->position);
     speed += deltaTime;
 

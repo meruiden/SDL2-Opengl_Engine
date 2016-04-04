@@ -78,16 +78,8 @@ Renderer::Renderer(){
         return;
     }
 
-    // Ensure we can capture the escape key being pressed below
-    //glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
-
     // Dark blue background
     glClearColor(101/255.0f, 121/255.0f, 98/255.0f, 0.0f);
-
-    // Enable depth test
-    //glEnable(GL_DEPTH_TEST);
-    // Accept fragment if it closer to the camera than the former one
-    //glDepthFunc(GL_LESS);
 
     // Cull triangles which normal is not towards the camera
     glEnable(GL_CULL_FACE);
@@ -111,10 +103,6 @@ Renderer::Renderer(){
     textureID  = glGetUniformLocation(programID, "myTextureSampler");
 
     // Load the texture (see: texture.h/cpp)
-
-
-    // Our vertices. Tree consecutive floats give a 3D vertex; Three consecutive vertices give a triangle.
-    // A sprite has 1 face (quad) with 2 triangles each, so this makes 1*2=2 triangles, and 2*3 vertices
 
     ProjectionMatrix = glm::ortho(0.0f, (float)window_width, (float)window_height, 0.0f, 0.1f, 100.0f);
 

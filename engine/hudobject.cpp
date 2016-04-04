@@ -18,6 +18,10 @@ bool HudObject::mouseOver(){
     && v.y > this->position.y-((this->height()/2)*this->scale.y)){
         return true;
     }
-
     return false;
+}
+
+Vector2 HudObject::getPosToWorld(Camera* c){
+//    std::cout << c->position.y << std::endl;
+    return this->position+c->position;
 }
