@@ -15,7 +15,8 @@ public:
 
 	std::string hoverImgPath;
 	std::string notHoverImgPath;
-
+	Vector2 selectedScale;
+	Vector2 unselectedScale;
 private:
 
 };

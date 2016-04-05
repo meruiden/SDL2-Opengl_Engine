@@ -9,7 +9,8 @@ MenuItem::MenuItem(int id) : HudObject(){
 
     this->hoverImgPath = "";
     this->notHoverImgPath = "";
-
+    this->selectedScale = Vector2();
+    this->unselectedScale = Vector2();
 }
 
 MenuItem::~MenuItem(){

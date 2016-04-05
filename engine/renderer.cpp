@@ -393,12 +393,14 @@ void Renderer::renderEntity(glm::mat4& modelMatrix, Entity* entity, bool isHud){
     std::vector<Entity*> children = entity->getChildren();
     std::vector<Entity*>::iterator child;
     for (child = children.begin(); child != children.end(); child++) {
-        this->renderEntity(modelMatrix, *child, isHud);
+        
         if((*child)->parent != NULL){
               modelMatrix = this->getModelMatrix( (*child)->parent->position,  (*child)->parent->scale, (*child)->parent->rotation);
         }else{
               modelMatrix = this->getModelMatrix(entity->position, entity->scale, entity->rotation);
         }
+        
+        this->renderEntity(modelMatrix, *child, isHud);
     }
 }
 

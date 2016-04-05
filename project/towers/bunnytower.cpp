@@ -1,8 +1,8 @@
 #include "bunnytower.h"
 
 BunnyTower::BunnyTower() : Tower(){
-    this->setPng("assets/bunny.png");
-    this->scale = Vector2(0.4f, 0.4f);
+    this->setPng("assets/konijn.png");
+    this->scale = Vector2(0.22f, 0.22f);
     this->shootingRange = 250;
     this->damage = 40;
 }
@@ -18,7 +18,7 @@ Bullet* BunnyTower::shoot(){
     b->position = this->position;
     b->target = this->target;
     b->lastKnownPos = this->target->position;
-    b->scale = Vector2(0.2f, 0.2f);
+    b->scale = Vector2(0.13f, 0.13f);
     b->damage = this->damage;
 
     return b;

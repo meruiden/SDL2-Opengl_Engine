@@ -668,7 +668,7 @@ void Mainscene::handleMenuItems(){
             }
         }
 
-        menuItems[i]->scale = Vector2(0.25f, 0.25f);
+        menuItems[i]->scale = menuItems[i]->unselectedScale;
         menuItems[i]->position = Vector2(1280-menuItems[i]->offsetpos.x, chooseframe->position.y - menuItems[i]->offsetpos.y);
 
     }
@@ -676,7 +676,7 @@ void Mainscene::handleMenuItems(){
 
 
     if(lockedItem != NULL){
-        lockedItem->scale = Vector2(0.5f, 0.5f);
+        lockedItem->scale = lockedItem->selectedScale;
         lockedItem->position = input->getMouseToScreen();
         hudRangeIndicator->position = lockedItem->position;
     }
@@ -737,9 +737,11 @@ void Mainscene::setMenuItems(){
     MenuItem* item = new MenuItem(1);
     menuItems.push_back(item);
     item->offsetpos = Vector2(66, 240);
+    item->unselectedScale = Vector2(0.12, 0.12);
+    item->selectedScale = Vector2(0.22, 0.22);
     item->range = 250.0f;
     item->price = 100;
-    item->notHoverImgPath = "assets/bunny.png";
+    item->notHoverImgPath = "assets/konijn.png";
 
     item->setPng(item->notHoverImgPath.c_str());
     addHudObject(item);
@@ -755,6 +757,8 @@ void Mainscene::setMenuItems(){
     item->setPng(item->notHoverImgPath.c_str());
     item->hoverImgPath = "assets/hondje_active.png";
     addHudObject(item);
+    item->unselectedScale = Vector2(0.25, 0.25);
+    item->selectedScale = Vector2(0.5, 0.5);
     item->layer = 2;
 }
 
@@ -789,8 +793,6 @@ bool Mainscene::canPlaceMenuItem(MenuItem* m){
                 canfalse = false;
             }
 
-
-
             if(b.x < a.x && normal.x < b.x){
                 canfalse = false;
             }
@@ -807,13 +809,9 @@ bool Mainscene::canPlaceMenuItem(MenuItem* m){
                 canfalse = false;
             }
 
-
-
-
             if (distance < 80 && canfalse){
                 return false;
             }
-
 
     }
     return true;

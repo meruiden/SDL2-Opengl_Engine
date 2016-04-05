@@ -15,9 +15,9 @@ Vector2::~Vector2(){
 }
 
 void Vector2::normalize(){
-    if(magnitude() != 0){
-        x /= magnitude();
-        y /= magnitude();
+    float m = magnitude();
+    if(m != 0){
+        *this /= m;
     }
 }
 
@@ -153,7 +153,7 @@ Vector2 Vector2::getNormalPoint(Vector2 p, Vector2 a, Vector2 b){
     ab.normalize();
 
     ab *= ap.dot(ab);
-    
+
     Vector2 normalPoint = a + ab;
     return normalPoint;
 }
