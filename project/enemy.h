@@ -17,7 +17,7 @@ public:
     float speed;
     float r, g, b;
     float spriteTimer;
-    
+    float slowness;
     int health;
 private:
 

@@ -22,7 +22,7 @@ public:
     int bulletType;
     bool wantsTwinkle;
     float twinkleCounter;
-
+    float slowingDamage;
 private:
 
 protected:

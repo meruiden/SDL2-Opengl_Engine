@@ -10,6 +10,7 @@ Bullet::Bullet() : Entity(){
     this->damage = 0;
     this->wantsTwinkle = false;
     this->twinkleCounter = 0.0f;
+    this->slowingDamage = 0;
 }
 
 Bullet::~Bullet(){

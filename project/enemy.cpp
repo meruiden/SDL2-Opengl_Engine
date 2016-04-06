@@ -11,7 +11,7 @@ Enemy::Enemy() : Entity(){
     speed = 40.0f;
     this->spriteTimer = 0;
     this->health = 100;
-
+    this->slowness = 0;
 
 }
 
@@ -71,8 +71,16 @@ void Enemy::update(float deltaTime){
         atTarget = true;
     }
     dir.normalize();
+    if(slowness < 0){
+        slowness = 0;
+    }
 
+    slowness -= deltaTime*5;
+
+    if(slowness > 70){
+        slowness = 70;
+    }
     float rads = (dir.getAngle()) * DEG_TO_RAD;
-    this->position += (Vector2(cos(rads), sin(rads))*speed)*deltaTime;
+    this->position += (Vector2(cos(rads), sin(rads))*((speed/100)*(100-slowness)))*deltaTime;
 
 }

@@ -54,7 +54,7 @@ Mainscene::Mainscene() : Scene(){
     notEnoughText->setFont("assets/Inder-Regular.ttf", 40);
     notEnoughText->color = Color(255,0,0, 0);
     notEnoughText->isHud = true;
-    coins = 100;
+    coins = 200;
     coinsText = new Text();
 
     coinsText->isHud = true;
@@ -305,6 +305,7 @@ void Mainscene::update(float deltaTime){
         if(!done){
             if(bullets[i]->disToTarget < bullets[i]->target->collisionRadius && bullets[i]->hasTarget){
                 bullets[i]->target->health -= bullets[i]->damage;
+                bullets[i]->target->slowness += bullets[i]->slowingDamage;
                 coins += 2;
 
                 bullets[i]->destroyMe = true;
@@ -362,19 +363,30 @@ void Mainscene::update(float deltaTime){
 
 
         for(unsigned int t = 0; t < towers.size(); t++){
-            for(unsigned int i = 0; i < enemies.size(); i ++){
-                if(!enemies[i]->dead){
-                    Vector2 curdisvec = Vector2(target->position, towers[t]->position);
-                    Vector2 disvec = Vector2(enemies[i]->position, towers[t]->position);
-                    if(disvec.magnitude() < curdisvec.magnitude()){
-                        target = enemies[i];
+            for(unsigned int i = 0;  i  < enemies.size(); i ++){
+                if(!enemies[i]->dead ){
+                    bool canpass = false;
+                    if(towers[t]->slowingDamage > 0 && towers[t]->damage == 0 && enemies[i]->slowness < 60){
+                        canpass = true;
+
+                    }
+                    if(towers[t]->slowingDamage == 0){
+                        canpass = true;
+                    }
+
+                    if(canpass){
+                        Vector2 curdisvec = Vector2(target->position, towers[t]->position);
+                        Vector2 disvec = Vector2(enemies[i]->position, towers[t]->position);
+                        if(disvec.magnitude() < curdisvec.magnitude()){
+                            target = enemies[i];
+                        }
+
                     }
 
                 }
             }
-            if((towers[t]->target == NULL || towers[t]->target->dead )&& towers[t]->ready){
+            if((towers[t]->target == NULL || (towers[t]->target->dead ))&& towers[t]->ready){
                 towers[t]->target = target;
-
             }
 
             if(towers[t]->wantsToShoot && towers[t]->target != NULL && !towers[t]->target->dead){
@@ -692,6 +704,10 @@ void Mainscene::handleMenuItems(){
             case 2:
                 tower = new DogTower();
             break;
+
+            case 3:
+                tower = new IceTower();
+            break;
         }
         addEntity(tower);
         tower->layer = 2;
@@ -742,7 +758,6 @@ void Mainscene::setMenuItems(){
     item->range = 250.0f;
     item->price = 100;
     item->notHoverImgPath = "assets/konijn.png";
-
     item->setPng(item->notHoverImgPath.c_str());
     addHudObject(item);
     item->layer = 2;
@@ -759,6 +774,19 @@ void Mainscene::setMenuItems(){
     addHudObject(item);
     item->unselectedScale = Vector2(0.25, 0.25);
     item->selectedScale = Vector2(0.5, 0.5);
+    item->layer = 2;
+
+    item = NULL;
+    item = new MenuItem(3);
+    item->offsetpos = Vector2(190, 133);
+    menuItems.push_back(item);
+    item->range = 130.0f;
+    item->price = 110;
+    item->notHoverImgPath = "assets/mrcone.png";
+    item->setPng(item->notHoverImgPath.c_str());
+    addHudObject(item);
+    item->unselectedScale = Vector2(0.12, 0.12);
+    item->selectedScale = Vector2(0.2, 0.2);
     item->layer = 2;
 }
 

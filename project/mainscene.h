@@ -16,7 +16,7 @@
 #include <project/towers/dogtower.h>
 #include <project/towers/bunnytower.h>
 #include <project/menuitem.h>
-
+#include <project/towers/icetower.h>
 class Mainscene : public Scene{
 public:
     Mainscene();

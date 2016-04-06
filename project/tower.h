@@ -11,9 +11,13 @@ public:
     virtual ~Tower();
     virtual void update(float deltaTime);
 
+    virtual void handleTarget(float deltaTime);
+
+    float shootDelay;
     float shootcounter;
     int level;
     bool wantsToShoot;
+    float slowingDamage;
     Enemy* target;
     virtual Bullet* shoot();
     bool ready;

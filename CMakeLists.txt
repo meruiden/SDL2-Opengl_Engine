@@ -156,6 +156,9 @@ add_executable(project
     project/menuitem.h
     project/towers/icetower.h
     project/towers/icetower.cpp
+    project/bullets/icebullet.h
+    project/bullets/icebullet.cpp
+
 )
 
 target_link_libraries(project
