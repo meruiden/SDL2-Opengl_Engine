@@ -393,19 +393,18 @@ void Renderer::renderEntity(glm::mat4& modelMatrix, Entity* entity, bool isHud){
     std::vector<Entity*> children = entity->getChildren();
     std::vector<Entity*>::iterator child;
     for (child = children.begin(); child != children.end(); child++) {
-        
+
         if((*child)->parent != NULL){
               modelMatrix = this->getModelMatrix( (*child)->parent->position,  (*child)->parent->scale, (*child)->parent->rotation);
         }else{
               modelMatrix = this->getModelMatrix(entity->position, entity->scale, entity->rotation);
         }
-        
+
         this->renderEntity(modelMatrix, *child, isHud);
     }
 }
 
 glm::mat4 Renderer::getModelMatrix(Vector2 pos, Vector2 scal, float rot){
-	// OpenGL doesn't understand our Vector2. Make it glm::vec3 compatible.
 	glm::vec3 position = glm::vec3(pos.x, pos.y, 0.0f);
 	glm::vec3 rotation = glm::vec3(0.0f, 0.0f, rot);
 	glm::vec3 scale = glm::vec3(scal.x, scal.y, 1.0f);
@@ -438,7 +437,6 @@ Renderer::~Renderer(){
     SDL_DestroyWindow(window);
     std::cout << "DELETED WINDOW" << std::endl;
     // Clean up
-
     SDL_Quit();
     std::cout << "DELETED RENDERER" << std::endl;
 }
@@ -509,6 +507,7 @@ void Renderer::renderText(Text* t){
     glUniform1f(rfloat, (float)t->color.r/255.0f);
     glUniform1f(gfloat, (float)t->color.g/255.0f);
     glUniform1f(bfloat, (float)t->color.b/255.0f);
+    
     // Bind our texture in Texture Unit 0
     glActiveTexture(GL_TEXTURE0);
 

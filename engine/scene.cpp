@@ -5,6 +5,8 @@ Scene::Scene(){
     this->camera = NULL;
     this->window_width = 0;
     this->window_height = 0;
+    this->nextScene = false;
+    this->wantsToQuit = false;
 }
 
 Scene::~Scene(){
@@ -123,4 +125,8 @@ bool Scene::hasEntity(Entity* child){
     }
 
     return false;
+}
+
+void Scene::quit(){
+    this->wantsToQuit = true;
 }

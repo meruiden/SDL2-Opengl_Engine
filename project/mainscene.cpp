@@ -1,9 +1,49 @@
 #include "mainscene.h"
 
 Mainscene::Mainscene() : Scene(){
+    house = new SimpleEntity();
+    house->setPng("assets/huis.png");
+    addEntity(house);
+    blackfader = new Shape();
+    blackfader->position = Vector2(1000,1000);
+    blackfader->layer = 3;
+    addShape(blackfader);
+    blackfader->square(2000,2000);
+    blackfader->color = BLACK;
+    blackfader->color.a = 0;
+    blackfader->isHud = true;
+    house->layer = 5;
+    house->scale = Vector2(0.4f ,0.4f);
+    house->position = Vector2(780, 1130);
+    priceText = new Text();
+    priceText->setFont("assets/Inder-Regular.ttf", 30);
+    priceText->setText("50 coins");
+    priceText->isHud = true;
+    priceText->color = BLACK;
+    priceText->scale = Vector2(0.9, 0.9);
+    addText(priceText);
+    SDL_ShowCursor(0);
+    waveText = new Text();
+    waveText->isHud = true;
+    waveText->setFont("assets/Inder-Regular.ttf", 30);
+    waveText->setText("Wave: 1");
+    addText(waveText);
+    waveText->position = Vector2(20, 20);
+    wave = 0;
+    enemiesToSpawn = 10;
+    spawnTimer = 8;
+    waveTimerText = new Text();
+    waveTimerText->setFont("assets/agoestoesan.ttf", 100);
+
+    waveTimerText->setText("8");
+    waveTimerText->color = RED;
+    waveTimerText->color.a = 0;
+    addText(waveTimerText);
+    waveTimerText->isHud = true;
+    waveTimerText->position = Vector2(550, 720/2);
 
     setMenuItems();
-    SDL_ShowCursor(0);
+    usedInit = false;
     canPlace = true;
     background = new SimpleEntity();
     addEntity(background);
@@ -54,9 +94,9 @@ Mainscene::Mainscene() : Scene(){
     notEnoughText->setFont("assets/Inder-Regular.ttf", 40);
     notEnoughText->color = Color(255,0,0, 0);
     notEnoughText->isHud = true;
-    coins = 200;
+    coins = 100;
     coinsText = new Text();
-
+    enemiesThisWave = 10;
     coinsText->isHud = true;
     coinsText->setFont("assets/Inder-Regular.ttf", 30);
     coinsText->setText("Coins: ");
@@ -67,7 +107,7 @@ Mainscene::Mainscene() : Scene(){
     availableWorkersText->position =  Vector2(1280-230, 40);
     availableWorkersText->setFont("assets/Inder-Regular.ttf", 30);
     availableWorkersText->scale = Vector2(0.5f, 0.5f);
-
+    waveTimer = 8;
     availableWorkersText->setText("Available Workers: 0");
     addText(availableWorkersText);
     addText(coinsText);
@@ -80,19 +120,15 @@ Mainscene::Mainscene() : Scene(){
     scrollvel = Vector2();
     scrollacc = Vector2();
     counter = 0;
-    bgmusic = new Sound("assets/bg-music.wav");
-    //bgmusic->play(true);
-    bgmusic->setVolume(40);
-    geluidje = new Sound("assets/geluidje.wav");
-    shootSound = new Sound("assets/shoot.wav");
-    explosionSound = new Sound("assets/explosion.wav");
-    shootSound->setVolume(30);
-    explosionSound->setVolume(30);
+    bgmusic = new Sound("assets/sound/bg-music.wav");
+
+    bgmusic->setVolume(15);
+
     chooseframe = new HudObject();
     chooseframe->setPng("assets/chooseframe.png");
     addHudObject(chooseframe);
     chooseframe->position = Vector2(1280-256/2, 720/2);
-    spawnEnemies(50);
+
     toolbar = new HudObject();
     toolbar->setPng("assets/toolbar.png");
     toolbar->position = Vector2(520, 720+(64));
@@ -137,9 +173,14 @@ Mainscene::Mainscene() : Scene(){
     upgradePriceText->setFont("assets/Inder-Regular.ttf", 30);
     upgradePriceText->setText("Upgrade Price: 10");
     addText(upgradePriceText);
-
+    pricetag = new HudObject();
+    pricetag->setPng("assets/pricetag.png");
+    addHudObject(pricetag);
+    pricetag->position = Vector2(-1000, -1000);
+    pricetag->scale = Vector2(0.8, 0.8);
     tmpH = 100;
     tmpW = 100;
+    waveEnd = true;
 
 }
 
@@ -148,10 +189,7 @@ Mainscene::~Mainscene(){
     delete background;
     delete toolbar;
     delete chooseframe;
-    delete shootSound;
-    delete explosionSound;
     delete bgmusic;
-    delete geluidje;
     delete availableWorkersText;
     delete coinsText;
     delete notEnoughText;
@@ -164,7 +202,12 @@ Mainscene::~Mainscene(){
     delete statusBarHappiness;
     delete upgradeBtn;
     delete upgradePriceText;
-
+    delete pricetag;
+    delete priceText;
+    delete house;
+    delete waveText;
+    delete waveTimerText;
+    delete blackfader;
     selectedTower = NULL;
     for(unsigned int i = 0; i < towers.size(); i++){
         removeEntity(towers[i]);
@@ -226,6 +269,49 @@ Mainscene::~Mainscene(){
 }
 
 void Mainscene::update(float deltaTime){
+
+    if(enemiesToSpawn > 0 && !waveEnd){
+        spawnTimer += deltaTime;
+    }else{
+
+        if(waveEnd){
+            spawnTimer = 0;
+            waveTimer -= deltaTime;
+            waveTimerText->color.a = 255;
+            std::ostringstream wts;
+            wts << (int)waveTimer;
+            waveTimerText->setText(wts.str());
+            if(waveTimer <= 0){
+                wave ++;
+                std::ostringstream ws;
+                ws << "Wave: ";
+                ws << wave;
+                waveText->setText(ws.str());
+                waveTimerText->color.a = 0;
+                waveTimer = 8;
+                if(wave > 1){
+                    enemiesToSpawn = 10+(2*wave);
+                    enemiesThisWave = enemiesToSpawn;
+                }
+                waveEnd = false;
+                spawnEnemy();
+                enemiesToSpawn --;
+            }
+        }
+    }
+    if(spawnTimer >= 4.0f){
+        spawnEnemy();
+        spawnTimer = 0;
+        enemiesToSpawn --;
+
+    }
+    if(!usedInit){
+        usedInit = true;
+        init();
+    }
+    if(enemies.size() == 0 ){
+        waveEnd = true;
+    }
     handleMenuItems();
     upgradeBtn->position =  Vector2(740,toolbar->position.y);
     upgradetxt->position = upgradeBtn->position+Vector2(-upgradetxt->getWidth()/2,0);
@@ -268,7 +354,7 @@ void Mainscene::update(float deltaTime){
     cc << "Coins: ";
     cc << coins;
     coinsText->setText(cc.str());
-
+    priceText->position = pricetag->position+Vector2(-80, 10);
 
     counter += deltaTime;
     if(counter >= 1.0f/60){
@@ -293,6 +379,20 @@ void Mainscene::update(float deltaTime){
             removeTwinkle(twinkles[i]);
         }
     }
+    pricetag->position = Vector2(-1000, -1000);
+    for(unsigned int i = 0; i < menuItems.size(); i++){
+        if(menuItems[i]->mouseOver() && lockedItem == NULL){
+            std::ostringstream ct;
+            ct << menuItems[i]->price;
+            ct << " coins";
+            priceText->setText(ct.str());
+            pricetag->position = Vector2(menuItems[i]->position.x-180, menuItems[i]->position.y);
+        }
+    }
+
+    if(input->getKeyDown(SDLK_c)){
+        coins += 10;
+    }
 
     for(unsigned int i = 0; i < bullets.size(); i++){
         bool done = false;
@@ -309,7 +409,7 @@ void Mainscene::update(float deltaTime){
                 coins += 2;
 
                 bullets[i]->destroyMe = true;
-                explosionSound->play();
+                bullets[i]->explodeSound->play();
                 if(bullets[i]->target->health <= 0){
                     bullets[i]->target->dead = true;
                 }
@@ -326,8 +426,11 @@ void Mainscene::update(float deltaTime){
             }
         }
     }
-
+    int enemycounter = 0;
     for(unsigned int i = 0; i < enemies.size(); i ++){
+        if(enemies[i]->dead){
+            enemycounter ++;
+        }
         if(enemies[i]->atTarget){
             if(pathpoints.size()-1 > (unsigned)enemies[i]->currPathPoint){
                 enemies[i]->atTarget = false;
@@ -343,6 +446,15 @@ void Mainscene::update(float deltaTime){
             }
 
             removeEnemy(enemies[i]);
+        }
+    }
+
+
+    if(enemycounter == enemiesThisWave  && enemies.size() > 0){
+        for(unsigned int i = 0; i < enemies.size(); i ++){
+            if(enemies[i]->dead){
+                enemies[i]->speed = 400;
+            }
         }
     }
 
@@ -400,7 +512,7 @@ void Mainscene::update(float deltaTime){
                 b->layer = 4;
                 b->hasTarget = true;
                 bullets.push_back(b);
-                shootSound->play();
+                towers[t]->shootSound->play();
             }
         }
     }
@@ -451,6 +563,7 @@ void Mainscene::update(float deltaTime){
         if(!toolbar->mouseOver()){
             for(unsigned int i = 0; i < towers.size(); i++){
                 removeShape(towers[i]->shootingRangeShape);
+
             }
         }
         if(upgradeBtn->mouseOver() && selectedTower->level < 5 && coins-selectedTower->upgradePrice >= 0){
@@ -471,6 +584,29 @@ void Mainscene::update(float deltaTime){
             }
         }
 
+    }
+
+    if(dreamHealth == 200){
+        for(unsigned int i = 0; i < enemies.size(); i++){
+            enemies[i]->speed = 0;
+            enemies[i]->health = 0;
+        }
+
+        wintimer += deltaTime;
+
+        if(wintimer >= 1){
+            blackfader->color.a += deltaTime*100;
+            if(blackfader->color.a >= 255){
+                reset();
+                this->nextScene = true;
+                blackfader->color.a = 0;
+                wintimer = 0;
+                bgmusic->stop();
+                usedInit = false;
+            }
+        }
+    }else if(dreamHealth == 0){
+        reset();
     }
     upgradetxt->color = upgradeBtn->color;
     for(unsigned int i = 0; i < towers.size(); i++){
@@ -527,18 +663,29 @@ void Mainscene::update(float deltaTime){
 
 }
 
-void Mainscene::spawnEnemies(int number){
-
-    for(unsigned int i = 0; i < (unsigned)number; i ++){
-        Enemy* e;
-        e = new Enemy();
-        e->position = Vector2(801,-500);
-        e->position.y -= 200*i;
-        enemies.push_back(e);
-        addEntity(e);
-        e->layer = 2;
-        e->curtarget = pathpoints[0];
+void Mainscene::spawnEnemy(){
+    Enemy* e;
+    float r = rand() % 100;
+    if(r > 90 && wave > 2){
+        e = new Ufo();
+        e->speed = 140;
+    }else if(r > 80 && r < 90 && wave > 2){
+        e = new Trol();
+        e->health = 200;
+        e->speed = 30;
+    }else{
+        e = new Duck();
     }
+    if(wave > 1){
+        e->speed += 30*wave;
+        e->health += 5*wave;
+    }
+    e->position = Vector2(801,-50);
+    enemies.push_back(e);
+    addEntity(e);
+    e->layer = 2;
+    e->dead = false;
+    e->curtarget = pathpoints[0];
 }
 
 void Mainscene::removeBullet(Bullet* b){
@@ -708,6 +855,14 @@ void Mainscene::handleMenuItems(){
             case 3:
                 tower = new IceTower();
             break;
+
+            case 4:
+                tower = new TurtleTower();
+            break;
+
+            case 5:
+                tower = new RobotTower();
+            break;
         }
         addEntity(tower);
         tower->layer = 2;
@@ -752,41 +907,67 @@ void Mainscene::handleMenuItems(){
 void Mainscene::setMenuItems(){
     MenuItem* item = new MenuItem(1);
     menuItems.push_back(item);
-    item->offsetpos = Vector2(66, 240);
-    item->unselectedScale = Vector2(0.12, 0.12);
+    item->offsetpos = Vector2(128, 100);
+    item->unselectedScale = Vector2(0.15, 0.15);
     item->selectedScale = Vector2(0.22, 0.22);
     item->range = 250.0f;
     item->price = 100;
-    item->notHoverImgPath = "assets/konijn.png";
+    item->notHoverImgPath = "assets/towers/konijn.png";
     item->setPng(item->notHoverImgPath.c_str());
     addHudObject(item);
     item->layer = 2;
 
     item = NULL;
     item = new MenuItem(2);
-    item->offsetpos = Vector2(190, 240);
+    item->offsetpos = Vector2(125, 230);
     menuItems.push_back(item);
     item->range = 200.0f;
     item->price = 80;
-    item->notHoverImgPath = "assets/hondje_sleeping.png";
+    item->notHoverImgPath = "assets/towers/hondje_sleeping.png";
     item->setPng(item->notHoverImgPath.c_str());
-    item->hoverImgPath = "assets/hondje_active.png";
+    item->hoverImgPath = "assets/towers/hondje_active.png";
     addHudObject(item);
-    item->unselectedScale = Vector2(0.25, 0.25);
+    item->unselectedScale = Vector2(0.35, 0.35);
     item->selectedScale = Vector2(0.5, 0.5);
     item->layer = 2;
 
     item = NULL;
     item = new MenuItem(3);
-    item->offsetpos = Vector2(190, 133);
+    item->offsetpos = Vector2(125, -25);
     menuItems.push_back(item);
     item->range = 130.0f;
     item->price = 110;
-    item->notHoverImgPath = "assets/mrcone.png";
+    item->notHoverImgPath = "assets/towers/mrcone.png";
     item->setPng(item->notHoverImgPath.c_str());
     addHudObject(item);
-    item->unselectedScale = Vector2(0.12, 0.12);
+    item->unselectedScale = Vector2(0.15, 0.15);
     item->selectedScale = Vector2(0.2, 0.2);
+    item->layer = 2;
+
+    item = NULL;
+    item = new MenuItem(4);
+    item->offsetpos = Vector2(125, -155);
+    menuItems.push_back(item);
+    item->range = 200.0f;
+    item->price = 140;
+    item->notHoverImgPath = "assets/towers/turtle_menu.png";
+    item->setPng(item->notHoverImgPath.c_str());
+    addHudObject(item);
+    item->unselectedScale = Vector2(0.33, 0.33);
+    item->selectedScale = Vector2(0.5, 0.5);
+    item->layer = 2;
+
+    item = NULL;
+    item = new MenuItem(5);
+    item->offsetpos = Vector2(125, -280);
+    menuItems.push_back(item);
+    item->range = 200.0f;
+    item->price = 140;
+    item->notHoverImgPath = "assets/towers/robot.png";
+    item->setPng(item->notHoverImgPath.c_str());
+    addHudObject(item);
+    item->unselectedScale = Vector2(0.22, 0.22);
+    item->selectedScale = Vector2(0.3, 0.3);
     item->layer = 2;
 }
 
@@ -843,4 +1024,40 @@ bool Mainscene::canPlaceMenuItem(MenuItem* m){
 
     }
     return true;
+}
+
+void Mainscene::reset(){
+    for(unsigned int i = 0; i < towers.size(); i++){
+        removeEntity(towers[i]);
+        delete towers[i];
+        towers[i] = NULL;
+    }
+    towers.clear();
+    for(unsigned int i = 0; i < enemies.size(); i ++){
+        removeEntity(enemies[i]);
+        delete enemies[i];
+        enemies[i] = NULL;
+    }
+    enemies.clear();
+
+    for(unsigned int i = 0; i < bullets.size(); i ++){
+        removeEntity(bullets[i]);
+        delete bullets[i];
+        bullets[i] = NULL;
+    }
+    bullets.clear();
+
+    lockedItem = NULL;
+    dreamHealth = 100;
+    coins = 100;
+
+    wave = 0;
+    enemiesToSpawn = 10;
+    waveEnd = true;
+
+}
+
+void Mainscene::init(){
+    bgmusic->play(true);
+
 }

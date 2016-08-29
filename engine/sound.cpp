@@ -1,7 +1,11 @@
 #include <engine/sound.h>
-
+int Sound::channelCounter = 1;
 Sound::Sound(const char * filepath){
-    this->channel= -10;
+    this->channel= channelCounter;
+    Sound::channelCounter ++;
+    if(this->channel > 70){
+        Mix_AllocateChannels(this->channel);
+    }
     this->sound = Mix_LoadWAV(filepath);
     this->volume = 100;
     if(sound == NULL){
@@ -28,7 +32,7 @@ void Sound::play( bool loop = false){
     }
     float v = 128.0f/100;
     v *= this->volume;
-    this->channel = Mix_PlayChannel(-1, sound, loopornot);
+    Mix_PlayChannel(this->channel, sound, loopornot);
     Mix_Volume(this->channel, (int)v);
 
 }
@@ -37,8 +41,10 @@ void Sound::setVolume(float value){
     float v = 128.0f/100;
     v *= value;
     this->volume = value;
-    if(this->channel != 10){
-        Mix_Volume(this->channel, (int)v);
-    }
+    Mix_Volume(this->channel, (int)v);
 
+}
+
+void Sound::stop(){
+    Mix_HaltChannel(this->channel);
 }

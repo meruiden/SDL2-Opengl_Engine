@@ -4,7 +4,7 @@ Worker::Worker() : Entity(){
     this->homePos = Vector2();
     this->wantsCloud = false;
     this->cloudpos = Vector2();
-    this->setPng("assets/worker.png");
+    this->setPng("assets/worker/worker.png");
     this->scale = Vector2(0.4f, 0.4f);
     this->working = false;
     this->target = NULL;
@@ -38,9 +38,9 @@ void Worker::update(float deltaTime){
                 }
             }
             if(spriteCounter == 1){
-                this->setPng("assets/worker_walk_1.png");
+                this->setPng("assets/worker/worker_walk_1.png");
             }else if(spriteCounter == 2){
-                this->setPng("assets/worker_walk_2.png");
+                this->setPng("assets/worker/worker_walk_2.png");
             }
         }else{
             spriteTimer += deltaTime;
@@ -54,9 +54,9 @@ void Worker::update(float deltaTime){
                 }
             }
             if(spriteCounter == 1){
-                this->setPng("assets/worker_building_1.png");
+                this->setPng("assets/worker/worker_building_1.png");
             }else if(spriteCounter == 2){
-                this->setPng("assets/worker_building_2.png");
+                this->setPng("assets/worker/worker_building_2.png");
             }
             this->buildProgress += deltaTime;
             cloudCounter += deltaTime;
@@ -94,12 +94,12 @@ void Worker::update(float deltaTime){
                 }
             }
             if(spriteCounter == 1){
-                this->setPng("assets/worker_walk_1.png");
+                this->setPng("assets/worker/worker_walk_1.png");
             }else if(spriteCounter == 2){
-                this->setPng("assets/worker_walk_2.png");
+                this->setPng("assets/worker/worker_walk_2.png");
             }
         }else{
-            this->setPng("assets/worker.png");
+            this->setPng("assets/worker/worker.png");
             this->rotation = 0;
         }
     }

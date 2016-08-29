@@ -1,7 +1,7 @@
 #include "dogbullet.h"
 
 DogBullet::DogBullet() : Bullet(){
-    this->setPng("assets/projectiel.png");
+    this->setPng("assets/bullets/projectiel.png");
 }
 
 DogBullet::~DogBullet(){

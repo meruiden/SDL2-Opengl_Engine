@@ -11,10 +11,12 @@ Bullet::Bullet() : Entity(){
     this->wantsTwinkle = false;
     this->twinkleCounter = 0.0f;
     this->slowingDamage = 0;
+    this->explodeSound = NULL;
+    this->bulletRotate = true;
 }
 
 Bullet::~Bullet(){
-
+    this->explodeSound = NULL;
 }
 
 void Bullet::update(float deltaTime){
@@ -26,6 +28,9 @@ void Bullet::handleTarget(float deltaTime){
         Vector2 subvec = Vector2(this->position, target->position);
         this->disToTarget = subvec.magnitude();
         float rot = atan2(subvec.y, subvec.x)+3.14f;
+        if(bulletRotate){
+            this->rotation = (rot*RAD_TO_DEG)+90;
+        }
         this->vel = Vector2(cos(rot), sin(rot));
         this->vel.normalize();
         this->vel *= this->speed;
@@ -35,6 +40,9 @@ void Bullet::handleTarget(float deltaTime){
         Vector2 subvec = Vector2(this->position, lastKnownPos);
         this->disToTarget = subvec.magnitude();
         float rot = atan2(subvec.y, subvec.x)+3.14f;
+        if(bulletRotate){
+            this->rotation = (rot*RAD_TO_DEG)+90;
+        }
         this->vel = Vector2(cos(rot), sin(rot));
         this->vel.normalize();
         this->vel *= this->speed;

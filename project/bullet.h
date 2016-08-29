@@ -3,7 +3,7 @@
 
 #include <engine/entity.h>
 #include <project/enemy.h>
-
+#include <engine/sound.h>
 
 class Bullet : public Entity{
 public:
@@ -23,6 +23,8 @@ public:
     bool wantsTwinkle;
     float twinkleCounter;
     float slowingDamage;
+    Sound* explodeSound;
+    bool bulletRotate;
 private:
 
 protected:

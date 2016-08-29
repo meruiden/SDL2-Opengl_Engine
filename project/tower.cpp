@@ -15,10 +15,17 @@ Tower::Tower() : Entity(){
     this->shootingRangeShape->color = Color(252, 61, 61, 100);
     this->shootDelay = 1.0f;
     this->upgradePrice = 10;
+
+    this->explosionSound = new Sound("assets/sound/explosion.wav");
+
+    this->explosionSound->setVolume(30);
+
 }
 
 Tower::~Tower(){
-    delete this->shootingRangeShape;
+    delete shootingRangeShape;
+    delete shootSound;
+    delete explosionSound;
 }
 
 void Tower::update(float deltaTime){
@@ -62,7 +69,7 @@ void Tower::handleTarget(float deltaTime){
     if (rotateTo > this->rotation + 180) rotateTo -= 360;
     if (rotateTo < this->rotation  - 180) rotateTo += 360;
     _trueRotation = (rotateTo - this->rotation ) / _rotateSpeedMax;
-    _trueRotation *= 300;
+    _trueRotation *= 400;
     this->rotation += _trueRotation*deltaTime;
 }
 
@@ -86,6 +93,7 @@ Bullet* Tower::shoot(){
     b->target = this->target;
     b->lastKnownPos = this->target->position;
     b->damage = this->damage;
+
 
     return b;
 }

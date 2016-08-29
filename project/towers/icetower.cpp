@@ -1,9 +1,11 @@
 #include "icetower.h"
 
 IceTower::IceTower() : Tower(){
-    this->setPng("assets/mrcone.png");
+    this->setPng("assets/towers/mrcone.png");
     this->scale = Vector2(0.2f, 0.2f);
     this->shootingRange = 130;
+    this->shootSound = new Sound("assets/sound/shoot.wav");
+    this->shootSound->setVolume(30);
     this->slowingDamage = 40;
 }
 
@@ -20,7 +22,7 @@ Bullet* IceTower::shoot(){
     b->scale = Vector2(0.2f, 0.2f);
     b->damage = this->damage;
     b->slowingDamage = this->slowingDamage;
-
+    b->explodeSound = this->explosionSound;
     return b;
 }
 

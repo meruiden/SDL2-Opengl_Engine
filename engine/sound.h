@@ -17,7 +17,10 @@ public:
     void play(bool loop);
     void setVolume(float value);
     void play();
+    void stop();
+    
 private:
+    static int channelCounter;
 
 };
 

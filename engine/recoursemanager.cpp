@@ -10,7 +10,7 @@ Recoursemanager::~Recoursemanager(){
         delete this->loadedImages[i];
         this->loadedImages[i] = NULL;
     }
-
+    loadedImages.clear();
     for(unsigned int i = 0; i < fontPaths.size(); i++){
         TTF_CloseFont(loadedFonts[i]);
         loadedFonts[i]= NULL;

@@ -15,8 +15,13 @@
 #include <engine/shape.h>
 #include <project/towers/dogtower.h>
 #include <project/towers/bunnytower.h>
+#include <project/towers/turtletower.h>
+#include <project/towers/robottower.h>
 #include <project/menuitem.h>
 #include <project/towers/icetower.h>
+#include <project/enemies/duck.h>
+#include <project/enemies/ufo.h>
+#include <project/enemies/trol.h>
 class Mainscene : public Scene{
 public:
     Mainscene();
@@ -31,7 +36,7 @@ public:
     Text* coinsText;
     int coins;
     std::vector<Vector2> pathpoints;
-    Sound* geluidje;
+
     Sound* bgmusic;
     Vector2 scrollvel;
     Vector2 scrollacc;
@@ -42,7 +47,7 @@ public:
     std::vector<Enemy*> enemies;
     std::vector<Bullet*> bullets;
     std::vector<Tower*> towers;
-    void spawnEnemies(int number);
+    void spawnEnemy();
     void removeBullet(Bullet* b);
     void removeEnemy(Enemy* e);
     std::vector<Worker*> busyWorkers;
@@ -51,11 +56,21 @@ public:
     void removeCloud(SimpleEntity* e);
     bool assignWorker(Tower* tower);
     void clearWorker(Worker* worker);
-    Sound* shootSound;
-    Sound* explosionSound;
+    void reset();
+    float wintimer;
+    int enemiesToSpawn;
+    bool waveEnd;
+    int enemiesThisWave;
+    int wave;
+    HudObject* pricetag;
+    Text* priceText;
+    float spawnTimer;
+    float waveTimer;
+    Text* waveTimerText;
     double counter;
     void fixedUpdate();
-
+    SimpleEntity* house;
+    Text* waveText;
     HudObject* toolbar;
     Text* availableWorkersText;
     bool lockDog;
@@ -66,7 +81,7 @@ public:
     float notenoughAlpha;
     HudObject* cursor;
     SimpleEntity* background;
-
+    Shape* blackfader;
     std::vector<Particle*> twinkles;
 
     void removeTwinkle(Particle* p);
@@ -84,6 +99,8 @@ public:
     std::vector<MenuItem*> menuItems;
     void handleMenuItems();
     MenuItem* lockedItem;
+    void init();
+    bool usedInit;
 
     float tmpH;
     float tmpW;

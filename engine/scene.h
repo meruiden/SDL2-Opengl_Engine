@@ -16,6 +16,7 @@ public:
     virtual ~Scene();
     virtual void update(float deltaTime);
 
+    bool nextScene;
     std::vector<Shape*> shapes;
     std::vector<Entity*> entities;
     std::vector<HudObject*> hudObjects;
@@ -38,9 +39,11 @@ public:
     Input* input;
 
     Camera* camera;
-
+    bool wantsToQuit;
     int window_width;
     int window_height;
+
+    void quit();
 private:
 
 };

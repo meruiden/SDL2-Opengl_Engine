@@ -5,6 +5,7 @@
 #include <project/bullet.h>
 #include <project/enemy.h>
 #include <engine/shape.h>
+#include <engine/sound.h>
 class Tower : public Entity{
 public:
     Tower();
@@ -25,7 +26,9 @@ public:
     int damage;
     Shape* shootingRangeShape;
     float shootingRange;
-
+    Sound* shootSound;
+    Sound* explosionSound;
+    bool alreadyDead;
     virtual void upgrade();
 
 private:

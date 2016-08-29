@@ -1,7 +1,8 @@
 #include "bunnybullet.h"
 
 BunnyBullet::BunnyBullet() : Bullet(){
-    this->setPng("assets/regenboog_projectiel.png");
+    this->setPng("assets/bullets/regenboog_projectiel.png");
+    this->bulletRotate = false;
 }
 
 BunnyBullet::~BunnyBullet(){

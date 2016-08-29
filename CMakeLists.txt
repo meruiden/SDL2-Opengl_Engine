@@ -156,9 +156,26 @@ add_executable(project
     project/menuitem.h
     project/towers/icetower.h
     project/towers/icetower.cpp
+    project/towers/turtletower.h
+    project/towers/turtletower.cpp
+    project/towers/robottower.h
+    project/towers/robottower.cpp
     project/bullets/icebullet.h
     project/bullets/icebullet.cpp
-
+    project/bullets/turtlebullet.h
+    project/bullets/turtlebullet.cpp
+    project/bullets/robotbullet.h
+    project/bullets/robotbullet.cpp
+    project/menuscene.h
+    project/menuscene.cpp
+    project/enemies/duck.h
+    project/enemies/duck.cpp
+    project/enemies/ufo.h
+    project/enemies/ufo.cpp
+    project/enemies/trol.h
+    project/enemies/trol.cpp
+    project/creditsscene.h
+    project/creditsscene.cpp
 )
 
 target_link_libraries(project

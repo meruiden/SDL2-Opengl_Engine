@@ -19,6 +19,7 @@ public:
     float spriteTimer;
     float slowness;
     int health;
+    void handleMovement(float deltaTime);
 private:
 
 protected:
