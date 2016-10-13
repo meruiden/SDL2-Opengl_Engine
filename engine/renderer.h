@@ -31,7 +31,7 @@
 #include <engine/hudobject.h>
 #include <engine/text.h>
 #include <engine/shape.h>
-
+#include <time.h>
 #include <sstream>
 class Renderer{
 public:

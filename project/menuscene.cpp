@@ -1,5 +1,6 @@
 #include "menuscene.h"
 
+
 MenuScene::MenuScene() : Scene(){
     background = new HudObject();
     background->setPng("assets/menu/achtergrond.png");

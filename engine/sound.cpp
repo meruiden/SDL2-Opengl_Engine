@@ -1,5 +1,7 @@
 #include <engine/sound.h>
+
 int Sound::channelCounter = 1;
+
 Sound::Sound(const char * filepath){
     this->channel= channelCounter;
     Sound::channelCounter ++;
@@ -22,6 +24,7 @@ Sound::~Sound(){
 void Sound::play(){
     this->play(false);
 }
+
 void Sound::play( bool loop = false){
     int loopornot = 0;
 

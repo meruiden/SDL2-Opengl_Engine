@@ -961,7 +961,7 @@ void Mainscene::setMenuItems(){
     item = new MenuItem(5);
     item->offsetpos = Vector2(125, -280);
     menuItems.push_back(item);
-    item->range = 200.0f;
+    item->range = 500.0f;
     item->price = 140;
     item->notHoverImgPath = "assets/towers/robot.png";
     item->setPng(item->notHoverImgPath.c_str());

@@ -1,5 +1,5 @@
 #include "enemy.h"
-#include <iostream>
+
 Enemy::Enemy() : Entity(){
     this->atTarget = false;
     this->curtarget = Vector2();

@@ -13,7 +13,7 @@ Renderer* renderer;
 Mainscene* mainscene;
 MenuScene* menuscene;
 CreditsScene* creditsscene;
-int main( void )
+int main(int argc, char *argv[])
 {
     std::vector<Scene*> scenes;
     renderer = new Renderer();

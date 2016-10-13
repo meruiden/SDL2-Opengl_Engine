@@ -1,5 +1,5 @@
 #include "bullet.h"
-#include <iostream>
+
 Bullet::Bullet() : Entity(){
     //this->scale = Vector2(0.3f, 0.3f);
     this->speed = 500.0f;

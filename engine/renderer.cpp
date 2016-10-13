@@ -24,8 +24,8 @@ Renderer::Renderer(){
     // Open a window and create its OpenGL context
     window = SDL_CreateWindow(
      "Dream Defenders",
-     SDL_WINDOWPOS_UNDEFINED,
-     SDL_WINDOWPOS_UNDEFINED,
+     SDL_WINDOWPOS_CENTERED,
+     SDL_WINDOWPOS_CENTERED,
      window_width,
      window_height,
      SDL_WINDOW_OPENGL
@@ -427,7 +427,7 @@ Renderer::~Renderer(){
     delete camera;
     delete resman;
     Mix_CloseAudio();
-
+    TTF_Quit();
     glDeleteProgram(programID);
     glDeleteTextures(1, &textureID);
     std::cout << "DELETED SHADER" << std::endl;
@@ -507,7 +507,7 @@ void Renderer::renderText(Text* t){
     glUniform1f(rfloat, (float)t->color.r/255.0f);
     glUniform1f(gfloat, (float)t->color.g/255.0f);
     glUniform1f(bfloat, (float)t->color.b/255.0f);
-    
+
     // Bind our texture in Texture Unit 0
     glActiveTexture(GL_TEXTURE0);
 

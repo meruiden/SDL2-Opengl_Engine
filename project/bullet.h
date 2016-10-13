@@ -4,7 +4,7 @@
 #include <engine/entity.h>
 #include <project/enemy.h>
 #include <engine/sound.h>
-
+#include <iostream>
 class Bullet : public Entity{
 public:
     Bullet();

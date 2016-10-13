@@ -1,6 +1,11 @@
  #ifndef CAMERA_H
 #define CAMERA_H
 
+#include <iostream>
+// Include GLM
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+
 #include <engine/vector2.h>
 
 #include <glm/gtc/matrix_transform.hpp>

@@ -1,10 +1,10 @@
 #ifndef SOUND_H
 #define SOUND_H
 
-
-#include <SDL_mixer.h>
 #include <string>
 #include <iostream>
+#include <SDL_mixer.h>
+
 class Sound{
 public:
     Sound(const char * filepath);
@@ -18,7 +18,7 @@ public:
     void setVolume(float value);
     void play();
     void stop();
-    
+
 private:
     static int channelCounter;
 
